@@ -115,8 +115,12 @@
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>Assume we have some patients with corresponding dates of interest:</p>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">coder</span>)
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">ex_people</span>) <span class="kw">%&gt;%</span> <span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>()</pre></div>
+<span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">ex_people</span>))</pre></div>
 <table class="table">
+<colgroup>
+<col width="30%">
+<col width="69%">
+</colgroup>
 <thead><tr class="header">
 <th align="left">name</th>
 <th align="left">event</th>
@@ -124,32 +128,35 @@
 <tbody>
 <tr class="odd">
 <td align="left">Miller, Von Buddenbrock</td>
-<td align="left">2019-05-03</td>
+<td align="left">2019-06-14</td>
 </tr>
 <tr class="even">
 <td align="left">Enriquez, Anthony</td>
-<td align="left">2019-10-15</td>
+<td align="left">2019-11-26</td>
 </tr>
 <tr class="odd">
 <td align="left">al-Dib, Farhaan</td>
-<td align="left">2019-12-11</td>
+<td align="left">2020-01-22</td>
 </tr>
 <tr class="even">
 <td align="left">Martinez, Alison</td>
-<td align="left">2019-09-17</td>
+<td align="left">2019-10-29</td>
 </tr>
 <tr class="odd">
 <td align="left">el-Masri, Junaid</td>
-<td align="left">2019-07-06</td>
+<td align="left">2019-08-17</td>
 </tr>
 <tr class="even">
 <td align="left">Sam, Niki</td>
-<td align="left">2019-12-23</td>
+<td align="left">2020-02-03</td>
+</tr>
+<tr class="odd">
+<td align="left">We also have some external</td>
+<td align="left">medical data (ICD-10-codes recorded at previous hospital):</td>
 </tr>
 </tbody>
 </table>
-<p>We also have some external medical data (ICD-10-codes recorded at previous hospital):</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">ex_icd10</span>) <span class="kw">%&gt;%</span> <span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>()</pre></div>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">ex_icd10</span>))</pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">id</th>
@@ -160,38 +167,38 @@
 <tbody>
 <tr class="odd">
 <td align="left">Aguilera, Brandon</td>
-<td align="left">2019-05-17</td>
-<td align="left">T931</td>
+<td align="left">2019-06-28</td>
+<td align="left">K061</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="even">
 <td align="left">Aguilera, Brandon</td>
-<td align="left">2019-08-11</td>
-<td align="left">D301</td>
+<td align="left">2019-09-22</td>
+<td align="left">X3601</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="odd">
 <td align="left">Aguilera, Brandon</td>
-<td align="left">2019-09-11</td>
-<td align="left">I828</td>
-<td align="left">FALSE</td>
+<td align="left">2019-10-23</td>
+<td align="left">W8911</td>
+<td align="left">TRUE</td>
 </tr>
 <tr class="even">
 <td align="left">Alexander, Bethany</td>
-<td align="left">2019-01-25</td>
-<td align="left">S925</td>
+<td align="left">2019-03-08</td>
+<td align="left">L988C</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="odd">
 <td align="left">Alexander, Bethany</td>
-<td align="left">2019-03-01</td>
-<td align="left">E278</td>
+<td align="left">2019-04-12</td>
+<td align="left">B670</td>
 <td align="left">FALSE</td>
 </tr>
 <tr class="even">
 <td align="left">Alexander, Bethany</td>
-<td align="left">2019-07-06</td>
-<td align="left">A507</td>
+<td align="left">2019-08-17</td>
+<td align="left">Y1469</td>
 <td align="left">FALSE</td>
 </tr>
 </tbody>
@@ -205,8 +212,10 @@
     <span class="kw">codify_args</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">date</span> <span class="kw">=</span> <span class="st">"event"</span>, <span class="kw">days</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(-<span class="fl">365</span>, -<span class="fl">1</span>))
   )
 <span class="co">#&gt; Classification based on: regex_icd10</span></pre></div>
-<p>The result is a dataset with columns for each comorbidity and (optional) each weighted index. Those were specified as “quan_original” and “quan_updated”:</p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu">select</span>(<span class="no">ch</span>, <span class="no">name</span>, <span class="no">quan_original</span>, <span class="no">quan_updated</span>) <span class="kw">%&gt;%</span> <span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>()</pre></div>
+<p>The result is a dataset with columns for each comorbidity and (optional) each weighted index (quan_original and quan_updated):</p>
+<div class="sourceCode" id="cb6"><pre class="r"><span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(
+  <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu">select</span>(<span class="no">ch</span>, <span class="no">name</span>, <span class="no">quan_original</span>, <span class="no">quan_updated</span>)
+)</pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">name</th>
@@ -221,7 +230,7 @@
 </tr>
 <tr class="even">
 <td align="left">Martinez, Alison</td>
-<td align="right">0</td>
+<td align="right">1</td>
 <td align="right">0</td>
 </tr>
 <tr class="odd">
@@ -231,8 +240,8 @@
 </tr>
 <tr class="even">
 <td align="left">Sam, Niki</td>
-<td align="right">2</td>
-<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
 </tr>
 <tr class="odd">
 <td align="left">al-Dib, Farhaan</td>
@@ -241,8 +250,8 @@
 </tr>
 <tr class="even">
 <td align="left">el-Masri, Junaid</td>
-<td align="right">2</td>
-<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
 </tr>
 </tbody>
 </table>
@@ -259,8 +268,8 @@
 <table class="table">
 <colgroup>
 <col width="6%">
-<col width="39%">
-<col width="53%">
+<col width="38%">
+<col width="54%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">classcodes</th>
@@ -316,7 +325,7 @@
 <div id="relation-to-other-packages" class="section level1">
 <h1 class="hasAnchor">
 <a href="#relation-to-other-packages" class="anchor"></a>Relation to other packages</h1>
-<p><code>coder</code> uses <code>data.table</code> as a backend to increase computational speed for large datasets. There are some CRAN packages with a specific scope of Charlson and Elixhauser comorbidity based on ICD-codes: <code>comorbidities.icd10</code>, <code>comorbidity</code> and <code>icd</code>. The first is rather slow for large datasets and is not actively developed. The other two are excellent alternatives for those specific use cases.</p>
+<p><code>coder</code> uses <code>data.table</code> as a backend to increase computational speed for large datasets. There are some R packages with a narrow focus on Charlson and Elixhauser co-morbidity based on ICD-codes (<a href="https://CRAN.R-project.org/package=icd">icd</a>, <a href="https://CRAN.R-project.org/package=comorbidity">comorbidity</a>, <a href="https://CRAN.R-project.org/package=medicalrisk">medicalrisk</a>, <a href="https://github.com/gforge/comorbidities.icd10">comorbidities.icd10</a>, <a href="https://github.com/wtcooper/icdcoder">icdcoder</a>). The <code>coder</code> package includes similar functionalities but has a wider scope.</p>
 </div>
 <div id="citation" class="section level1">
 <h1 class="hasAnchor">
@@ -325,16 +334,15 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To cite package 'coder' in publications use:</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt;   Erik Bulow (2020). coder: Deterministic Categorization of Items Based on External Code</span>
-<span class="co">#&gt;   Data. R package version 0.11.2. https://github.com/eribul/coder</span>
+<span class="co">#&gt;   Erik Bulow (NA). coder: Deterministic Categorization of Items Based</span>
+<span class="co">#&gt;   on External Code Data. R package version 0.11.2.</span>
+<span class="co">#&gt;   https://github.com/eribul/coder</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;   @Manual{,</span>
-<span class="co">#&gt;     title = {coder: Deterministic Categorization of Items Based on External Code</span>
-<span class="co">#&gt; Data},</span>
+<span class="co">#&gt;     title = {coder: Deterministic Categorization of Items Based on External Code Data},</span>
 <span class="co">#&gt;     author = {Erik Bulow},</span>
-<span class="co">#&gt;     year = {2020},</span>
 <span class="co">#&gt;     note = {R package version 0.11.2},</span>
 <span class="co">#&gt;     url = {https://github.com/eribul/coder},</span>
 <span class="co">#&gt;   }</span></pre></div>
@@ -382,6 +390,7 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
+<li><a href="https://github.com/eribul/coder/actions"><img src="https://github.com/eribul/coder/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://travis-ci.org/eribul/coder"><img src="https://travis-ci.org/eribul/coder.svg?branch=master" alt="Build Status"></a></li>
 <li><a href="https://ci.appveyor.com/project/eribul/coder"><img src="https://ci.appveyor.com/api/projects/status/github/eribul/coder?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
 <li><a href="https://codecov.io/gh/eribul/coder"><img src="https://codecov.io/gh/eribul/coder/branch/master/graph/badge.svg" alt="codecov"></a></li>
