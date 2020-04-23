@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">coder</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.3</span>
       </span>
     </div>
 
@@ -98,10 +98,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Co-morbidity_codes.html">Classcodes objects</a>
+      <a href="../articles/Comorbidity.html">Co-morbidity</a>
     </li>
     <li>
-      <a href="../articles/Comorbidity.html">Co-morbidity</a>
+      <a href="../articles/classcodes.html">Classcodes objects</a>
     </li>
   </ul>
 </li>
@@ -207,18 +207,18 @@ but the object will be changed by reference.</p></td>
 <code><a href='index_fun.html'>index_fun</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>codify</span>(<span class='no'>ex_people</span>, <span class='no'>ex_icd10</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"name"</span>, <span class='kw'>date</span> <span class='kw'>=</span> <span class='st'>"event"</span>, <span class='kw'>days</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>365</span>, <span class='fl'>0</span>))</div><div class='output co'>#&gt;                    name       date  code_date  code  hdia in_period
-#&gt;   1: Alexander, Bethany 2019-04-18 2019-03-08 L988C FALSE      TRUE
-#&gt;   2: Alexander, Bethany 2019-04-18 2019-04-12  B670 FALSE      TRUE
-#&gt;   3:    Arguello, Tommy 2020-01-14 2019-01-25 E888A FALSE      TRUE
-#&gt;   4:    Arguello, Tommy 2020-01-14 2019-06-26 V3811 FALSE      TRUE
-#&gt;   5:    Arguello, Tommy 2020-01-14 2019-10-02 X5214 FALSE      TRUE
-#&gt;  ---                                                               
-#&gt; 365:   el-Zaki, Huwaida 2020-02-01 2019-03-20 V3533 FALSE      TRUE
-#&gt; 366:   el-Zaki, Huwaida 2020-02-01 2019-03-20 V4103 FALSE      TRUE
-#&gt; 367:   el-Zaki, Huwaida 2020-02-01 2019-06-04  F058 FALSE      TRUE
-#&gt; 368:   el-Zaki, Huwaida 2020-02-01 2019-07-22  E748 FALSE      TRUE
-#&gt; 369:   el-Zaki, Huwaida 2020-02-01 2019-12-29 Y2623 FALSE      TRUE</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>codify</span>(<span class='no'>ex_people</span>, <span class='no'>ex_icd10</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"name"</span>, <span class='kw'>date</span> <span class='kw'>=</span> <span class='st'>"event"</span>, <span class='kw'>days</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>365</span>, <span class='fl'>0</span>))</div><div class='output co'>#&gt;                    name       date  code_date    code  hdia in_period
+#&gt;   1: Alexander, Bethany 2019-05-01 2019-03-21 S62126K FALSE      TRUE
+#&gt;   2: Alexander, Bethany 2019-05-01 2019-04-25  I70718 FALSE      TRUE
+#&gt;   3:    Arguello, Tommy 2020-01-27 2019-02-07 S32464D FALSE      TRUE
+#&gt;   4:    Arguello, Tommy 2020-01-27 2019-07-09  M02152 FALSE      TRUE
+#&gt;   5:    Arguello, Tommy 2020-01-27 2019-10-15 T84192A FALSE      TRUE
+#&gt;  ---                                                                 
+#&gt; 365:   el-Zaki, Huwaida 2020-02-14 2019-04-02  M11821 FALSE      TRUE
+#&gt; 366:   el-Zaki, Huwaida 2020-02-14 2019-04-02 O368923 FALSE      TRUE
+#&gt; 367:   el-Zaki, Huwaida 2020-02-14 2019-06-17 T23609D FALSE      TRUE
+#&gt; 368:   el-Zaki, Huwaida 2020-02-14 2019-08-04 S7491XD FALSE      TRUE
+#&gt; 369:   el-Zaki, Huwaida 2020-02-14 2020-01-11    C751 FALSE      TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

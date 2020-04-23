@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">coder</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.3</span>
       </span>
     </div>
 
@@ -98,10 +98,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Co-morbidity_codes.html">Classcodes objects</a>
+      <a href="../articles/Comorbidity.html">Co-morbidity</a>
     </li>
     <li>
-      <a href="../articles/Comorbidity.html">Co-morbidity</a>
+      <a href="../articles/classcodes.html">Classcodes objects</a>
     </li>
   </ul>
 </li>
@@ -213,112 +213,112 @@ Indices are also included if so specified by the 'index' argument.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Add Elixhauser based on all registered ICD10-codes</span>
 <span class='fu'>categorize</span>(<span class='no'>ex_people</span>, <span class='no'>ex_icd10</span>, <span class='st'>"elixhauser"</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"name"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt;                           name      event congestive heart failure
-#&gt;   1:        Alexander, Bethany 2019-04-18                    FALSE
-#&gt;   2:           Arguello, Tommy 2020-01-14                    FALSE
-#&gt;   3:             Austin, Maeve 2020-01-07                    FALSE
-#&gt;   4:            Ball, Rockelle 2019-05-26                    FALSE
-#&gt;   5:            Bean, Haileigh 2019-06-24                    FALSE
-#&gt;   6:            Beehler, Kelly 2019-05-14                    FALSE
-#&gt;   7:           Bessard, Marzel 2020-02-03                    FALSE
-#&gt;   8:              Bishop, Alec 2019-05-18                    FALSE
-#&gt;   9:            Bivings, Devin 2019-07-15                    FALSE
-#&gt;  10:            Brown, Patrick 2019-09-26                    FALSE
-#&gt;  11:             Burges, Amber 2019-07-21                    FALSE
-#&gt;  12:            Burton, Martin 2019-12-10                    FALSE
-#&gt;  13:           Cannon, Timothy 2019-04-18                    FALSE
-#&gt;  14:  Cardenas Perez, Gabriela 2019-08-16                    FALSE
-#&gt;  15:               Chung, Noor 2019-08-25                    FALSE
-#&gt;  16:           Connors, Jaylyn 2019-06-20                    FALSE
-#&gt;  17:    Copeland-Doyle, Symone 2019-07-30                    FALSE
-#&gt;  18:                 Doan, Sam 2020-01-30                    FALSE
-#&gt;  19:         Dominguez, Suriel 2020-03-22                    FALSE
-#&gt;  20:         Enriquez, Anthony 2019-11-26                    FALSE
-#&gt;  21:      Fitzsimmons, Tabatha 2019-07-22                    FALSE
-#&gt;  22:             Grim, Cheanna 2019-09-06                    FALSE
-#&gt;  23:               Harder, Rio 2020-02-25                    FALSE
-#&gt;  24:               Hood, Dania 2019-12-03                    FALSE
-#&gt;  25:           Howard, Marcius 2020-02-06                    FALSE
-#&gt;  26:              Huff, Hassan 2020-03-21                    FALSE
-#&gt;  27:           Hughey, Darlene 2019-10-26                    FALSE
-#&gt;  28:        Hutchinson, Joshua 2019-07-21                    FALSE
-#&gt;  29:  Iron Cloud-Gresko, Sadie 2019-12-16                    FALSE
-#&gt;  30:       Khamsoulinh, De'Von 2019-12-05                    FALSE
-#&gt;  31:          Lechuga, Anthony 2019-07-14                    FALSE
-#&gt;  32:         Littlejohn, Kevin 2019-08-26                    FALSE
-#&gt;  33:          Liufau, Sue Lynn 2019-10-08                    FALSE
-#&gt;  34:            Martin, Trevor 2019-07-25                    FALSE
-#&gt;  35:          Martinez, Alison 2019-10-29                    FALSE
-#&gt;  36:         Martinez, Columba 2019-05-15                    FALSE
-#&gt;  37:          Mendoza, Jessica 2019-10-13                    FALSE
-#&gt;  38:           Mendoza, Nathan 2019-05-19                    FALSE
-#&gt;  39:   Miller, Von Buddenbrock 2019-06-14                    FALSE
-#&gt;  40:              Mills, Henry 2019-09-14                    FALSE
-#&gt;  41:           Mitchell, Dalon 2019-05-12                    FALSE
-#&gt;  42:              Murray, Eric 2019-08-22                    FALSE
-#&gt;  43:             Nguyen, Hoang 2019-11-24                    FALSE
-#&gt;  44:            Orozco, Daniel 2019-07-01                    FALSE
-#&gt;  45:              Pappas, Cole 2019-09-03                    FALSE
-#&gt;  46:         Pearsall, Deontre 2019-11-21                    FALSE
-#&gt;  47:           Pena, Francisco 2019-11-01                    FALSE
-#&gt;  48:              Perez, Vidal 2020-02-18                    FALSE
-#&gt;  49:        Peterson, Brittany 2019-07-10                    FALSE
-#&gt;  50:            Polvon, Alicia 2019-08-29                    FALSE
-#&gt;  51:             Quick, Miriah 2020-01-03                    FALSE
-#&gt;  52:             Raab, Jeannie 2019-09-05                    FALSE
-#&gt;  53:             Rice, Jamissa 2020-04-02                    FALSE
-#&gt;  54:        Rockwell, Savannah 2019-10-25                    FALSE
-#&gt;  55:         Rodriquez, Monica 2019-05-22                    FALSE
-#&gt;  56:              Romero, Carl 2020-02-29                    FALSE
-#&gt;  57: Rosales-Marroquin, Monika 2019-07-11                    FALSE
-#&gt;  58:                 Sam, Niki 2020-02-03                    FALSE
-#&gt;  59:             Sanchez, Ryan 2020-01-25                    FALSE
-#&gt;  60:             Sharma, Katie 2020-01-11                    FALSE
-#&gt;  61:           Snider, Melanie 2019-04-11                    FALSE
-#&gt;  62:       Summerhays, Spencer 2019-05-10                    FALSE
-#&gt;  63:            Thompson, Trae 2019-12-26                    FALSE
-#&gt;  64: Torres Escalante, Herbert 2019-08-19                    FALSE
-#&gt;  65:   Trader-Bankston, J'Quan 2019-12-08                    FALSE
-#&gt;  66:               Tram, Medha 2020-01-20                    FALSE
-#&gt;  67:            Vaclav, Taylor 2020-02-21                    FALSE
-#&gt;  68:           Valdez, Antonio 2019-04-12                    FALSE
-#&gt;  69:           Ventura, Joshua 2019-12-03                    FALSE
-#&gt;  70:         Vogltanz, Michael 2019-07-25                    FALSE
-#&gt;  71:             Wang, Phillip 2019-10-24                    FALSE
-#&gt;  72:          Whitaker, Taylor 2019-07-17                    FALSE
-#&gt;  73:                 Wu, Lucas 2020-04-08                    FALSE
-#&gt;  74:             Wuertz, Jenny 2019-05-29                    FALSE
-#&gt;  75:    al-Asmar, Abdur Raheem 2019-11-24                    FALSE
-#&gt;  76:       al-Bashara, Shaahir 2019-05-05                    FALSE
-#&gt;  77:          al-Dawood, Hasan 2020-02-03                    FALSE
-#&gt;  78:           al-Dib, Farhaan 2020-01-22                    FALSE
-#&gt;  79:        al-Ismail, Waleeda 2020-01-14                    FALSE
-#&gt;  80:        al-Jafri, Shaheera 2020-03-12                    FALSE
-#&gt;  81:        al-Kader, Siddeeqa 2020-02-29                    FALSE
-#&gt;  82:          al-Karam, Ziyaad 2020-01-10                    FALSE
-#&gt;  83:       al-Ramadan, Hanoona 2019-09-05                    FALSE
-#&gt;  84:         al-Shaban, Mazeed 2019-08-23                    FALSE
-#&gt;  85:            el-Amiri, Jaad 2019-11-28                    FALSE
-#&gt;  86:         el-Bashara, Najma 2019-10-12                    FALSE
-#&gt;  87:           el-Diab, Nadeem 2019-12-05                    FALSE
-#&gt;  88:          el-Faris, Shuaib 2020-02-24                    FALSE
-#&gt;  89:          el-Hallal, Uwais 2019-09-17                    FALSE
-#&gt;  90:         el-Hamad, Tayyiba 2019-09-01                    FALSE
-#&gt;  91:       el-Jamail, Hudhaifa 2020-01-21                    FALSE
-#&gt;  92:         el-Khalifa, Nawfa 2019-12-10                    FALSE
-#&gt;  93:           el-Khan, Jasoor 2019-11-25                    FALSE
-#&gt;  94:          el-Masri, Junaid 2019-08-17                    FALSE
-#&gt;  95:        el-Sabir, Mumtaaza 2020-02-05                    FALSE
-#&gt;  96:          el-Sadek, Wafaaa 2019-09-22                    FALSE
-#&gt;  97:       el-Salehi, Mahuroos 2019-07-04                    FALSE
-#&gt;  98:      el-Salih, Farajallah 2019-07-27                    FALSE
-#&gt;  99:         el-Sharif, Nadeem 2020-01-18                    FALSE
-#&gt; 100:          el-Zaki, Huwaida 2020-02-01                    FALSE
+#&gt;   1:        Alexander, Bethany 2019-05-01                    FALSE
+#&gt;   2:           Arguello, Tommy 2020-01-27                    FALSE
+#&gt;   3:             Austin, Maeve 2020-01-20                    FALSE
+#&gt;   4:            Ball, Rockelle 2019-06-08                    FALSE
+#&gt;   5:            Bean, Haileigh 2019-07-07                    FALSE
+#&gt;   6:            Beehler, Kelly 2019-05-27                    FALSE
+#&gt;   7:           Bessard, Marzel 2020-02-16                    FALSE
+#&gt;   8:              Bishop, Alec 2019-05-31                    FALSE
+#&gt;   9:            Bivings, Devin 2019-07-28                    FALSE
+#&gt;  10:            Brown, Patrick 2019-10-09                    FALSE
+#&gt;  11:             Burges, Amber 2019-08-03                    FALSE
+#&gt;  12:            Burton, Martin 2019-12-23                    FALSE
+#&gt;  13:           Cannon, Timothy 2019-05-01                    FALSE
+#&gt;  14:  Cardenas Perez, Gabriela 2019-08-29                    FALSE
+#&gt;  15:               Chung, Noor 2019-09-07                    FALSE
+#&gt;  16:           Connors, Jaylyn 2019-07-03                    FALSE
+#&gt;  17:    Copeland-Doyle, Symone 2019-08-12                    FALSE
+#&gt;  18:                 Doan, Sam 2020-02-12                    FALSE
+#&gt;  19:         Dominguez, Suriel 2020-04-04                    FALSE
+#&gt;  20:         Enriquez, Anthony 2019-12-09                    FALSE
+#&gt;  21:      Fitzsimmons, Tabatha 2019-08-04                    FALSE
+#&gt;  22:             Grim, Cheanna 2019-09-19                    FALSE
+#&gt;  23:               Harder, Rio 2020-03-09                    FALSE
+#&gt;  24:               Hood, Dania 2019-12-16                    FALSE
+#&gt;  25:           Howard, Marcius 2020-02-19                    FALSE
+#&gt;  26:              Huff, Hassan 2020-04-03                    FALSE
+#&gt;  27:           Hughey, Darlene 2019-11-08                    FALSE
+#&gt;  28:        Hutchinson, Joshua 2019-08-03                    FALSE
+#&gt;  29:  Iron Cloud-Gresko, Sadie 2019-12-29                    FALSE
+#&gt;  30:       Khamsoulinh, De'Von 2019-12-18                    FALSE
+#&gt;  31:          Lechuga, Anthony 2019-07-27                    FALSE
+#&gt;  32:         Littlejohn, Kevin 2019-09-08                    FALSE
+#&gt;  33:          Liufau, Sue Lynn 2019-10-21                    FALSE
+#&gt;  34:            Martin, Trevor 2019-08-07                    FALSE
+#&gt;  35:          Martinez, Alison 2019-11-11                    FALSE
+#&gt;  36:         Martinez, Columba 2019-05-28                    FALSE
+#&gt;  37:          Mendoza, Jessica 2019-10-26                    FALSE
+#&gt;  38:           Mendoza, Nathan 2019-06-01                    FALSE
+#&gt;  39:   Miller, Von Buddenbrock 2019-06-27                    FALSE
+#&gt;  40:              Mills, Henry 2019-09-27                    FALSE
+#&gt;  41:           Mitchell, Dalon 2019-05-25                    FALSE
+#&gt;  42:              Murray, Eric 2019-09-04                    FALSE
+#&gt;  43:             Nguyen, Hoang 2019-12-07                    FALSE
+#&gt;  44:            Orozco, Daniel 2019-07-14                    FALSE
+#&gt;  45:              Pappas, Cole 2019-09-16                    FALSE
+#&gt;  46:         Pearsall, Deontre 2019-12-04                    FALSE
+#&gt;  47:           Pena, Francisco 2019-11-14                    FALSE
+#&gt;  48:              Perez, Vidal 2020-03-02                    FALSE
+#&gt;  49:        Peterson, Brittany 2019-07-23                    FALSE
+#&gt;  50:            Polvon, Alicia 2019-09-11                    FALSE
+#&gt;  51:             Quick, Miriah 2020-01-16                    FALSE
+#&gt;  52:             Raab, Jeannie 2019-09-18                    FALSE
+#&gt;  53:             Rice, Jamissa 2020-04-15                    FALSE
+#&gt;  54:        Rockwell, Savannah 2019-11-07                    FALSE
+#&gt;  55:         Rodriquez, Monica 2019-06-04                    FALSE
+#&gt;  56:              Romero, Carl 2020-03-13                    FALSE
+#&gt;  57: Rosales-Marroquin, Monika 2019-07-24                    FALSE
+#&gt;  58:                 Sam, Niki 2020-02-16                    FALSE
+#&gt;  59:             Sanchez, Ryan 2020-02-07                    FALSE
+#&gt;  60:             Sharma, Katie 2020-01-24                    FALSE
+#&gt;  61:           Snider, Melanie 2019-04-24                    FALSE
+#&gt;  62:       Summerhays, Spencer 2019-05-23                    FALSE
+#&gt;  63:            Thompson, Trae 2020-01-08                    FALSE
+#&gt;  64: Torres Escalante, Herbert 2019-09-01                    FALSE
+#&gt;  65:   Trader-Bankston, J'Quan 2019-12-21                    FALSE
+#&gt;  66:               Tram, Medha 2020-02-02                    FALSE
+#&gt;  67:            Vaclav, Taylor 2020-03-05                    FALSE
+#&gt;  68:           Valdez, Antonio 2019-04-25                    FALSE
+#&gt;  69:           Ventura, Joshua 2019-12-16                    FALSE
+#&gt;  70:         Vogltanz, Michael 2019-08-07                    FALSE
+#&gt;  71:             Wang, Phillip 2019-11-06                    FALSE
+#&gt;  72:          Whitaker, Taylor 2019-07-30                    FALSE
+#&gt;  73:                 Wu, Lucas 2020-04-21                    FALSE
+#&gt;  74:             Wuertz, Jenny 2019-06-11                    FALSE
+#&gt;  75:    al-Asmar, Abdur Raheem 2019-12-07                    FALSE
+#&gt;  76:       al-Bashara, Shaahir 2019-05-18                    FALSE
+#&gt;  77:          al-Dawood, Hasan 2020-02-16                    FALSE
+#&gt;  78:           al-Dib, Farhaan 2020-02-04                    FALSE
+#&gt;  79:        al-Ismail, Waleeda 2020-01-27                    FALSE
+#&gt;  80:        al-Jafri, Shaheera 2020-03-25                    FALSE
+#&gt;  81:        al-Kader, Siddeeqa 2020-03-13                    FALSE
+#&gt;  82:          al-Karam, Ziyaad 2020-01-23                    FALSE
+#&gt;  83:       al-Ramadan, Hanoona 2019-09-18                    FALSE
+#&gt;  84:         al-Shaban, Mazeed 2019-09-05                    FALSE
+#&gt;  85:            el-Amiri, Jaad 2019-12-11                    FALSE
+#&gt;  86:         el-Bashara, Najma 2019-10-25                    FALSE
+#&gt;  87:           el-Diab, Nadeem 2019-12-18                     TRUE
+#&gt;  88:          el-Faris, Shuaib 2020-03-08                    FALSE
+#&gt;  89:          el-Hallal, Uwais 2019-09-30                    FALSE
+#&gt;  90:         el-Hamad, Tayyiba 2019-09-14                    FALSE
+#&gt;  91:       el-Jamail, Hudhaifa 2020-02-03                    FALSE
+#&gt;  92:         el-Khalifa, Nawfa 2019-12-23                    FALSE
+#&gt;  93:           el-Khan, Jasoor 2019-12-08                    FALSE
+#&gt;  94:          el-Masri, Junaid 2019-08-30                    FALSE
+#&gt;  95:        el-Sabir, Mumtaaza 2020-02-18                    FALSE
+#&gt;  96:          el-Sadek, Wafaaa 2019-10-05                    FALSE
+#&gt;  97:       el-Salehi, Mahuroos 2019-07-17                    FALSE
+#&gt;  98:      el-Salih, Farajallah 2019-08-09                    FALSE
+#&gt;  99:         el-Sharif, Nadeem 2020-01-31                    FALSE
+#&gt; 100:          el-Zaki, Huwaida 2020-02-14                    FALSE
 #&gt;                           name      event congestive heart failure
 #&gt;      cardiac arrhythmias valvular disease pulmonary circulation disorder
 #&gt;   1:               FALSE            FALSE                          FALSE
 #&gt;   2:               FALSE            FALSE                          FALSE
 #&gt;   3:               FALSE            FALSE                          FALSE
-#&gt;   4:                TRUE            FALSE                          FALSE
+#&gt;   4:               FALSE            FALSE                          FALSE
 #&gt;   5:               FALSE            FALSE                          FALSE
 #&gt;   6:               FALSE            FALSE                          FALSE
 #&gt;   7:               FALSE            FALSE                          FALSE
@@ -356,8 +356,8 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  39:               FALSE            FALSE                          FALSE
 #&gt;  40:               FALSE            FALSE                          FALSE
 #&gt;  41:               FALSE            FALSE                          FALSE
-#&gt;  42:               FALSE            FALSE                          FALSE
-#&gt;  43:               FALSE            FALSE                          FALSE
+#&gt;  42:                TRUE            FALSE                          FALSE
+#&gt;  43:                TRUE            FALSE                          FALSE
 #&gt;  44:               FALSE            FALSE                          FALSE
 #&gt;  45:               FALSE            FALSE                          FALSE
 #&gt;  46:               FALSE            FALSE                          FALSE
@@ -374,7 +374,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  57:               FALSE            FALSE                          FALSE
 #&gt;  58:               FALSE            FALSE                          FALSE
 #&gt;  59:               FALSE            FALSE                          FALSE
-#&gt;  60:               FALSE             TRUE                          FALSE
+#&gt;  60:               FALSE            FALSE                          FALSE
 #&gt;  61:               FALSE            FALSE                          FALSE
 #&gt;  62:               FALSE            FALSE                          FALSE
 #&gt;  63:               FALSE            FALSE                          FALSE
@@ -403,21 +403,21 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  86:               FALSE            FALSE                          FALSE
 #&gt;  87:               FALSE            FALSE                          FALSE
 #&gt;  88:               FALSE            FALSE                          FALSE
-#&gt;  89:                TRUE            FALSE                          FALSE
+#&gt;  89:               FALSE            FALSE                          FALSE
 #&gt;  90:               FALSE            FALSE                          FALSE
 #&gt;  91:               FALSE            FALSE                          FALSE
 #&gt;  92:               FALSE            FALSE                          FALSE
 #&gt;  93:               FALSE            FALSE                          FALSE
-#&gt;  94:               FALSE             TRUE                          FALSE
+#&gt;  94:               FALSE            FALSE                          FALSE
 #&gt;  95:               FALSE            FALSE                          FALSE
 #&gt;  96:               FALSE            FALSE                          FALSE
-#&gt;  97:               FALSE            FALSE                          FALSE
+#&gt;  97:               FALSE             TRUE                          FALSE
 #&gt;  98:               FALSE            FALSE                          FALSE
 #&gt;  99:               FALSE            FALSE                          FALSE
 #&gt; 100:               FALSE            FALSE                          FALSE
 #&gt;      cardiac arrhythmias valvular disease pulmonary circulation disorder
 #&gt;      peripheral vascular disorder hypertension uncomplicated
-#&gt;   1:                        FALSE                      FALSE
+#&gt;   1:                         TRUE                      FALSE
 #&gt;   2:                        FALSE                      FALSE
 #&gt;   3:                        FALSE                      FALSE
 #&gt;   4:                        FALSE                      FALSE
@@ -425,7 +425,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;   6:                        FALSE                      FALSE
 #&gt;   7:                        FALSE                      FALSE
 #&gt;   8:                        FALSE                      FALSE
-#&gt;   9:                        FALSE                      FALSE
+#&gt;   9:                         TRUE                      FALSE
 #&gt;  10:                        FALSE                      FALSE
 #&gt;  11:                        FALSE                      FALSE
 #&gt;  12:                        FALSE                      FALSE
@@ -509,7 +509,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  90:                        FALSE                      FALSE
 #&gt;  91:                        FALSE                      FALSE
 #&gt;  92:                        FALSE                      FALSE
-#&gt;  93:                        FALSE                      FALSE
+#&gt;  93:                         TRUE                      FALSE
 #&gt;  94:                        FALSE                      FALSE
 #&gt;  95:                        FALSE                      FALSE
 #&gt;  96:                        FALSE                      FALSE
@@ -540,8 +540,8 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  19:                    FALSE     FALSE                        FALSE
 #&gt;  20:                    FALSE     FALSE                        FALSE
 #&gt;  21:                    FALSE     FALSE                        FALSE
-#&gt;  22:                    FALSE     FALSE                        FALSE
-#&gt;  23:                    FALSE     FALSE                        FALSE
+#&gt;  22:                    FALSE     FALSE                         TRUE
+#&gt;  23:                    FALSE      TRUE                        FALSE
 #&gt;  24:                    FALSE     FALSE                        FALSE
 #&gt;  25:                    FALSE     FALSE                        FALSE
 #&gt;  26:                    FALSE     FALSE                        FALSE
@@ -623,7 +623,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;      chronic pulmonary disease diabetes uncomplicated diabetes complicated
 #&gt;   1:                     FALSE                  FALSE                FALSE
 #&gt;   2:                     FALSE                  FALSE                FALSE
-#&gt;   3:                     FALSE                  FALSE                FALSE
+#&gt;   3:                     FALSE                  FALSE                 TRUE
 #&gt;   4:                     FALSE                  FALSE                FALSE
 #&gt;   5:                     FALSE                  FALSE                FALSE
 #&gt;   6:                     FALSE                  FALSE                FALSE
@@ -638,14 +638,14 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  15:                     FALSE                  FALSE                FALSE
 #&gt;  16:                     FALSE                  FALSE                FALSE
 #&gt;  17:                     FALSE                  FALSE                FALSE
-#&gt;  18:                     FALSE                  FALSE                 TRUE
+#&gt;  18:                     FALSE                  FALSE                FALSE
 #&gt;  19:                     FALSE                  FALSE                FALSE
 #&gt;  20:                     FALSE                  FALSE                FALSE
 #&gt;  21:                     FALSE                  FALSE                FALSE
 #&gt;  22:                     FALSE                  FALSE                FALSE
 #&gt;  23:                     FALSE                  FALSE                FALSE
 #&gt;  24:                     FALSE                  FALSE                FALSE
-#&gt;  25:                     FALSE                  FALSE                 TRUE
+#&gt;  25:                     FALSE                  FALSE                FALSE
 #&gt;  26:                     FALSE                  FALSE                FALSE
 #&gt;  27:                     FALSE                  FALSE                FALSE
 #&gt;  28:                     FALSE                  FALSE                FALSE
@@ -674,7 +674,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  51:                     FALSE                  FALSE                FALSE
 #&gt;  52:                     FALSE                  FALSE                FALSE
 #&gt;  53:                     FALSE                  FALSE                FALSE
-#&gt;  54:                      TRUE                  FALSE                FALSE
+#&gt;  54:                     FALSE                  FALSE                FALSE
 #&gt;  55:                     FALSE                  FALSE                FALSE
 #&gt;  56:                     FALSE                  FALSE                FALSE
 #&gt;  57:                     FALSE                  FALSE                FALSE
@@ -686,7 +686,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  63:                     FALSE                  FALSE                FALSE
 #&gt;  64:                     FALSE                  FALSE                FALSE
 #&gt;  65:                     FALSE                  FALSE                FALSE
-#&gt;  66:                     FALSE                  FALSE                 TRUE
+#&gt;  66:                     FALSE                  FALSE                FALSE
 #&gt;  67:                     FALSE                  FALSE                FALSE
 #&gt;  68:                     FALSE                  FALSE                FALSE
 #&gt;  69:                     FALSE                  FALSE                FALSE
@@ -704,7 +704,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  81:                     FALSE                  FALSE                FALSE
 #&gt;  82:                     FALSE                  FALSE                FALSE
 #&gt;  83:                     FALSE                  FALSE                FALSE
-#&gt;  84:                     FALSE                  FALSE                FALSE
+#&gt;  84:                     FALSE                  FALSE                 TRUE
 #&gt;  85:                     FALSE                  FALSE                FALSE
 #&gt;  86:                     FALSE                  FALSE                FALSE
 #&gt;  87:                     FALSE                  FALSE                FALSE
@@ -786,7 +786,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  61:          FALSE         FALSE         FALSE                FALSE    FALSE
 #&gt;  62:          FALSE         FALSE         FALSE                FALSE    FALSE
 #&gt;  63:          FALSE         FALSE         FALSE                FALSE    FALSE
-#&gt;  64:           TRUE         FALSE         FALSE                FALSE    FALSE
+#&gt;  64:          FALSE         FALSE         FALSE                FALSE    FALSE
 #&gt;  65:          FALSE         FALSE         FALSE                FALSE    FALSE
 #&gt;  66:          FALSE         FALSE         FALSE                FALSE    FALSE
 #&gt;  67:          FALSE         FALSE         FALSE                FALSE    FALSE
@@ -805,7 +805,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  80:          FALSE         FALSE         FALSE                FALSE    FALSE
 #&gt;  81:          FALSE         FALSE         FALSE                FALSE    FALSE
 #&gt;  82:          FALSE         FALSE         FALSE                FALSE    FALSE
-#&gt;  83:           TRUE         FALSE         FALSE                FALSE    FALSE
+#&gt;  83:          FALSE         FALSE         FALSE                FALSE    FALSE
 #&gt;  84:          FALSE         FALSE         FALSE                FALSE    FALSE
 #&gt;  85:          FALSE         FALSE         FALSE                FALSE    FALSE
 #&gt;  86:          FALSE         FALSE         FALSE                FALSE    FALSE
@@ -829,20 +829,20 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;   2:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;   3:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;   4:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;   5:     TRUE             FALSE       FALSE                FALSE        FALSE
+#&gt;   5:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;   6:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;   7:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;   8:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;   9:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;  10:    FALSE             FALSE       FALSE                FALSE        FALSE
+#&gt;  10:    FALSE             FALSE        TRUE                FALSE        FALSE
 #&gt;  11:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  12:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  13:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;  14:    FALSE             FALSE        TRUE                FALSE        FALSE
-#&gt;  15:    FALSE             FALSE       FALSE                 TRUE        FALSE
+#&gt;  14:    FALSE             FALSE       FALSE                FALSE        FALSE
+#&gt;  15:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  16:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  17:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;  18:    FALSE              TRUE       FALSE                FALSE        FALSE
+#&gt;  18:    FALSE             FALSE        TRUE                FALSE        FALSE
 #&gt;  19:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  20:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  21:    FALSE             FALSE       FALSE                FALSE        FALSE
@@ -850,8 +850,8 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  23:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  24:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  25:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;  26:    FALSE             FALSE        TRUE                FALSE        FALSE
-#&gt;  27:    FALSE             FALSE        TRUE                FALSE        FALSE
+#&gt;  26:    FALSE             FALSE       FALSE                FALSE        FALSE
+#&gt;  27:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  28:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  29:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  30:    FALSE             FALSE       FALSE                FALSE        FALSE
@@ -867,10 +867,10 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  40:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  41:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  42:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;  43:    FALSE             FALSE        TRUE                FALSE        FALSE
+#&gt;  43:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  44:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;  45:    FALSE             FALSE        TRUE                FALSE        FALSE
-#&gt;  46:    FALSE             FALSE       FALSE                FALSE        FALSE
+#&gt;  45:    FALSE             FALSE       FALSE                FALSE        FALSE
+#&gt;  46:    FALSE             FALSE       FALSE                 TRUE        FALSE
 #&gt;  47:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  48:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  49:    FALSE             FALSE       FALSE                FALSE        FALSE
@@ -881,7 +881,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  54:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  55:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  56:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;  57:    FALSE             FALSE        TRUE                FALSE        FALSE
+#&gt;  57:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  58:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  59:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  60:    FALSE             FALSE       FALSE                FALSE        FALSE
@@ -890,16 +890,16 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  63:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  64:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  65:    FALSE             FALSE        TRUE                FALSE        FALSE
-#&gt;  66:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;  67:    FALSE             FALSE       FALSE                FALSE        FALSE
+#&gt;  66:    FALSE             FALSE       FALSE                 TRUE        FALSE
+#&gt;  67:    FALSE              TRUE       FALSE                FALSE        FALSE
 #&gt;  68:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  69:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;  70:    FALSE             FALSE       FALSE                FALSE        FALSE
+#&gt;  70:    FALSE             FALSE       FALSE                FALSE         TRUE
 #&gt;  71:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  72:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  73:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  74:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;  75:    FALSE              TRUE       FALSE                FALSE        FALSE
+#&gt;  75:     TRUE             FALSE       FALSE                FALSE        FALSE
 #&gt;  76:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  77:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  78:    FALSE             FALSE       FALSE                FALSE        FALSE
@@ -915,16 +915,16 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  88:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  89:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  90:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;  91:    FALSE             FALSE       FALSE                FALSE        FALSE
+#&gt;  91:    FALSE             FALSE       FALSE                 TRUE        FALSE
 #&gt;  92:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt;  93:    FALSE             FALSE        TRUE                FALSE        FALSE
+#&gt;  93:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  94:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  95:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  96:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  97:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  98:    FALSE             FALSE       FALSE                FALSE        FALSE
 #&gt;  99:    FALSE             FALSE       FALSE                FALSE        FALSE
-#&gt; 100:    FALSE             FALSE       FALSE                FALSE        FALSE
+#&gt; 100:    FALSE             FALSE        TRUE                FALSE        FALSE
 #&gt;      lymphoma metastatic cancer solid tumor rheumatoid arthritis coagulopathy
 #&gt;      obesity weight loss fluid electrolyte disorders blood loss anemia
 #&gt;   1:   FALSE       FALSE                       FALSE             FALSE
@@ -988,7 +988,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  59:   FALSE       FALSE                       FALSE             FALSE
 #&gt;  60:   FALSE       FALSE                       FALSE             FALSE
 #&gt;  61:   FALSE       FALSE                       FALSE             FALSE
-#&gt;  62:   FALSE       FALSE                       FALSE             FALSE
+#&gt;  62:   FALSE        TRUE                       FALSE             FALSE
 #&gt;  63:   FALSE       FALSE                       FALSE             FALSE
 #&gt;  64:   FALSE       FALSE                       FALSE             FALSE
 #&gt;  65:   FALSE       FALSE                       FALSE             FALSE
@@ -1032,9 +1032,9 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;   1:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;   2:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;   3:             FALSE         FALSE      FALSE     FALSE      FALSE
-#&gt;   4:             FALSE          TRUE      FALSE     FALSE      FALSE
+#&gt;   4:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;   5:             FALSE         FALSE      FALSE     FALSE      FALSE
-#&gt;   6:             FALSE         FALSE      FALSE     FALSE      FALSE
+#&gt;   6:             FALSE          TRUE      FALSE     FALSE      FALSE
 #&gt;   7:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;   8:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;   9:             FALSE         FALSE      FALSE     FALSE      FALSE
@@ -1066,7 +1066,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  35:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;  36:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;  37:             FALSE         FALSE      FALSE     FALSE      FALSE
-#&gt;  38:             FALSE         FALSE      FALSE     FALSE      FALSE
+#&gt;  38:             FALSE         FALSE       TRUE     FALSE      FALSE
 #&gt;  39:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;  40:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;  41:             FALSE         FALSE      FALSE     FALSE      FALSE
@@ -1090,11 +1090,11 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  59:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;  60:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;  61:             FALSE         FALSE      FALSE     FALSE      FALSE
-#&gt;  62:             FALSE         FALSE      FALSE     FALSE      FALSE
+#&gt;  62:             FALSE         FALSE       TRUE     FALSE      FALSE
 #&gt;  63:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;  64:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;  65:             FALSE         FALSE      FALSE     FALSE      FALSE
-#&gt;  66:             FALSE         FALSE      FALSE     FALSE      FALSE
+#&gt;  66:             FALSE         FALSE      FALSE     FALSE       TRUE
 #&gt;  67:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;  68:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;  69:             FALSE         FALSE      FALSE     FALSE      FALSE
@@ -1131,33 +1131,33 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt; 100:             FALSE         FALSE      FALSE     FALSE      FALSE
 #&gt;      deficiency anemia alcohol abuse drug abuse psychoses depression
 #&gt;      index_sum_all index_sum_all_ahrq index_walraven index_sid29 index_sid30
-#&gt;   1:             0                  0              0           0           0
+#&gt;   1:             1                  1              2           4           4
 #&gt;   2:             0                  0              0           0           0
-#&gt;   3:             0                  0              0           0           0
-#&gt;   4:             2                  1              5           8          -2
-#&gt;   5:             1                  1              9           8           6
-#&gt;   6:             0                  0              0           0           0
+#&gt;   3:             1                  1              0           0          -1
+#&gt;   4:             0                  0              0           0           0
+#&gt;   5:             0                  0              0           0           0
+#&gt;   6:             1                  1              0           0          -2
 #&gt;   7:             0                  0              0           0           0
 #&gt;   8:             0                  0              0           0           0
-#&gt;   9:             0                  0              0           0           0
-#&gt;  10:             0                  0              0           0           0
+#&gt;   9:             1                  1              2           4           4
+#&gt;  10:             1                  1              4          10           8
 #&gt;  11:             0                  0              0           0           0
 #&gt;  12:             0                  0              0           0           0
 #&gt;  13:             0                  0              0           0           0
-#&gt;  14:             1                  1              4          10           8
-#&gt;  15:             1                  1              0           0           0
+#&gt;  14:             0                  0              0           0           0
+#&gt;  15:             0                  0              0           0           0
 #&gt;  16:             0                  0              0           0           0
 #&gt;  17:             0                  0              0           0           0
-#&gt;  18:             2                  2             12          17          12
+#&gt;  18:             1                  1              4          10           8
 #&gt;  19:             0                  0              0           0           0
 #&gt;  20:             0                  0              0           0           0
 #&gt;  21:             0                  0              0           0           0
-#&gt;  22:             0                  0              0           0           0
-#&gt;  23:             0                  0              0           0           0
+#&gt;  22:             1                  1              6           5           4
+#&gt;  23:             1                  1              7           4           3
 #&gt;  24:             0                  0              0           0           0
-#&gt;  25:             1                  1              0           0          -1
-#&gt;  26:             1                  1              4          10           8
-#&gt;  27:             1                  1              4          10           8
+#&gt;  25:             0                  0              0           0           0
+#&gt;  26:             0                  0              0           0           0
+#&gt;  27:             0                  0              0           0           0
 #&gt;  28:             0                  0              0           0           0
 #&gt;  29:             0                  0              0           0           0
 #&gt;  30:             0                  0              0           0           0
@@ -1168,15 +1168,15 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  35:             0                  0              0           0           0
 #&gt;  36:             0                  0              0           0           0
 #&gt;  37:             0                  0              0           0           0
-#&gt;  38:             0                  0              0           0           0
+#&gt;  38:             1                  1             -7         -11          -8
 #&gt;  39:             0                  0              0           0           0
 #&gt;  40:             0                  0              0           0           0
 #&gt;  41:             0                  0              0           0           0
-#&gt;  42:             0                  0              0           0           0
-#&gt;  43:             1                  1              4          10           8
+#&gt;  42:             1                  0              5           8           0
+#&gt;  43:             1                  0              5           8           0
 #&gt;  44:             0                  0              0           0           0
-#&gt;  45:             1                  1              4          10           8
-#&gt;  46:             0                  0              0           0           0
+#&gt;  45:             0                  0              0           0           0
+#&gt;  46:             1                  1              0           0           0
 #&gt;  47:             0                  0              0           0           0
 #&gt;  48:             0                  0              0           0           0
 #&gt;  49:             0                  0              0           0           0
@@ -1184,28 +1184,28 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  51:             0                  0              0           0           0
 #&gt;  52:             0                  0              0           0           0
 #&gt;  53:             0                  0              0           0           0
-#&gt;  54:             1                  1              3           3           3
+#&gt;  54:             0                  0              0           0           0
 #&gt;  55:             0                  0              0           0           0
 #&gt;  56:             0                  0              0           0           0
-#&gt;  57:             1                  1              4          10           8
+#&gt;  57:             0                  0              0           0           0
 #&gt;  58:             0                  0              0           0           0
 #&gt;  59:             0                  0              0           0           0
-#&gt;  60:             1                  1             -1           0           0
+#&gt;  60:             0                  0              0           0           0
 #&gt;  61:             0                  0              0           0           0
-#&gt;  62:             0                  0              0           0           0
+#&gt;  62:             2                  2             -1          -1           0
 #&gt;  63:             0                  0              0           0           0
-#&gt;  64:             1                  1              0           0           0
+#&gt;  64:             0                  0              0           0           0
 #&gt;  65:             1                  1              4          10           8
-#&gt;  66:             1                  1              0           0          -1
-#&gt;  67:             0                  0              0           0           0
+#&gt;  66:             1                  2             -3          -5          -4
+#&gt;  67:             1                  1             12          17          13
 #&gt;  68:             0                  0              0           0           0
 #&gt;  69:             0                  0              0           0           0
-#&gt;  70:             0                  0              0           0           0
+#&gt;  70:             1                  1              3          12           9
 #&gt;  71:             0                  0              0           0           0
 #&gt;  72:             0                  0              0           0           0
 #&gt;  73:             0                  0              0           0           0
 #&gt;  74:             0                  0              0           0           0
-#&gt;  75:             1                  1             12          17          13
+#&gt;  75:             1                  1              9           8           6
 #&gt;  76:             0                  0              0           0           0
 #&gt;  77:             0                  0              0           0           0
 #&gt;  78:             0                  0              0           0           0
@@ -1213,53 +1213,53 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  80:             0                  0              0           0           0
 #&gt;  81:             0                  0              0           0           0
 #&gt;  82:             0                  0              0           0           0
-#&gt;  83:             1                  1              0           0           0
-#&gt;  84:             0                  0              0           0           0
+#&gt;  83:             0                  0              0           0           0
+#&gt;  84:             1                  1              0           0          -1
 #&gt;  85:             0                  0              0           0           0
 #&gt;  86:             0                  0              0           0           0
-#&gt;  87:             0                  0              0           0           0
+#&gt;  87:             1                  1              7           9           9
 #&gt;  88:             0                  0              0           0           0
-#&gt;  89:             1                  0              5           8           0
+#&gt;  89:             0                  0              0           0           0
 #&gt;  90:             0                  0              0           0           0
-#&gt;  91:             0                  0              0           0           0
+#&gt;  91:             1                  1              0           0           0
 #&gt;  92:             0                  0              0           0           0
-#&gt;  93:             1                  1              4          10           8
-#&gt;  94:             1                  1             -1           0           0
+#&gt;  93:             1                  1              2           4           4
+#&gt;  94:             0                  0              0           0           0
 #&gt;  95:             0                  0              0           0           0
 #&gt;  96:             0                  0              0           0           0
-#&gt;  97:             0                  0              0           0           0
+#&gt;  97:             1                  1             -1           0           0
 #&gt;  98:             0                  0              0           0           0
 #&gt;  99:             0                  0              0           0           0
-#&gt; 100:             0                  0              0           0           0
+#&gt; 100:             1                  1              4          10           8
 #&gt;      index_sum_all index_sum_all_ahrq index_walraven index_sid29 index_sid30
 #&gt;      index_ahrq_mort index_ahrq_readm
-#&gt;   1:               0                0
+#&gt;   1:               3                4
 #&gt;   2:               0                0
-#&gt;   3:               0                0
-#&gt;   4:              -1                6
-#&gt;   5:               6               16
-#&gt;   6:               0                0
+#&gt;   3:              -3                9
+#&gt;   4:               0                0
+#&gt;   5:               0                0
+#&gt;   6:              -1                6
 #&gt;   7:               0                0
 #&gt;   8:               0                0
-#&gt;   9:               0                0
-#&gt;  10:               0                0
+#&gt;   9:               3                4
+#&gt;  10:               7               15
 #&gt;  11:               0                0
 #&gt;  12:               0                0
 #&gt;  13:               0                0
-#&gt;  14:               7               15
-#&gt;  15:               0                4
+#&gt;  14:               0                0
+#&gt;  15:               0                0
 #&gt;  16:               0                0
 #&gt;  17:               0                0
-#&gt;  18:              11               30
+#&gt;  18:               7               15
 #&gt;  19:               0                0
 #&gt;  20:               0                0
 #&gt;  21:               0                0
-#&gt;  22:               0                0
-#&gt;  23:               0                0
+#&gt;  22:               5                7
+#&gt;  23:               5                6
 #&gt;  24:               0                0
-#&gt;  25:              -3                9
-#&gt;  26:               7               15
-#&gt;  27:               7               15
+#&gt;  25:               0                0
+#&gt;  26:               0                0
+#&gt;  27:               0                0
 #&gt;  28:               0                0
 #&gt;  29:               0                0
 #&gt;  30:               0                0
@@ -1270,15 +1270,15 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  35:               0                0
 #&gt;  36:               0                0
 #&gt;  37:               0                0
-#&gt;  38:               0                0
+#&gt;  38:              -7               14
 #&gt;  39:               0                0
 #&gt;  40:               0                0
 #&gt;  41:               0                0
 #&gt;  42:               0                0
-#&gt;  43:               7               15
+#&gt;  43:               0                0
 #&gt;  44:               0                0
-#&gt;  45:               7               15
-#&gt;  46:               0                0
+#&gt;  45:               0                0
+#&gt;  46:               0                4
 #&gt;  47:               0                0
 #&gt;  48:               0                0
 #&gt;  49:               0                0
@@ -1286,28 +1286,28 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  51:               0                0
 #&gt;  52:               0                0
 #&gt;  53:               0                0
-#&gt;  54:               3                8
+#&gt;  54:               0                0
 #&gt;  55:               0                0
 #&gt;  56:               0                0
-#&gt;  57:               7               15
+#&gt;  57:               0                0
 #&gt;  58:               0                0
 #&gt;  59:               0                0
 #&gt;  60:               0                0
 #&gt;  61:               0                0
-#&gt;  62:               0                0
+#&gt;  62:               2               24
 #&gt;  63:               0                0
 #&gt;  64:               0                0
 #&gt;  65:               7               15
-#&gt;  66:              -3                9
-#&gt;  67:               0                0
+#&gt;  66:              -5                8
+#&gt;  67:              14               21
 #&gt;  68:               0                0
 #&gt;  69:               0                0
-#&gt;  70:               0                0
+#&gt;  70:              11                7
 #&gt;  71:               0                0
 #&gt;  72:               0                0
 #&gt;  73:               0                0
 #&gt;  74:               0                0
-#&gt;  75:              14               21
+#&gt;  75:               6               16
 #&gt;  76:               0                0
 #&gt;  77:               0                0
 #&gt;  78:               0                0
@@ -1316,23 +1316,23 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  81:               0                0
 #&gt;  82:               0                0
 #&gt;  83:               0                0
-#&gt;  84:               0                0
+#&gt;  84:              -3                9
 #&gt;  85:               0                0
 #&gt;  86:               0                0
-#&gt;  87:               0                0
+#&gt;  87:               9               13
 #&gt;  88:               0                0
 #&gt;  89:               0                0
 #&gt;  90:               0                0
-#&gt;  91:               0                0
+#&gt;  91:               0                4
 #&gt;  92:               0                0
-#&gt;  93:               7               15
+#&gt;  93:               3                4
 #&gt;  94:               0                0
 #&gt;  95:               0                0
 #&gt;  96:               0                0
 #&gt;  97:               0                0
 #&gt;  98:               0                0
 #&gt;  99:               0                0
-#&gt; 100:               0                0
+#&gt; 100:               7               15
 #&gt;      index_ahrq_mort index_ahrq_readm</div><div class='input'>
 <span class='co'># Add Charlson categorias and two versions of a calculated index.</span>
 <span class='co'># Only include recent hospital visits within 30 days before surgery,</span>
@@ -1343,109 +1343,109 @@ Indices are also included if so specified by the 'index' argument.</p>
   <span class='kw'>codify_args</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='st'>"event"</span>, <span class='kw'>days</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>30</span>, -<span class='fl'>1</span>)),
   <span class='kw'>cc_args</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>tech_names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 )</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt;                           name      event charlson__myocardial_infarction
-#&gt;   1:        Alexander, Bethany 2019-04-18                           FALSE
-#&gt;   2:           Arguello, Tommy 2020-01-14                              NA
-#&gt;   3:             Austin, Maeve 2020-01-07                              NA
-#&gt;   4:            Ball, Rockelle 2019-05-26                           FALSE
-#&gt;   5:            Bean, Haileigh 2019-06-24                              NA
-#&gt;   6:            Beehler, Kelly 2019-05-14                              NA
-#&gt;   7:           Bessard, Marzel 2020-02-03                              NA
-#&gt;   8:              Bishop, Alec 2019-05-18                           FALSE
-#&gt;   9:            Bivings, Devin 2019-07-15                              NA
-#&gt;  10:            Brown, Patrick 2019-09-26                           FALSE
-#&gt;  11:             Burges, Amber 2019-07-21                           FALSE
-#&gt;  12:            Burton, Martin 2019-12-10                              NA
-#&gt;  13:           Cannon, Timothy 2019-04-18                              NA
-#&gt;  14:  Cardenas Perez, Gabriela 2019-08-16                              NA
-#&gt;  15:               Chung, Noor 2019-08-25                              NA
-#&gt;  16:           Connors, Jaylyn 2019-06-20                              NA
-#&gt;  17:    Copeland-Doyle, Symone 2019-07-30                           FALSE
-#&gt;  18:                 Doan, Sam 2020-01-30                              NA
-#&gt;  19:         Dominguez, Suriel 2020-03-22                              NA
-#&gt;  20:         Enriquez, Anthony 2019-11-26                              NA
-#&gt;  21:      Fitzsimmons, Tabatha 2019-07-22                           FALSE
-#&gt;  22:             Grim, Cheanna 2019-09-06                              NA
-#&gt;  23:               Harder, Rio 2020-02-25                              NA
-#&gt;  24:               Hood, Dania 2019-12-03                           FALSE
-#&gt;  25:           Howard, Marcius 2020-02-06                              NA
-#&gt;  26:              Huff, Hassan 2020-03-21                              NA
-#&gt;  27:           Hughey, Darlene 2019-10-26                              NA
-#&gt;  28:        Hutchinson, Joshua 2019-07-21                              NA
-#&gt;  29:  Iron Cloud-Gresko, Sadie 2019-12-16                              NA
-#&gt;  30:       Khamsoulinh, De'Von 2019-12-05                              NA
-#&gt;  31:          Lechuga, Anthony 2019-07-14                              NA
-#&gt;  32:         Littlejohn, Kevin 2019-08-26                              NA
-#&gt;  33:          Liufau, Sue Lynn 2019-10-08                              NA
-#&gt;  34:            Martin, Trevor 2019-07-25                           FALSE
-#&gt;  35:          Martinez, Alison 2019-10-29                           FALSE
-#&gt;  36:         Martinez, Columba 2019-05-15                              NA
-#&gt;  37:          Mendoza, Jessica 2019-10-13                              NA
-#&gt;  38:           Mendoza, Nathan 2019-05-19                              NA
-#&gt;  39:   Miller, Von Buddenbrock 2019-06-14                              NA
-#&gt;  40:              Mills, Henry 2019-09-14                              NA
-#&gt;  41:           Mitchell, Dalon 2019-05-12                              NA
-#&gt;  42:              Murray, Eric 2019-08-22                           FALSE
-#&gt;  43:             Nguyen, Hoang 2019-11-24                              NA
-#&gt;  44:            Orozco, Daniel 2019-07-01                              NA
-#&gt;  45:              Pappas, Cole 2019-09-03                              NA
-#&gt;  46:         Pearsall, Deontre 2019-11-21                              NA
-#&gt;  47:           Pena, Francisco 2019-11-01                           FALSE
-#&gt;  48:              Perez, Vidal 2020-02-18                              NA
-#&gt;  49:        Peterson, Brittany 2019-07-10                           FALSE
-#&gt;  50:            Polvon, Alicia 2019-08-29                              NA
-#&gt;  51:             Quick, Miriah 2020-01-03                              NA
-#&gt;  52:             Raab, Jeannie 2019-09-05                              NA
-#&gt;  53:             Rice, Jamissa 2020-04-02                              NA
-#&gt;  54:        Rockwell, Savannah 2019-10-25                           FALSE
-#&gt;  55:         Rodriquez, Monica 2019-05-22                           FALSE
-#&gt;  56:              Romero, Carl 2020-02-29                              NA
-#&gt;  57: Rosales-Marroquin, Monika 2019-07-11                           FALSE
-#&gt;  58:                 Sam, Niki 2020-02-03                              NA
-#&gt;  59:             Sanchez, Ryan 2020-01-25                              NA
-#&gt;  60:             Sharma, Katie 2020-01-11                              NA
-#&gt;  61:           Snider, Melanie 2019-04-11                              NA
-#&gt;  62:       Summerhays, Spencer 2019-05-10                              NA
-#&gt;  63:            Thompson, Trae 2019-12-26                              NA
-#&gt;  64: Torres Escalante, Herbert 2019-08-19                           FALSE
-#&gt;  65:   Trader-Bankston, J'Quan 2019-12-08                              NA
-#&gt;  66:               Tram, Medha 2020-01-20                              NA
-#&gt;  67:            Vaclav, Taylor 2020-02-21                              NA
-#&gt;  68:           Valdez, Antonio 2019-04-12                              NA
-#&gt;  69:           Ventura, Joshua 2019-12-03                              NA
-#&gt;  70:         Vogltanz, Michael 2019-07-25                           FALSE
-#&gt;  71:             Wang, Phillip 2019-10-24                           FALSE
-#&gt;  72:          Whitaker, Taylor 2019-07-17                              NA
-#&gt;  73:                 Wu, Lucas 2020-04-08                              NA
-#&gt;  74:             Wuertz, Jenny 2019-05-29                           FALSE
-#&gt;  75:    al-Asmar, Abdur Raheem 2019-11-24                              NA
-#&gt;  76:       al-Bashara, Shaahir 2019-05-05                              NA
-#&gt;  77:          al-Dawood, Hasan 2020-02-03                              NA
-#&gt;  78:           al-Dib, Farhaan 2020-01-22                              NA
-#&gt;  79:        al-Ismail, Waleeda 2020-01-14                              NA
-#&gt;  80:        al-Jafri, Shaheera 2020-03-12                              NA
-#&gt;  81:        al-Kader, Siddeeqa 2020-02-29                              NA
-#&gt;  82:          al-Karam, Ziyaad 2020-01-10                              NA
-#&gt;  83:       al-Ramadan, Hanoona 2019-09-05                              NA
-#&gt;  84:         al-Shaban, Mazeed 2019-08-23                              NA
-#&gt;  85:            el-Amiri, Jaad 2019-11-28                              NA
-#&gt;  86:         el-Bashara, Najma 2019-10-12                              NA
-#&gt;  87:           el-Diab, Nadeem 2019-12-05                              NA
-#&gt;  88:          el-Faris, Shuaib 2020-02-24                              NA
-#&gt;  89:          el-Hallal, Uwais 2019-09-17                              NA
-#&gt;  90:         el-Hamad, Tayyiba 2019-09-01                              NA
-#&gt;  91:       el-Jamail, Hudhaifa 2020-01-21                              NA
-#&gt;  92:         el-Khalifa, Nawfa 2019-12-10                           FALSE
-#&gt;  93:           el-Khan, Jasoor 2019-11-25                              NA
-#&gt;  94:          el-Masri, Junaid 2019-08-17                           FALSE
-#&gt;  95:        el-Sabir, Mumtaaza 2020-02-05                              NA
-#&gt;  96:          el-Sadek, Wafaaa 2019-09-22                              NA
-#&gt;  97:       el-Salehi, Mahuroos 2019-07-04                              NA
-#&gt;  98:      el-Salih, Farajallah 2019-07-27                           FALSE
-#&gt;  99:         el-Sharif, Nadeem 2020-01-18                              NA
-#&gt; 100:          el-Zaki, Huwaida 2020-02-01                              NA
+#&gt;   1:        Alexander, Bethany 2019-05-01                           FALSE
+#&gt;   2:           Arguello, Tommy 2020-01-27                              NA
+#&gt;   3:             Austin, Maeve 2020-01-20                              NA
+#&gt;   4:            Ball, Rockelle 2019-06-08                           FALSE
+#&gt;   5:            Bean, Haileigh 2019-07-07                              NA
+#&gt;   6:            Beehler, Kelly 2019-05-27                              NA
+#&gt;   7:           Bessard, Marzel 2020-02-16                              NA
+#&gt;   8:              Bishop, Alec 2019-05-31                           FALSE
+#&gt;   9:            Bivings, Devin 2019-07-28                              NA
+#&gt;  10:            Brown, Patrick 2019-10-09                           FALSE
+#&gt;  11:             Burges, Amber 2019-08-03                           FALSE
+#&gt;  12:            Burton, Martin 2019-12-23                              NA
+#&gt;  13:           Cannon, Timothy 2019-05-01                              NA
+#&gt;  14:  Cardenas Perez, Gabriela 2019-08-29                              NA
+#&gt;  15:               Chung, Noor 2019-09-07                              NA
+#&gt;  16:           Connors, Jaylyn 2019-07-03                              NA
+#&gt;  17:    Copeland-Doyle, Symone 2019-08-12                           FALSE
+#&gt;  18:                 Doan, Sam 2020-02-12                              NA
+#&gt;  19:         Dominguez, Suriel 2020-04-04                              NA
+#&gt;  20:         Enriquez, Anthony 2019-12-09                              NA
+#&gt;  21:      Fitzsimmons, Tabatha 2019-08-04                           FALSE
+#&gt;  22:             Grim, Cheanna 2019-09-19                              NA
+#&gt;  23:               Harder, Rio 2020-03-09                              NA
+#&gt;  24:               Hood, Dania 2019-12-16                           FALSE
+#&gt;  25:           Howard, Marcius 2020-02-19                              NA
+#&gt;  26:              Huff, Hassan 2020-04-03                              NA
+#&gt;  27:           Hughey, Darlene 2019-11-08                              NA
+#&gt;  28:        Hutchinson, Joshua 2019-08-03                              NA
+#&gt;  29:  Iron Cloud-Gresko, Sadie 2019-12-29                              NA
+#&gt;  30:       Khamsoulinh, De'Von 2019-12-18                              NA
+#&gt;  31:          Lechuga, Anthony 2019-07-27                              NA
+#&gt;  32:         Littlejohn, Kevin 2019-09-08                              NA
+#&gt;  33:          Liufau, Sue Lynn 2019-10-21                              NA
+#&gt;  34:            Martin, Trevor 2019-08-07                           FALSE
+#&gt;  35:          Martinez, Alison 2019-11-11                           FALSE
+#&gt;  36:         Martinez, Columba 2019-05-28                              NA
+#&gt;  37:          Mendoza, Jessica 2019-10-26                              NA
+#&gt;  38:           Mendoza, Nathan 2019-06-01                              NA
+#&gt;  39:   Miller, Von Buddenbrock 2019-06-27                              NA
+#&gt;  40:              Mills, Henry 2019-09-27                              NA
+#&gt;  41:           Mitchell, Dalon 2019-05-25                              NA
+#&gt;  42:              Murray, Eric 2019-09-04                           FALSE
+#&gt;  43:             Nguyen, Hoang 2019-12-07                              NA
+#&gt;  44:            Orozco, Daniel 2019-07-14                              NA
+#&gt;  45:              Pappas, Cole 2019-09-16                              NA
+#&gt;  46:         Pearsall, Deontre 2019-12-04                              NA
+#&gt;  47:           Pena, Francisco 2019-11-14                           FALSE
+#&gt;  48:              Perez, Vidal 2020-03-02                              NA
+#&gt;  49:        Peterson, Brittany 2019-07-23                           FALSE
+#&gt;  50:            Polvon, Alicia 2019-09-11                              NA
+#&gt;  51:             Quick, Miriah 2020-01-16                              NA
+#&gt;  52:             Raab, Jeannie 2019-09-18                              NA
+#&gt;  53:             Rice, Jamissa 2020-04-15                              NA
+#&gt;  54:        Rockwell, Savannah 2019-11-07                           FALSE
+#&gt;  55:         Rodriquez, Monica 2019-06-04                           FALSE
+#&gt;  56:              Romero, Carl 2020-03-13                              NA
+#&gt;  57: Rosales-Marroquin, Monika 2019-07-24                           FALSE
+#&gt;  58:                 Sam, Niki 2020-02-16                              NA
+#&gt;  59:             Sanchez, Ryan 2020-02-07                              NA
+#&gt;  60:             Sharma, Katie 2020-01-24                              NA
+#&gt;  61:           Snider, Melanie 2019-04-24                              NA
+#&gt;  62:       Summerhays, Spencer 2019-05-23                              NA
+#&gt;  63:            Thompson, Trae 2020-01-08                              NA
+#&gt;  64: Torres Escalante, Herbert 2019-09-01                           FALSE
+#&gt;  65:   Trader-Bankston, J'Quan 2019-12-21                              NA
+#&gt;  66:               Tram, Medha 2020-02-02                              NA
+#&gt;  67:            Vaclav, Taylor 2020-03-05                              NA
+#&gt;  68:           Valdez, Antonio 2019-04-25                              NA
+#&gt;  69:           Ventura, Joshua 2019-12-16                              NA
+#&gt;  70:         Vogltanz, Michael 2019-08-07                           FALSE
+#&gt;  71:             Wang, Phillip 2019-11-06                           FALSE
+#&gt;  72:          Whitaker, Taylor 2019-07-30                              NA
+#&gt;  73:                 Wu, Lucas 2020-04-21                              NA
+#&gt;  74:             Wuertz, Jenny 2019-06-11                           FALSE
+#&gt;  75:    al-Asmar, Abdur Raheem 2019-12-07                              NA
+#&gt;  76:       al-Bashara, Shaahir 2019-05-18                              NA
+#&gt;  77:          al-Dawood, Hasan 2020-02-16                              NA
+#&gt;  78:           al-Dib, Farhaan 2020-02-04                              NA
+#&gt;  79:        al-Ismail, Waleeda 2020-01-27                              NA
+#&gt;  80:        al-Jafri, Shaheera 2020-03-25                              NA
+#&gt;  81:        al-Kader, Siddeeqa 2020-03-13                              NA
+#&gt;  82:          al-Karam, Ziyaad 2020-01-23                              NA
+#&gt;  83:       al-Ramadan, Hanoona 2019-09-18                              NA
+#&gt;  84:         al-Shaban, Mazeed 2019-09-05                              NA
+#&gt;  85:            el-Amiri, Jaad 2019-12-11                              NA
+#&gt;  86:         el-Bashara, Najma 2019-10-25                              NA
+#&gt;  87:           el-Diab, Nadeem 2019-12-18                              NA
+#&gt;  88:          el-Faris, Shuaib 2020-03-08                              NA
+#&gt;  89:          el-Hallal, Uwais 2019-09-30                              NA
+#&gt;  90:         el-Hamad, Tayyiba 2019-09-14                              NA
+#&gt;  91:       el-Jamail, Hudhaifa 2020-02-03                              NA
+#&gt;  92:         el-Khalifa, Nawfa 2019-12-23                           FALSE
+#&gt;  93:           el-Khan, Jasoor 2019-12-08                              NA
+#&gt;  94:          el-Masri, Junaid 2019-08-30                           FALSE
+#&gt;  95:        el-Sabir, Mumtaaza 2020-02-18                              NA
+#&gt;  96:          el-Sadek, Wafaaa 2019-10-05                              NA
+#&gt;  97:       el-Salehi, Mahuroos 2019-07-17                              NA
+#&gt;  98:      el-Salih, Farajallah 2019-08-09                           FALSE
+#&gt;  99:         el-Sharif, Nadeem 2020-01-31                              NA
+#&gt; 100:          el-Zaki, Huwaida 2020-02-14                              NA
 #&gt;                           name      event charlson__myocardial_infarction
 #&gt;      charlson__congestive_heart_failure charlson__peripheral_vascular_disease
-#&gt;   1:                              FALSE                                 FALSE
+#&gt;   1:                              FALSE                                  TRUE
 #&gt;   2:                                 NA                                    NA
 #&gt;   3:                                 NA                                    NA
 #&gt;   4:                              FALSE                                 FALSE
@@ -2130,7 +2130,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  71:                FALSE                                      FALSE
 #&gt;  72:                   NA                                         NA
 #&gt;  73:                   NA                                         NA
-#&gt;  74:                 TRUE                                      FALSE
+#&gt;  74:                FALSE                                      FALSE
 #&gt;  75:                   NA                                         NA
 #&gt;  76:                   NA                                         NA
 #&gt;  77:                   NA                                         NA
@@ -2261,7 +2261,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt; 100:                               NA                 NA
 #&gt;      charlson__metastatic_solid_tumor charlson__aids_hiv
 #&gt;      charlson_index_quan_original charlson_index_quan_updated
-#&gt;   1:                            0                           0
+#&gt;   1:                            1                           0
 #&gt;   2:                           NA                          NA
 #&gt;   3:                           NA                          NA
 #&gt;   4:                            0                           0
@@ -2334,7 +2334,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  71:                            0                           0
 #&gt;  72:                           NA                          NA
 #&gt;  73:                           NA                          NA
-#&gt;  74:                            2                           2
+#&gt;  74:                            0                           0
 #&gt;  75:                           NA                          NA
 #&gt;  76:                           NA                          NA
 #&gt;  77:                           NA                          NA
