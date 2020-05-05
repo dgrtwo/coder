@@ -213,106 +213,106 @@ Indices are also included if so specified by the 'index' argument.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Add Elixhauser based on all registered ICD10-codes</span>
 <span class='fu'>categorize</span>(<span class='no'>ex_people</span>, <span class='no'>ex_icd10</span>, <span class='st'>"elixhauser"</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"name"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt;                           name      event congestive heart failure
-#&gt;   1:        Alexander, Bethany 2019-05-01                    FALSE
-#&gt;   2:           Arguello, Tommy 2020-01-27                    FALSE
-#&gt;   3:             Austin, Maeve 2020-01-20                    FALSE
-#&gt;   4:            Ball, Rockelle 2019-06-08                    FALSE
-#&gt;   5:            Bean, Haileigh 2019-07-07                    FALSE
-#&gt;   6:            Beehler, Kelly 2019-05-27                    FALSE
-#&gt;   7:           Bessard, Marzel 2020-02-16                    FALSE
-#&gt;   8:              Bishop, Alec 2019-05-31                    FALSE
-#&gt;   9:            Bivings, Devin 2019-07-28                    FALSE
-#&gt;  10:            Brown, Patrick 2019-10-09                    FALSE
-#&gt;  11:             Burges, Amber 2019-08-03                    FALSE
-#&gt;  12:            Burton, Martin 2019-12-23                    FALSE
-#&gt;  13:           Cannon, Timothy 2019-05-01                    FALSE
-#&gt;  14:  Cardenas Perez, Gabriela 2019-08-29                    FALSE
-#&gt;  15:               Chung, Noor 2019-09-07                    FALSE
-#&gt;  16:           Connors, Jaylyn 2019-07-03                    FALSE
-#&gt;  17:    Copeland-Doyle, Symone 2019-08-12                    FALSE
-#&gt;  18:                 Doan, Sam 2020-02-12                    FALSE
-#&gt;  19:         Dominguez, Suriel 2020-04-04                    FALSE
-#&gt;  20:         Enriquez, Anthony 2019-12-09                    FALSE
-#&gt;  21:      Fitzsimmons, Tabatha 2019-08-04                    FALSE
-#&gt;  22:             Grim, Cheanna 2019-09-19                    FALSE
-#&gt;  23:               Harder, Rio 2020-03-09                    FALSE
-#&gt;  24:               Hood, Dania 2019-12-16                    FALSE
-#&gt;  25:           Howard, Marcius 2020-02-19                    FALSE
-#&gt;  26:              Huff, Hassan 2020-04-03                    FALSE
-#&gt;  27:           Hughey, Darlene 2019-11-08                    FALSE
-#&gt;  28:        Hutchinson, Joshua 2019-08-03                    FALSE
-#&gt;  29:  Iron Cloud-Gresko, Sadie 2019-12-29                    FALSE
-#&gt;  30:       Khamsoulinh, De'Von 2019-12-18                    FALSE
-#&gt;  31:          Lechuga, Anthony 2019-07-27                    FALSE
-#&gt;  32:         Littlejohn, Kevin 2019-09-08                    FALSE
-#&gt;  33:          Liufau, Sue Lynn 2019-10-21                    FALSE
-#&gt;  34:            Martin, Trevor 2019-08-07                    FALSE
-#&gt;  35:          Martinez, Alison 2019-11-11                    FALSE
-#&gt;  36:         Martinez, Columba 2019-05-28                    FALSE
-#&gt;  37:          Mendoza, Jessica 2019-10-26                    FALSE
-#&gt;  38:           Mendoza, Nathan 2019-06-01                    FALSE
-#&gt;  39:   Miller, Von Buddenbrock 2019-06-27                    FALSE
-#&gt;  40:              Mills, Henry 2019-09-27                    FALSE
-#&gt;  41:           Mitchell, Dalon 2019-05-25                    FALSE
-#&gt;  42:              Murray, Eric 2019-09-04                    FALSE
-#&gt;  43:             Nguyen, Hoang 2019-12-07                    FALSE
-#&gt;  44:            Orozco, Daniel 2019-07-14                    FALSE
-#&gt;  45:              Pappas, Cole 2019-09-16                    FALSE
-#&gt;  46:         Pearsall, Deontre 2019-12-04                    FALSE
-#&gt;  47:           Pena, Francisco 2019-11-14                    FALSE
-#&gt;  48:              Perez, Vidal 2020-03-02                    FALSE
-#&gt;  49:        Peterson, Brittany 2019-07-23                    FALSE
-#&gt;  50:            Polvon, Alicia 2019-09-11                    FALSE
-#&gt;  51:             Quick, Miriah 2020-01-16                    FALSE
-#&gt;  52:             Raab, Jeannie 2019-09-18                    FALSE
-#&gt;  53:             Rice, Jamissa 2020-04-15                    FALSE
-#&gt;  54:        Rockwell, Savannah 2019-11-07                    FALSE
-#&gt;  55:         Rodriquez, Monica 2019-06-04                    FALSE
-#&gt;  56:              Romero, Carl 2020-03-13                    FALSE
-#&gt;  57: Rosales-Marroquin, Monika 2019-07-24                    FALSE
-#&gt;  58:                 Sam, Niki 2020-02-16                    FALSE
-#&gt;  59:             Sanchez, Ryan 2020-02-07                    FALSE
-#&gt;  60:             Sharma, Katie 2020-01-24                    FALSE
-#&gt;  61:           Snider, Melanie 2019-04-24                    FALSE
-#&gt;  62:       Summerhays, Spencer 2019-05-23                    FALSE
-#&gt;  63:            Thompson, Trae 2020-01-08                    FALSE
-#&gt;  64: Torres Escalante, Herbert 2019-09-01                    FALSE
-#&gt;  65:   Trader-Bankston, J'Quan 2019-12-21                    FALSE
-#&gt;  66:               Tram, Medha 2020-02-02                    FALSE
-#&gt;  67:            Vaclav, Taylor 2020-03-05                    FALSE
-#&gt;  68:           Valdez, Antonio 2019-04-25                    FALSE
-#&gt;  69:           Ventura, Joshua 2019-12-16                    FALSE
-#&gt;  70:         Vogltanz, Michael 2019-08-07                    FALSE
-#&gt;  71:             Wang, Phillip 2019-11-06                    FALSE
-#&gt;  72:          Whitaker, Taylor 2019-07-30                    FALSE
-#&gt;  73:                 Wu, Lucas 2020-04-21                    FALSE
-#&gt;  74:             Wuertz, Jenny 2019-06-11                    FALSE
-#&gt;  75:    al-Asmar, Abdur Raheem 2019-12-07                    FALSE
-#&gt;  76:       al-Bashara, Shaahir 2019-05-18                    FALSE
-#&gt;  77:          al-Dawood, Hasan 2020-02-16                    FALSE
-#&gt;  78:           al-Dib, Farhaan 2020-02-04                    FALSE
-#&gt;  79:        al-Ismail, Waleeda 2020-01-27                    FALSE
-#&gt;  80:        al-Jafri, Shaheera 2020-03-25                    FALSE
-#&gt;  81:        al-Kader, Siddeeqa 2020-03-13                    FALSE
-#&gt;  82:          al-Karam, Ziyaad 2020-01-23                    FALSE
-#&gt;  83:       al-Ramadan, Hanoona 2019-09-18                    FALSE
-#&gt;  84:         al-Shaban, Mazeed 2019-09-05                    FALSE
-#&gt;  85:            el-Amiri, Jaad 2019-12-11                    FALSE
-#&gt;  86:         el-Bashara, Najma 2019-10-25                    FALSE
-#&gt;  87:           el-Diab, Nadeem 2019-12-18                     TRUE
-#&gt;  88:          el-Faris, Shuaib 2020-03-08                    FALSE
-#&gt;  89:          el-Hallal, Uwais 2019-09-30                    FALSE
-#&gt;  90:         el-Hamad, Tayyiba 2019-09-14                    FALSE
-#&gt;  91:       el-Jamail, Hudhaifa 2020-02-03                    FALSE
-#&gt;  92:         el-Khalifa, Nawfa 2019-12-23                    FALSE
-#&gt;  93:           el-Khan, Jasoor 2019-12-08                    FALSE
-#&gt;  94:          el-Masri, Junaid 2019-08-30                    FALSE
-#&gt;  95:        el-Sabir, Mumtaaza 2020-02-18                    FALSE
-#&gt;  96:          el-Sadek, Wafaaa 2019-10-05                    FALSE
-#&gt;  97:       el-Salehi, Mahuroos 2019-07-17                    FALSE
-#&gt;  98:      el-Salih, Farajallah 2019-08-09                    FALSE
-#&gt;  99:         el-Sharif, Nadeem 2020-01-31                    FALSE
-#&gt; 100:          el-Zaki, Huwaida 2020-02-14                    FALSE
+#&gt;   1:        Alexander, Bethany 2019-05-14                    FALSE
+#&gt;   2:           Arguello, Tommy 2020-02-09                    FALSE
+#&gt;   3:             Austin, Maeve 2020-02-02                    FALSE
+#&gt;   4:            Ball, Rockelle 2019-06-21                    FALSE
+#&gt;   5:            Bean, Haileigh 2019-07-20                    FALSE
+#&gt;   6:            Beehler, Kelly 2019-06-09                    FALSE
+#&gt;   7:           Bessard, Marzel 2020-02-29                    FALSE
+#&gt;   8:              Bishop, Alec 2019-06-13                    FALSE
+#&gt;   9:            Bivings, Devin 2019-08-10                    FALSE
+#&gt;  10:            Brown, Patrick 2019-10-22                    FALSE
+#&gt;  11:             Burges, Amber 2019-08-16                    FALSE
+#&gt;  12:            Burton, Martin 2020-01-05                    FALSE
+#&gt;  13:           Cannon, Timothy 2019-05-14                    FALSE
+#&gt;  14:  Cardenas Perez, Gabriela 2019-09-11                    FALSE
+#&gt;  15:               Chung, Noor 2019-09-20                    FALSE
+#&gt;  16:           Connors, Jaylyn 2019-07-16                    FALSE
+#&gt;  17:    Copeland-Doyle, Symone 2019-08-25                    FALSE
+#&gt;  18:                 Doan, Sam 2020-02-25                    FALSE
+#&gt;  19:         Dominguez, Suriel 2020-04-17                    FALSE
+#&gt;  20:         Enriquez, Anthony 2019-12-22                    FALSE
+#&gt;  21:      Fitzsimmons, Tabatha 2019-08-17                    FALSE
+#&gt;  22:             Grim, Cheanna 2019-10-02                    FALSE
+#&gt;  23:               Harder, Rio 2020-03-22                    FALSE
+#&gt;  24:               Hood, Dania 2019-12-29                    FALSE
+#&gt;  25:           Howard, Marcius 2020-03-03                    FALSE
+#&gt;  26:              Huff, Hassan 2020-04-16                    FALSE
+#&gt;  27:           Hughey, Darlene 2019-11-21                    FALSE
+#&gt;  28:        Hutchinson, Joshua 2019-08-16                    FALSE
+#&gt;  29:  Iron Cloud-Gresko, Sadie 2020-01-11                    FALSE
+#&gt;  30:       Khamsoulinh, De'Von 2019-12-31                    FALSE
+#&gt;  31:          Lechuga, Anthony 2019-08-09                    FALSE
+#&gt;  32:         Littlejohn, Kevin 2019-09-21                    FALSE
+#&gt;  33:          Liufau, Sue Lynn 2019-11-03                    FALSE
+#&gt;  34:            Martin, Trevor 2019-08-20                    FALSE
+#&gt;  35:          Martinez, Alison 2019-11-24                    FALSE
+#&gt;  36:         Martinez, Columba 2019-06-10                    FALSE
+#&gt;  37:          Mendoza, Jessica 2019-11-08                    FALSE
+#&gt;  38:           Mendoza, Nathan 2019-06-14                    FALSE
+#&gt;  39:   Miller, Von Buddenbrock 2019-07-10                    FALSE
+#&gt;  40:              Mills, Henry 2019-10-10                    FALSE
+#&gt;  41:           Mitchell, Dalon 2019-06-07                    FALSE
+#&gt;  42:              Murray, Eric 2019-09-17                    FALSE
+#&gt;  43:             Nguyen, Hoang 2019-12-20                    FALSE
+#&gt;  44:            Orozco, Daniel 2019-07-27                    FALSE
+#&gt;  45:              Pappas, Cole 2019-09-29                    FALSE
+#&gt;  46:         Pearsall, Deontre 2019-12-17                    FALSE
+#&gt;  47:           Pena, Francisco 2019-11-27                    FALSE
+#&gt;  48:              Perez, Vidal 2020-03-15                    FALSE
+#&gt;  49:        Peterson, Brittany 2019-08-05                    FALSE
+#&gt;  50:            Polvon, Alicia 2019-09-24                    FALSE
+#&gt;  51:             Quick, Miriah 2020-01-29                    FALSE
+#&gt;  52:             Raab, Jeannie 2019-10-01                    FALSE
+#&gt;  53:             Rice, Jamissa 2020-04-28                    FALSE
+#&gt;  54:        Rockwell, Savannah 2019-11-20                    FALSE
+#&gt;  55:         Rodriquez, Monica 2019-06-17                    FALSE
+#&gt;  56:              Romero, Carl 2020-03-26                    FALSE
+#&gt;  57: Rosales-Marroquin, Monika 2019-08-06                    FALSE
+#&gt;  58:                 Sam, Niki 2020-02-29                    FALSE
+#&gt;  59:             Sanchez, Ryan 2020-02-20                    FALSE
+#&gt;  60:             Sharma, Katie 2020-02-06                    FALSE
+#&gt;  61:           Snider, Melanie 2019-05-07                    FALSE
+#&gt;  62:       Summerhays, Spencer 2019-06-05                    FALSE
+#&gt;  63:            Thompson, Trae 2020-01-21                    FALSE
+#&gt;  64: Torres Escalante, Herbert 2019-09-14                    FALSE
+#&gt;  65:   Trader-Bankston, J'Quan 2020-01-03                    FALSE
+#&gt;  66:               Tram, Medha 2020-02-15                    FALSE
+#&gt;  67:            Vaclav, Taylor 2020-03-18                    FALSE
+#&gt;  68:           Valdez, Antonio 2019-05-08                    FALSE
+#&gt;  69:           Ventura, Joshua 2019-12-29                    FALSE
+#&gt;  70:         Vogltanz, Michael 2019-08-20                    FALSE
+#&gt;  71:             Wang, Phillip 2019-11-19                    FALSE
+#&gt;  72:          Whitaker, Taylor 2019-08-12                    FALSE
+#&gt;  73:                 Wu, Lucas 2020-05-04                    FALSE
+#&gt;  74:             Wuertz, Jenny 2019-06-24                    FALSE
+#&gt;  75:    al-Asmar, Abdur Raheem 2019-12-20                    FALSE
+#&gt;  76:       al-Bashara, Shaahir 2019-05-31                    FALSE
+#&gt;  77:          al-Dawood, Hasan 2020-02-29                    FALSE
+#&gt;  78:           al-Dib, Farhaan 2020-02-17                    FALSE
+#&gt;  79:        al-Ismail, Waleeda 2020-02-09                    FALSE
+#&gt;  80:        al-Jafri, Shaheera 2020-04-07                    FALSE
+#&gt;  81:        al-Kader, Siddeeqa 2020-03-26                    FALSE
+#&gt;  82:          al-Karam, Ziyaad 2020-02-05                    FALSE
+#&gt;  83:       al-Ramadan, Hanoona 2019-10-01                    FALSE
+#&gt;  84:         al-Shaban, Mazeed 2019-09-18                    FALSE
+#&gt;  85:            el-Amiri, Jaad 2019-12-24                    FALSE
+#&gt;  86:         el-Bashara, Najma 2019-11-07                    FALSE
+#&gt;  87:           el-Diab, Nadeem 2019-12-31                     TRUE
+#&gt;  88:          el-Faris, Shuaib 2020-03-21                    FALSE
+#&gt;  89:          el-Hallal, Uwais 2019-10-13                    FALSE
+#&gt;  90:         el-Hamad, Tayyiba 2019-09-27                    FALSE
+#&gt;  91:       el-Jamail, Hudhaifa 2020-02-16                    FALSE
+#&gt;  92:         el-Khalifa, Nawfa 2020-01-05                    FALSE
+#&gt;  93:           el-Khan, Jasoor 2019-12-21                    FALSE
+#&gt;  94:          el-Masri, Junaid 2019-09-12                    FALSE
+#&gt;  95:        el-Sabir, Mumtaaza 2020-03-02                    FALSE
+#&gt;  96:          el-Sadek, Wafaaa 2019-10-18                    FALSE
+#&gt;  97:       el-Salehi, Mahuroos 2019-07-30                    FALSE
+#&gt;  98:      el-Salih, Farajallah 2019-08-22                    FALSE
+#&gt;  99:         el-Sharif, Nadeem 2020-02-13                    FALSE
+#&gt; 100:          el-Zaki, Huwaida 2020-02-27                    FALSE
 #&gt;                           name      event congestive heart failure
 #&gt;      cardiac arrhythmias valvular disease pulmonary circulation disorder
 #&gt;   1:               FALSE            FALSE                          FALSE
@@ -1343,106 +1343,106 @@ Indices are also included if so specified by the 'index' argument.</p>
   <span class='kw'>codify_args</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='st'>"event"</span>, <span class='kw'>days</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>30</span>, -<span class='fl'>1</span>)),
   <span class='kw'>cc_args</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>tech_names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 )</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt;                           name      event
-#&gt;   1:        Alexander, Bethany 2019-05-01
-#&gt;   2:           Arguello, Tommy 2020-01-27
-#&gt;   3:             Austin, Maeve 2020-01-20
-#&gt;   4:            Ball, Rockelle 2019-06-08
-#&gt;   5:            Bean, Haileigh 2019-07-07
-#&gt;   6:            Beehler, Kelly 2019-05-27
-#&gt;   7:           Bessard, Marzel 2020-02-16
-#&gt;   8:              Bishop, Alec 2019-05-31
-#&gt;   9:            Bivings, Devin 2019-07-28
-#&gt;  10:            Brown, Patrick 2019-10-09
-#&gt;  11:             Burges, Amber 2019-08-03
-#&gt;  12:            Burton, Martin 2019-12-23
-#&gt;  13:           Cannon, Timothy 2019-05-01
-#&gt;  14:  Cardenas Perez, Gabriela 2019-08-29
-#&gt;  15:               Chung, Noor 2019-09-07
-#&gt;  16:           Connors, Jaylyn 2019-07-03
-#&gt;  17:    Copeland-Doyle, Symone 2019-08-12
-#&gt;  18:                 Doan, Sam 2020-02-12
-#&gt;  19:         Dominguez, Suriel 2020-04-04
-#&gt;  20:         Enriquez, Anthony 2019-12-09
-#&gt;  21:      Fitzsimmons, Tabatha 2019-08-04
-#&gt;  22:             Grim, Cheanna 2019-09-19
-#&gt;  23:               Harder, Rio 2020-03-09
-#&gt;  24:               Hood, Dania 2019-12-16
-#&gt;  25:           Howard, Marcius 2020-02-19
-#&gt;  26:              Huff, Hassan 2020-04-03
-#&gt;  27:           Hughey, Darlene 2019-11-08
-#&gt;  28:        Hutchinson, Joshua 2019-08-03
-#&gt;  29:  Iron Cloud-Gresko, Sadie 2019-12-29
-#&gt;  30:       Khamsoulinh, De'Von 2019-12-18
-#&gt;  31:          Lechuga, Anthony 2019-07-27
-#&gt;  32:         Littlejohn, Kevin 2019-09-08
-#&gt;  33:          Liufau, Sue Lynn 2019-10-21
-#&gt;  34:            Martin, Trevor 2019-08-07
-#&gt;  35:          Martinez, Alison 2019-11-11
-#&gt;  36:         Martinez, Columba 2019-05-28
-#&gt;  37:          Mendoza, Jessica 2019-10-26
-#&gt;  38:           Mendoza, Nathan 2019-06-01
-#&gt;  39:   Miller, Von Buddenbrock 2019-06-27
-#&gt;  40:              Mills, Henry 2019-09-27
-#&gt;  41:           Mitchell, Dalon 2019-05-25
-#&gt;  42:              Murray, Eric 2019-09-04
-#&gt;  43:             Nguyen, Hoang 2019-12-07
-#&gt;  44:            Orozco, Daniel 2019-07-14
-#&gt;  45:              Pappas, Cole 2019-09-16
-#&gt;  46:         Pearsall, Deontre 2019-12-04
-#&gt;  47:           Pena, Francisco 2019-11-14
-#&gt;  48:              Perez, Vidal 2020-03-02
-#&gt;  49:        Peterson, Brittany 2019-07-23
-#&gt;  50:            Polvon, Alicia 2019-09-11
-#&gt;  51:             Quick, Miriah 2020-01-16
-#&gt;  52:             Raab, Jeannie 2019-09-18
-#&gt;  53:             Rice, Jamissa 2020-04-15
-#&gt;  54:        Rockwell, Savannah 2019-11-07
-#&gt;  55:         Rodriquez, Monica 2019-06-04
-#&gt;  56:              Romero, Carl 2020-03-13
-#&gt;  57: Rosales-Marroquin, Monika 2019-07-24
-#&gt;  58:                 Sam, Niki 2020-02-16
-#&gt;  59:             Sanchez, Ryan 2020-02-07
-#&gt;  60:             Sharma, Katie 2020-01-24
-#&gt;  61:           Snider, Melanie 2019-04-24
-#&gt;  62:       Summerhays, Spencer 2019-05-23
-#&gt;  63:            Thompson, Trae 2020-01-08
-#&gt;  64: Torres Escalante, Herbert 2019-09-01
-#&gt;  65:   Trader-Bankston, J'Quan 2019-12-21
-#&gt;  66:               Tram, Medha 2020-02-02
-#&gt;  67:            Vaclav, Taylor 2020-03-05
-#&gt;  68:           Valdez, Antonio 2019-04-25
-#&gt;  69:           Ventura, Joshua 2019-12-16
-#&gt;  70:         Vogltanz, Michael 2019-08-07
-#&gt;  71:             Wang, Phillip 2019-11-06
-#&gt;  72:          Whitaker, Taylor 2019-07-30
-#&gt;  73:                 Wu, Lucas 2020-04-21
-#&gt;  74:             Wuertz, Jenny 2019-06-11
-#&gt;  75:    al-Asmar, Abdur Raheem 2019-12-07
-#&gt;  76:       al-Bashara, Shaahir 2019-05-18
-#&gt;  77:          al-Dawood, Hasan 2020-02-16
-#&gt;  78:           al-Dib, Farhaan 2020-02-04
-#&gt;  79:        al-Ismail, Waleeda 2020-01-27
-#&gt;  80:        al-Jafri, Shaheera 2020-03-25
-#&gt;  81:        al-Kader, Siddeeqa 2020-03-13
-#&gt;  82:          al-Karam, Ziyaad 2020-01-23
-#&gt;  83:       al-Ramadan, Hanoona 2019-09-18
-#&gt;  84:         al-Shaban, Mazeed 2019-09-05
-#&gt;  85:            el-Amiri, Jaad 2019-12-11
-#&gt;  86:         el-Bashara, Najma 2019-10-25
-#&gt;  87:           el-Diab, Nadeem 2019-12-18
-#&gt;  88:          el-Faris, Shuaib 2020-03-08
-#&gt;  89:          el-Hallal, Uwais 2019-09-30
-#&gt;  90:         el-Hamad, Tayyiba 2019-09-14
-#&gt;  91:       el-Jamail, Hudhaifa 2020-02-03
-#&gt;  92:         el-Khalifa, Nawfa 2019-12-23
-#&gt;  93:           el-Khan, Jasoor 2019-12-08
-#&gt;  94:          el-Masri, Junaid 2019-08-30
-#&gt;  95:        el-Sabir, Mumtaaza 2020-02-18
-#&gt;  96:          el-Sadek, Wafaaa 2019-10-05
-#&gt;  97:       el-Salehi, Mahuroos 2019-07-17
-#&gt;  98:      el-Salih, Farajallah 2019-08-09
-#&gt;  99:         el-Sharif, Nadeem 2020-01-31
-#&gt; 100:          el-Zaki, Huwaida 2020-02-14
+#&gt;   1:        Alexander, Bethany 2019-05-14
+#&gt;   2:           Arguello, Tommy 2020-02-09
+#&gt;   3:             Austin, Maeve 2020-02-02
+#&gt;   4:            Ball, Rockelle 2019-06-21
+#&gt;   5:            Bean, Haileigh 2019-07-20
+#&gt;   6:            Beehler, Kelly 2019-06-09
+#&gt;   7:           Bessard, Marzel 2020-02-29
+#&gt;   8:              Bishop, Alec 2019-06-13
+#&gt;   9:            Bivings, Devin 2019-08-10
+#&gt;  10:            Brown, Patrick 2019-10-22
+#&gt;  11:             Burges, Amber 2019-08-16
+#&gt;  12:            Burton, Martin 2020-01-05
+#&gt;  13:           Cannon, Timothy 2019-05-14
+#&gt;  14:  Cardenas Perez, Gabriela 2019-09-11
+#&gt;  15:               Chung, Noor 2019-09-20
+#&gt;  16:           Connors, Jaylyn 2019-07-16
+#&gt;  17:    Copeland-Doyle, Symone 2019-08-25
+#&gt;  18:                 Doan, Sam 2020-02-25
+#&gt;  19:         Dominguez, Suriel 2020-04-17
+#&gt;  20:         Enriquez, Anthony 2019-12-22
+#&gt;  21:      Fitzsimmons, Tabatha 2019-08-17
+#&gt;  22:             Grim, Cheanna 2019-10-02
+#&gt;  23:               Harder, Rio 2020-03-22
+#&gt;  24:               Hood, Dania 2019-12-29
+#&gt;  25:           Howard, Marcius 2020-03-03
+#&gt;  26:              Huff, Hassan 2020-04-16
+#&gt;  27:           Hughey, Darlene 2019-11-21
+#&gt;  28:        Hutchinson, Joshua 2019-08-16
+#&gt;  29:  Iron Cloud-Gresko, Sadie 2020-01-11
+#&gt;  30:       Khamsoulinh, De'Von 2019-12-31
+#&gt;  31:          Lechuga, Anthony 2019-08-09
+#&gt;  32:         Littlejohn, Kevin 2019-09-21
+#&gt;  33:          Liufau, Sue Lynn 2019-11-03
+#&gt;  34:            Martin, Trevor 2019-08-20
+#&gt;  35:          Martinez, Alison 2019-11-24
+#&gt;  36:         Martinez, Columba 2019-06-10
+#&gt;  37:          Mendoza, Jessica 2019-11-08
+#&gt;  38:           Mendoza, Nathan 2019-06-14
+#&gt;  39:   Miller, Von Buddenbrock 2019-07-10
+#&gt;  40:              Mills, Henry 2019-10-10
+#&gt;  41:           Mitchell, Dalon 2019-06-07
+#&gt;  42:              Murray, Eric 2019-09-17
+#&gt;  43:             Nguyen, Hoang 2019-12-20
+#&gt;  44:            Orozco, Daniel 2019-07-27
+#&gt;  45:              Pappas, Cole 2019-09-29
+#&gt;  46:         Pearsall, Deontre 2019-12-17
+#&gt;  47:           Pena, Francisco 2019-11-27
+#&gt;  48:              Perez, Vidal 2020-03-15
+#&gt;  49:        Peterson, Brittany 2019-08-05
+#&gt;  50:            Polvon, Alicia 2019-09-24
+#&gt;  51:             Quick, Miriah 2020-01-29
+#&gt;  52:             Raab, Jeannie 2019-10-01
+#&gt;  53:             Rice, Jamissa 2020-04-28
+#&gt;  54:        Rockwell, Savannah 2019-11-20
+#&gt;  55:         Rodriquez, Monica 2019-06-17
+#&gt;  56:              Romero, Carl 2020-03-26
+#&gt;  57: Rosales-Marroquin, Monika 2019-08-06
+#&gt;  58:                 Sam, Niki 2020-02-29
+#&gt;  59:             Sanchez, Ryan 2020-02-20
+#&gt;  60:             Sharma, Katie 2020-02-06
+#&gt;  61:           Snider, Melanie 2019-05-07
+#&gt;  62:       Summerhays, Spencer 2019-06-05
+#&gt;  63:            Thompson, Trae 2020-01-21
+#&gt;  64: Torres Escalante, Herbert 2019-09-14
+#&gt;  65:   Trader-Bankston, J'Quan 2020-01-03
+#&gt;  66:               Tram, Medha 2020-02-15
+#&gt;  67:            Vaclav, Taylor 2020-03-18
+#&gt;  68:           Valdez, Antonio 2019-05-08
+#&gt;  69:           Ventura, Joshua 2019-12-29
+#&gt;  70:         Vogltanz, Michael 2019-08-20
+#&gt;  71:             Wang, Phillip 2019-11-19
+#&gt;  72:          Whitaker, Taylor 2019-08-12
+#&gt;  73:                 Wu, Lucas 2020-05-04
+#&gt;  74:             Wuertz, Jenny 2019-06-24
+#&gt;  75:    al-Asmar, Abdur Raheem 2019-12-20
+#&gt;  76:       al-Bashara, Shaahir 2019-05-31
+#&gt;  77:          al-Dawood, Hasan 2020-02-29
+#&gt;  78:           al-Dib, Farhaan 2020-02-17
+#&gt;  79:        al-Ismail, Waleeda 2020-02-09
+#&gt;  80:        al-Jafri, Shaheera 2020-04-07
+#&gt;  81:        al-Kader, Siddeeqa 2020-03-26
+#&gt;  82:          al-Karam, Ziyaad 2020-02-05
+#&gt;  83:       al-Ramadan, Hanoona 2019-10-01
+#&gt;  84:         al-Shaban, Mazeed 2019-09-18
+#&gt;  85:            el-Amiri, Jaad 2019-12-24
+#&gt;  86:         el-Bashara, Najma 2019-11-07
+#&gt;  87:           el-Diab, Nadeem 2019-12-31
+#&gt;  88:          el-Faris, Shuaib 2020-03-21
+#&gt;  89:          el-Hallal, Uwais 2019-10-13
+#&gt;  90:         el-Hamad, Tayyiba 2019-09-27
+#&gt;  91:       el-Jamail, Hudhaifa 2020-02-16
+#&gt;  92:         el-Khalifa, Nawfa 2020-01-05
+#&gt;  93:           el-Khan, Jasoor 2019-12-21
+#&gt;  94:          el-Masri, Junaid 2019-09-12
+#&gt;  95:        el-Sabir, Mumtaaza 2020-03-02
+#&gt;  96:          el-Sadek, Wafaaa 2019-10-18
+#&gt;  97:       el-Salehi, Mahuroos 2019-07-30
+#&gt;  98:      el-Salih, Farajallah 2019-08-22
+#&gt;  99:         el-Sharif, Nadeem 2020-02-13
+#&gt; 100:          el-Zaki, Huwaida 2020-02-27
 #&gt;                           name      event
 #&gt;      charlson_regex_icd10_myocardial_infarction
 #&gt;   1:                                      FALSE
