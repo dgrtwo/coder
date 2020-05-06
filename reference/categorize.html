@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">coder</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.5</span>
       </span>
     </div>
 
@@ -2872,108 +2872,210 @@ Indices are also included if so specified by the 'index' argument.</p>
 #&gt;  99:                                          NA                            NA
 #&gt; 100:                                          NA                            NA
 #&gt;      charlson_regex_icd10_metastatic_solid_tumor charlson_regex_icd10_aids_hiv
-#&gt;      charlson_index_quan_original charlson_index_quan_updated
-#&gt;   1:                            1                           0
-#&gt;   2:                           NA                          NA
-#&gt;   3:                           NA                          NA
-#&gt;   4:                            0                           0
-#&gt;   5:                           NA                          NA
-#&gt;   6:                           NA                          NA
-#&gt;   7:                           NA                          NA
-#&gt;   8:                            0                           0
-#&gt;   9:                           NA                          NA
-#&gt;  10:                            0                           0
-#&gt;  11:                            0                           0
-#&gt;  12:                           NA                          NA
-#&gt;  13:                           NA                          NA
-#&gt;  14:                           NA                          NA
-#&gt;  15:                           NA                          NA
-#&gt;  16:                           NA                          NA
-#&gt;  17:                            0                           0
-#&gt;  18:                           NA                          NA
-#&gt;  19:                           NA                          NA
-#&gt;  20:                           NA                          NA
-#&gt;  21:                            0                           0
-#&gt;  22:                           NA                          NA
-#&gt;  23:                           NA                          NA
-#&gt;  24:                            0                           0
-#&gt;  25:                           NA                          NA
-#&gt;  26:                           NA                          NA
-#&gt;  27:                           NA                          NA
-#&gt;  28:                           NA                          NA
-#&gt;  29:                           NA                          NA
-#&gt;  30:                           NA                          NA
-#&gt;  31:                           NA                          NA
-#&gt;  32:                           NA                          NA
-#&gt;  33:                           NA                          NA
-#&gt;  34:                            0                           0
-#&gt;  35:                            0                           0
-#&gt;  36:                           NA                          NA
-#&gt;  37:                           NA                          NA
-#&gt;  38:                           NA                          NA
-#&gt;  39:                           NA                          NA
-#&gt;  40:                           NA                          NA
-#&gt;  41:                           NA                          NA
-#&gt;  42:                            0                           0
-#&gt;  43:                           NA                          NA
-#&gt;  44:                           NA                          NA
-#&gt;  45:                           NA                          NA
-#&gt;  46:                           NA                          NA
-#&gt;  47:                            0                           0
-#&gt;  48:                           NA                          NA
-#&gt;  49:                            0                           0
-#&gt;  50:                           NA                          NA
-#&gt;  51:                           NA                          NA
-#&gt;  52:                           NA                          NA
-#&gt;  53:                           NA                          NA
-#&gt;  54:                            0                           0
-#&gt;  55:                            0                           0
-#&gt;  56:                           NA                          NA
-#&gt;  57:                            0                           0
-#&gt;  58:                           NA                          NA
-#&gt;  59:                           NA                          NA
-#&gt;  60:                           NA                          NA
-#&gt;  61:                           NA                          NA
-#&gt;  62:                           NA                          NA
-#&gt;  63:                           NA                          NA
-#&gt;  64:                            0                           0
-#&gt;  65:                           NA                          NA
-#&gt;  66:                           NA                          NA
-#&gt;  67:                           NA                          NA
-#&gt;  68:                           NA                          NA
-#&gt;  69:                           NA                          NA
-#&gt;  70:                            0                           0
-#&gt;  71:                            0                           0
-#&gt;  72:                           NA                          NA
-#&gt;  73:                           NA                          NA
-#&gt;  74:                            0                           0
-#&gt;  75:                           NA                          NA
-#&gt;  76:                           NA                          NA
-#&gt;  77:                           NA                          NA
-#&gt;  78:                           NA                          NA
-#&gt;  79:                           NA                          NA
-#&gt;  80:                           NA                          NA
-#&gt;  81:                           NA                          NA
-#&gt;  82:                           NA                          NA
-#&gt;  83:                           NA                          NA
-#&gt;  84:                           NA                          NA
-#&gt;  85:                           NA                          NA
-#&gt;  86:                           NA                          NA
-#&gt;  87:                           NA                          NA
-#&gt;  88:                           NA                          NA
-#&gt;  89:                           NA                          NA
-#&gt;  90:                           NA                          NA
-#&gt;  91:                           NA                          NA
-#&gt;  92:                            0                           0
-#&gt;  93:                           NA                          NA
-#&gt;  94:                            0                           0
-#&gt;  95:                           NA                          NA
-#&gt;  96:                           NA                          NA
-#&gt;  97:                           NA                          NA
-#&gt;  98:                            0                           0
-#&gt;  99:                           NA                          NA
-#&gt; 100:                           NA                          NA
-#&gt;      charlson_index_quan_original charlson_index_quan_updated</div></pre>
+#&gt;      charlson_regex_icd10_index_quan_original
+#&gt;   1:                                        1
+#&gt;   2:                                       NA
+#&gt;   3:                                       NA
+#&gt;   4:                                        0
+#&gt;   5:                                       NA
+#&gt;   6:                                       NA
+#&gt;   7:                                       NA
+#&gt;   8:                                        0
+#&gt;   9:                                       NA
+#&gt;  10:                                        0
+#&gt;  11:                                        0
+#&gt;  12:                                       NA
+#&gt;  13:                                       NA
+#&gt;  14:                                       NA
+#&gt;  15:                                       NA
+#&gt;  16:                                       NA
+#&gt;  17:                                        0
+#&gt;  18:                                       NA
+#&gt;  19:                                       NA
+#&gt;  20:                                       NA
+#&gt;  21:                                        0
+#&gt;  22:                                       NA
+#&gt;  23:                                       NA
+#&gt;  24:                                        0
+#&gt;  25:                                       NA
+#&gt;  26:                                       NA
+#&gt;  27:                                       NA
+#&gt;  28:                                       NA
+#&gt;  29:                                       NA
+#&gt;  30:                                       NA
+#&gt;  31:                                       NA
+#&gt;  32:                                       NA
+#&gt;  33:                                       NA
+#&gt;  34:                                        0
+#&gt;  35:                                        0
+#&gt;  36:                                       NA
+#&gt;  37:                                       NA
+#&gt;  38:                                       NA
+#&gt;  39:                                       NA
+#&gt;  40:                                       NA
+#&gt;  41:                                       NA
+#&gt;  42:                                        0
+#&gt;  43:                                       NA
+#&gt;  44:                                       NA
+#&gt;  45:                                       NA
+#&gt;  46:                                       NA
+#&gt;  47:                                        0
+#&gt;  48:                                       NA
+#&gt;  49:                                        0
+#&gt;  50:                                       NA
+#&gt;  51:                                       NA
+#&gt;  52:                                       NA
+#&gt;  53:                                       NA
+#&gt;  54:                                        0
+#&gt;  55:                                        0
+#&gt;  56:                                       NA
+#&gt;  57:                                        0
+#&gt;  58:                                       NA
+#&gt;  59:                                       NA
+#&gt;  60:                                       NA
+#&gt;  61:                                       NA
+#&gt;  62:                                       NA
+#&gt;  63:                                       NA
+#&gt;  64:                                        0
+#&gt;  65:                                       NA
+#&gt;  66:                                       NA
+#&gt;  67:                                       NA
+#&gt;  68:                                       NA
+#&gt;  69:                                       NA
+#&gt;  70:                                        0
+#&gt;  71:                                        0
+#&gt;  72:                                       NA
+#&gt;  73:                                       NA
+#&gt;  74:                                        0
+#&gt;  75:                                       NA
+#&gt;  76:                                       NA
+#&gt;  77:                                       NA
+#&gt;  78:                                       NA
+#&gt;  79:                                       NA
+#&gt;  80:                                       NA
+#&gt;  81:                                       NA
+#&gt;  82:                                       NA
+#&gt;  83:                                       NA
+#&gt;  84:                                       NA
+#&gt;  85:                                       NA
+#&gt;  86:                                       NA
+#&gt;  87:                                       NA
+#&gt;  88:                                       NA
+#&gt;  89:                                       NA
+#&gt;  90:                                       NA
+#&gt;  91:                                       NA
+#&gt;  92:                                        0
+#&gt;  93:                                       NA
+#&gt;  94:                                        0
+#&gt;  95:                                       NA
+#&gt;  96:                                       NA
+#&gt;  97:                                       NA
+#&gt;  98:                                        0
+#&gt;  99:                                       NA
+#&gt; 100:                                       NA
+#&gt;      charlson_regex_icd10_index_quan_original
+#&gt;      charlson_regex_icd10_index_quan_updated
+#&gt;   1:                                       0
+#&gt;   2:                                      NA
+#&gt;   3:                                      NA
+#&gt;   4:                                       0
+#&gt;   5:                                      NA
+#&gt;   6:                                      NA
+#&gt;   7:                                      NA
+#&gt;   8:                                       0
+#&gt;   9:                                      NA
+#&gt;  10:                                       0
+#&gt;  11:                                       0
+#&gt;  12:                                      NA
+#&gt;  13:                                      NA
+#&gt;  14:                                      NA
+#&gt;  15:                                      NA
+#&gt;  16:                                      NA
+#&gt;  17:                                       0
+#&gt;  18:                                      NA
+#&gt;  19:                                      NA
+#&gt;  20:                                      NA
+#&gt;  21:                                       0
+#&gt;  22:                                      NA
+#&gt;  23:                                      NA
+#&gt;  24:                                       0
+#&gt;  25:                                      NA
+#&gt;  26:                                      NA
+#&gt;  27:                                      NA
+#&gt;  28:                                      NA
+#&gt;  29:                                      NA
+#&gt;  30:                                      NA
+#&gt;  31:                                      NA
+#&gt;  32:                                      NA
+#&gt;  33:                                      NA
+#&gt;  34:                                       0
+#&gt;  35:                                       0
+#&gt;  36:                                      NA
+#&gt;  37:                                      NA
+#&gt;  38:                                      NA
+#&gt;  39:                                      NA
+#&gt;  40:                                      NA
+#&gt;  41:                                      NA
+#&gt;  42:                                       0
+#&gt;  43:                                      NA
+#&gt;  44:                                      NA
+#&gt;  45:                                      NA
+#&gt;  46:                                      NA
+#&gt;  47:                                       0
+#&gt;  48:                                      NA
+#&gt;  49:                                       0
+#&gt;  50:                                      NA
+#&gt;  51:                                      NA
+#&gt;  52:                                      NA
+#&gt;  53:                                      NA
+#&gt;  54:                                       0
+#&gt;  55:                                       0
+#&gt;  56:                                      NA
+#&gt;  57:                                       0
+#&gt;  58:                                      NA
+#&gt;  59:                                      NA
+#&gt;  60:                                      NA
+#&gt;  61:                                      NA
+#&gt;  62:                                      NA
+#&gt;  63:                                      NA
+#&gt;  64:                                       0
+#&gt;  65:                                      NA
+#&gt;  66:                                      NA
+#&gt;  67:                                      NA
+#&gt;  68:                                      NA
+#&gt;  69:                                      NA
+#&gt;  70:                                       0
+#&gt;  71:                                       0
+#&gt;  72:                                      NA
+#&gt;  73:                                      NA
+#&gt;  74:                                       0
+#&gt;  75:                                      NA
+#&gt;  76:                                      NA
+#&gt;  77:                                      NA
+#&gt;  78:                                      NA
+#&gt;  79:                                      NA
+#&gt;  80:                                      NA
+#&gt;  81:                                      NA
+#&gt;  82:                                      NA
+#&gt;  83:                                      NA
+#&gt;  84:                                      NA
+#&gt;  85:                                      NA
+#&gt;  86:                                      NA
+#&gt;  87:                                      NA
+#&gt;  88:                                      NA
+#&gt;  89:                                      NA
+#&gt;  90:                                      NA
+#&gt;  91:                                      NA
+#&gt;  92:                                       0
+#&gt;  93:                                      NA
+#&gt;  94:                                       0
+#&gt;  95:                                      NA
+#&gt;  96:                                      NA
+#&gt;  97:                                      NA
+#&gt;  98:                                       0
+#&gt;  99:                                      NA
+#&gt; 100:                                      NA
+#&gt;      charlson_regex_icd10_index_quan_updated</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
