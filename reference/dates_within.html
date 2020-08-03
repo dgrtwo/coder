@@ -98,7 +98,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Comorbidity.html">Co-morbidity</a>
+      <a href="../articles/Comorbidity.html">Comorbidity</a>
     </li>
     <li>
       <a href="../articles/classcodes.html">Classcodes objects</a>
@@ -138,7 +138,7 @@
     <p>Check if dates are within limits</p>
     </div>
 
-    <pre class="usage"><span class='fu'>dates_within</span>(<span class='no'>x</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='st'>"1970-01-01"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>())</pre>
+    <pre class="usage"><span class='fu'>dates_within</span>(<span class='kw'>x</span>, from = <span class='st'>"1970-01-01"</span>, to = <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>())</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -167,8 +167,8 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>#                 valid         future      too early</span>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2017-02-02"</span>, <span class='st'>"2050-02-02"</span>, <span class='st'>"1969-02-02"</span>))
-<span class='fu'>dates_within</span>(<span class='no'>x</span>) <span class='co'># TRUE FALSE FALSE</span></div><div class='output co'>#&gt; [1]  TRUE FALSE FALSE</div><div class='input'><span class='fu'>dates_within</span>(<span class='no'>x</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='st'>"2000-01-01"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"2100-01-01"</span>) <span class='co'>#  TRUE  TRUE FALSE</span></div><div class='output co'>#&gt; [1]  TRUE  TRUE FALSE</div></pre>
+<span class='kw'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2017-02-02"</span>, <span class='st'>"2050-02-02"</span>, <span class='st'>"1969-02-02"</span>))
+<span class='fu'>dates_within</span>(<span class='kw'>x</span>) <span class='co'># TRUE FALSE FALSE</span></div><div class='output co'>#&gt; [1]  TRUE FALSE FALSE</div><div class='input'><span class='fu'>dates_within</span>(<span class='kw'>x</span>, from = <span class='st'>"2000-01-01"</span>, to = <span class='st'>"2100-01-01"</span>) <span class='co'>#  TRUE  TRUE FALSE</span></div><div class='output co'>#&gt; [1]  TRUE  TRUE FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

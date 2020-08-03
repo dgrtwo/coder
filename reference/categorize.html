@@ -98,7 +98,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Comorbidity.html">Co-morbidity</a>
+      <a href="../articles/Comorbidity.html">Comorbidity</a>
     </li>
     <li>
       <a href="../articles/classcodes.html">Classcodes objects</a>
@@ -139,14 +139,14 @@
     </div>
 
     <pre class="usage"><span class='fu'>categorize</span>(
-  <span class='no'>data</span>,
-  <span class='no'>codedata</span>,
-  <span class='no'>cc</span>,
-  <span class='no'>id</span>,
-  <span class='kw'>index</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>sort</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>codify_args</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(),
-  <span class='kw'>cc_args</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>()
+  <span class='kw'>data</span>,
+  <span class='kw'>codedata</span>,
+  <span class='kw'>cc</span>,
+  <span class='kw'>id</span>,
+  index = <span class='kw'>NULL</span>,
+  sort = <span class='fl'>TRUE</span>,
+  codify_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(),
+  cc_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>()
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -212,7 +212,7 @@ Indices are also included if so specified by the 'index' argument.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Add Elixhauser based on all registered ICD10-codes</span>
-<span class='fu'>categorize</span>(<span class='no'>ex_people</span>, <span class='no'>ex_icd10</span>, <span class='st'>"elixhauser"</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"name"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt;                           name      event congestive heart failure
+<span class='fu'>categorize</span>(<span class='kw'>ex_people</span>, <span class='kw'>ex_icd10</span>, <span class='st'>"elixhauser"</span>, id = <span class='st'>"name"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt;                           name      event congestive heart failure
 #&gt;   1:        Alexander, Bethany 2019-05-19                    FALSE
 #&gt;   2:           Arguello, Tommy 2020-02-14                    FALSE
 #&gt;   3:             Austin, Maeve 2020-02-07                    FALSE
@@ -1337,11 +1337,11 @@ Indices are also included if so specified by the 'index' argument.</p>
 <span class='co'># Add Charlson categorias and two versions of a calculated index.</span>
 <span class='co'># Only include recent hospital visits within 30 days before surgery,</span>
 <span class='co'># and use technical variable names to clearly identify the new columns.</span>
-<span class='fu'>categorize</span>(<span class='no'>ex_people</span>, <span class='no'>ex_icd10</span>, <span class='st'>"charlson"</span>,
-  <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"name"</span>,
-  <span class='kw'>index</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"quan_original"</span>, <span class='st'>"quan_updated"</span>),
-  <span class='kw'>codify_args</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>date</span> <span class='kw'>=</span> <span class='st'>"event"</span>, <span class='kw'>days</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>30</span>, -<span class='fl'>1</span>)),
-  <span class='kw'>cc_args</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>tech_names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>categorize</span>(<span class='kw'>ex_people</span>, <span class='kw'>ex_icd10</span>, <span class='st'>"charlson"</span>,
+  id = <span class='st'>"name"</span>,
+  index = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"quan_original"</span>, <span class='st'>"quan_updated"</span>),
+  codify_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(date = <span class='st'>"event"</span>, days = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='op'>-</span><span class='fl'>30</span>, <span class='op'>-</span><span class='fl'>1</span>)),
+  cc_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(tech_names = <span class='fl'>TRUE</span>)
 )</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt;                           name      event
 #&gt;   1:        Alexander, Bethany 2019-05-19
 #&gt;   2:           Arguello, Tommy 2020-02-14

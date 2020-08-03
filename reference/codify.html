@@ -98,7 +98,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Comorbidity.html">Co-morbidity</a>
+      <a href="../articles/Comorbidity.html">Comorbidity</a>
     </li>
     <li>
       <a href="../articles/classcodes.html">Classcodes objects</a>
@@ -138,7 +138,7 @@
     <p>Enhance case data with code data, possibly limited to relevant period.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>codify</span>(<span class='no'>data</span>, <span class='no'>codedata</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"id"</span>, <span class='kw'>date</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>days</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>.copy</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>codify</span>(<span class='kw'>data</span>, <span class='kw'>codedata</span>, id = <span class='st'>"id"</span>, date = <span class='kw'>NULL</span>, days = <span class='kw'>NULL</span>, .copy = <span class='fl'>NA</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -207,7 +207,7 @@ but the object will be changed by reference.</p></td>
 <code><a href='index_fun.html'>index_fun</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>codify</span>(<span class='no'>ex_people</span>, <span class='no'>ex_icd10</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"name"</span>, <span class='kw'>date</span> <span class='kw'>=</span> <span class='st'>"event"</span>, <span class='kw'>days</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(-<span class='fl'>365</span>, <span class='fl'>0</span>))</div><div class='output co'>#&gt;                    name       date  code_date    code  hdia in_period
+    <pre class="examples"><div class='input'><span class='fu'>codify</span>(<span class='kw'>ex_people</span>, <span class='kw'>ex_icd10</span>, id = <span class='st'>"name"</span>, date = <span class='st'>"event"</span>, days = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='op'>-</span><span class='fl'>365</span>, <span class='fl'>0</span>))</div><div class='output co'>#&gt;                    name       date  code_date    code  hdia in_period
 #&gt;   1: Alexander, Bethany 2019-05-19 2019-04-08 S62126K FALSE      TRUE
 #&gt;   2: Alexander, Bethany 2019-05-19 2019-05-13  I70718 FALSE      TRUE
 #&gt;   3:    Arguello, Tommy 2020-02-14 2019-02-25 S32464D FALSE      TRUE

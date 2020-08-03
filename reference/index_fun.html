@@ -101,7 +101,7 @@ superior classes if index specified with argument index." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Comorbidity.html">Co-morbidity</a>
+      <a href="../articles/Comorbidity.html">Comorbidity</a>
     </li>
     <li>
       <a href="../articles/classcodes.html">Classcodes objects</a>
@@ -144,13 +144,13 @@ Index weights for subordinate hierarchical classes
 superior classes if index specified with argument <code>index</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>index</span>(<span class='no'>classified</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>index</span>(<span class='kw'>classified</span>, <span class='kw'>...</span>)
 
 <span class='co'># S3 method for data.frame</span>
-<span class='fu'>index</span>(<span class='no'>classified</span>, <span class='no'>...</span>)
+<span class='fu'>index</span>(<span class='kw'>classified</span>, <span class='kw'>...</span>)
 
 <span class='co'># S3 method for matrix</span>
-<span class='fu'>index</span>(<span class='no'>classified</span>, <span class='kw'>index</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>cc</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>index</span>(<span class='kw'>classified</span>, index = <span class='kw'>NULL</span>, cc = <span class='kw'>NULL</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -191,15 +191,14 @@ and/or if index calculated without weights.</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'># Calculate Elixhauser comorbidity index</span>
-<span class='no'>cl</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='classify.html'>classify</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"C80"</span>, <span class='st'>"I20"</span>), <span class='st'>"elixhauser"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='fu'>index</span>(<span class='no'>cl</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; <span class='message'>index calculated as number of relevant categories</span></div><div class='output co'>#&gt; C80 I20 
+<span class='kw'>cl</span> <span class='op'>&lt;-</span> <span class='fu'><a href='classify.html'>classify</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"C80"</span>, <span class='st'>"I20"</span>), <span class='st'>"elixhauser"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='fu'>index</span>(<span class='kw'>cl</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; <span class='message'>index calculated as number of relevant categories</span></div><div class='output co'>#&gt; C80 I20 
 #&gt;   1   0 </div><div class='input'>
 <span class='co'># Calculate Charlson-index using original weights</span>
-<span class='no'>cl</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='classify.html'>classify</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"C80"</span>, <span class='st'>"I21"</span>), <span class='st'>"charlson"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='fu'>index</span>(<span class='no'>cl</span>, <span class='st'>"quan_original"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; C80 I21 
+<span class='kw'>cl</span> <span class='op'>&lt;-</span> <span class='fu'><a href='classify.html'>classify</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"C80"</span>, <span class='st'>"I21"</span>), <span class='st'>"charlson"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='fu'>index</span>(<span class='kw'>cl</span>, <span class='st'>"quan_original"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; C80 I21 
 #&gt;   6   1 </div><div class='input'>
 <span class='co'># Calculate Charlson-index using updated weights</span>
-<span class='no'>cl</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='classify.html'>classify</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"C80"</span>, <span class='st'>"I21"</span>), <span class='st'>"charlson"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='fu'>index</span>(<span class='no'>cl</span>, <span class='st'>"quan_updated"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; C80 I21 
-#&gt;   6   0 </div><div class='input'>
-</div></pre>
+<span class='kw'>cl</span> <span class='op'>&lt;-</span> <span class='fu'><a href='classify.html'>classify</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"C80"</span>, <span class='st'>"I21"</span>), <span class='st'>"charlson"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='fu'>index</span>(<span class='kw'>cl</span>, <span class='st'>"quan_updated"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; C80 I21 
+#&gt;   6   0 </div><div class='input'></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
