@@ -211,56 +211,66 @@
 </tr>
 </tbody>
 </table>
-<p>Let’s generate some sample ATC data where each patient can have zero, one, or several codes prescribed at different dates:</p>
+<p>Let’s generate some sample ATC data for 90 of the 100 individuals, such that each patient can have zero (the excluded 10 individuals), one, or several codes prescribed at different dates:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">123</span>)
 <span class="kw">N</span> <span class="op">&lt;-</span> <span class="fl">10000</span>
 
+<span class="kw">nms</span> <span class="op">&lt;-</span> <span class="kw">ex_people</span><span class="op">$</span><span class="kw">name</span>[<span class="fl">1</span><span class="op">:</span><span class="fl">90</span>]
+
 <span class="kw">ex_atc</span> <span class="op">&lt;-</span> 
   <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
-    id        = <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="kw">ex_people</span><span class="op">$</span><span class="kw">name</span>, <span class="kw">N</span>, replace = <span class="fl">TRUE</span>),
+    id        = <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="kw">nms</span>, <span class="kw">N</span>, replace = <span class="fl">TRUE</span>),
     code      = <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="kw">decoder</span>::<span class="kw"><a href="https://rdrr.io/pkg/decoder/man/atc.html">atc</a></span><span class="op">$</span><span class="kw">key</span>, <span class="kw">N</span>, replace = <span class="fl">TRUE</span>),
     code_date = <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span>(<span class="kw">ex_people</span><span class="op">$</span><span class="kw">event</span>) <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="op">-</span><span class="fl">3650</span><span class="op">:</span><span class="fl">365</span>, <span class="kw">N</span>, replace = <span class="fl">TRUE</span>),
     stringsAsFactors = <span class="fl">FALSE</span>
   )
-<span class="kw">knitr</span>::<span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="kw">ex_atc</span>))
+
+<span class="kw">knitr</span>::<span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="kw">ex_atc</span>[<span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span>(<span class="kw">ex_atc</span><span class="op">$</span><span class="kw">id</span>), ]))
 </pre></div>
 <table class="table">
 <thead><tr class="header">
+<th align="left"></th>
 <th align="left">id</th>
 <th align="left">code</th>
 <th align="left">code_date</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">al-Dawood, Hasan</td>
-<td align="left">QM01AX90</td>
-<td align="left">2012-01-01</td>
-</tr>
-<tr class="even">
-<td align="left">Mendoza, Jessica</td>
-<td align="left">QJ51BA90</td>
-<td align="left">2014-01-26</td>
-</tr>
-<tr class="odd">
-<td align="left">Rice, Jamissa</td>
-<td align="left">QA12CC09</td>
-<td align="left">2019-08-18</td>
-</tr>
-<tr class="even">
+<td align="left">4</td>
 <td align="left">al-Asmar, Abdur Raheem</td>
-<td align="left">QN06BX14</td>
-<td align="left">2016-06-05</td>
-</tr>
-<tr class="odd">
-<td align="left">Bivings, Devin</td>
-<td align="left">QC07E</td>
-<td align="left">2015-04-30</td>
+<td align="left">QI07AA03</td>
+<td align="left">2012-06-14</td>
 </tr>
 <tr class="even">
-<td align="left">Harder, Rio</td>
-<td align="left">B02AA02</td>
-<td align="left">2013-04-30</td>
+<td align="left">9</td>
+<td align="left">al-Asmar, Abdur Raheem</td>
+<td align="left">A12AA09</td>
+<td align="left">2015-07-25</td>
+</tr>
+<tr class="odd">
+<td align="left">83</td>
+<td align="left">al-Asmar, Abdur Raheem</td>
+<td align="left">QP51AJ01</td>
+<td align="left">2018-04-20</td>
+</tr>
+<tr class="even">
+<td align="left">169</td>
+<td align="left">al-Asmar, Abdur Raheem</td>
+<td align="left">R07A</td>
+<td align="left">2014-01-23</td>
+</tr>
+<tr class="odd">
+<td align="left">211</td>
+<td align="left">al-Asmar, Abdur Raheem</td>
+<td align="left">M01AB07</td>
+<td align="left">2018-01-14</td>
+</tr>
+<tr class="even">
+<td align="left">593</td>
+<td align="left">al-Asmar, Abdur Raheem</td>
+<td align="left">QG01AA99</td>
+<td align="left">2015-03-06</td>
 </tr>
 </tbody>
 </table>
@@ -385,13 +395,7 @@
 <td align="left">Alexander, Bethany</td>
 <td align="left">2019-08-19</td>
 <td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
 <td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
@@ -399,10 +403,9 @@
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">TRUE</td>
+<td align="left">TRUE</td>
 <td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
+<td align="left">TRUE</td>
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
@@ -413,8 +416,6 @@
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
@@ -423,37 +424,30 @@
 <td align="left">FALSE</td>
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="right">12</td>
-<td align="right">9</td>
+<td align="right">14</td>
 </tr>
 <tr class="even">
 <td align="left">Arguello, Tommy</td>
 <td align="left">2020-05-16</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
@@ -465,16 +459,6 @@
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
@@ -482,14 +466,54 @@
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">TRUE</td>
-<td align="right">12</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">18</td>
 <td align="right">8</td>
 </tr>
 <tr class="odd">
 <td align="left">Austin, Maeve</td>
 <td align="left">2020-05-09</td>
 <td align="left">FALSE</td>
+<td align="left">TRUE</td>
 <td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
@@ -502,20 +526,6 @@
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
@@ -523,7 +533,7 @@
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
-<td align="left">TRUE</td>
+<td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
@@ -533,91 +543,75 @@
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="right">9</td>
-<td align="right">8</td>
+<td align="left">TRUE</td>
+<td align="right">13</td>
+<td align="right">10</td>
 </tr>
 <tr class="even">
 <td align="left">Ball, Rockelle</td>
 <td align="left">2019-09-26</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="right">12</td>
-<td align="right">11</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">Bean, Haileigh</td>
 <td align="left">2019-10-25</td>
 <td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
 <td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
 <td align="left">TRUE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">TRUE</td>
@@ -630,6 +624,16 @@
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
@@ -638,8 +642,14 @@
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
-<td align="right">3</td>
-<td align="right">7</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">11</td>
+<td align="right">9</td>
 </tr>
 <tr class="even">
 <td align="left">Beehler, Kelly</td>
@@ -651,28 +661,10 @@
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">TRUE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
-<td align="left">TRUE</td>
-<td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
@@ -683,6 +675,7 @@
 <td align="left">FALSE</td>
 <td align="left">TRUE</td>
 <td align="left">FALSE</td>
+<td align="left">TRUE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
@@ -690,12 +683,29 @@
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
 <td align="left">FALSE</td>
-<td align="right">4</td>
-<td align="right">12</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">-2</td>
+<td align="right">3</td>
 </tr>
 </tbody>
 </table>
-<p>The first two columns are identical to <code>ex_people</code> (except row order, which could be preserved by <code>sort = FALSE</code>). Additional columns indicate whether patients had any of the individual co-morbidities identified by Rx Risk V. The last columns contain summarized index values (weighted sums of individual co-morbidities). Let’s summarize the distribution of <code>index_pratt</code> (<a href="https://dx.doi.org/10.1136/bmjopen-2017-021122">Pratt et al.</a>):</p>
+<p>The first two columns are identical to <code>ex_people</code> (except row order, which could be preserved by <code>sort = FALSE</code>). Additional columns indicate whether patients had any of the individual co-morbidities identified by Rx Risk V. Patients without any ATC data have <code>NA</code> values but, which might be substituted with <code>FALSE</code>. The last columns contain summarized index values (weighted sums of individual co-morbidities). Let’s summarize the distribution of <code>index_pratt</code> (<a href="https://dx.doi.org/10.1136/bmjopen-2017-021122">Pratt et al.</a>):</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="kw">hist2</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">x</span>) <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span>(<span class="kw">x</span><span class="op">$</span><span class="kw">index_pratt</span>, main = <span class="kw">NULL</span>, xlab = <span class="st">"RxRisk V"</span>, col = <span class="st">"lightblue"</span>)
 <span class="fu">hist2</span>(<span class="kw">default</span>)
@@ -756,33 +766,33 @@
 <tbody>
 <tr class="odd">
 <td align="left">al-Dawood, Hasan</td>
-<td align="left">j2F-QM01AX90H5</td>
-<td align="left">2012-01-01</td>
+<td align="left">c6M-QC01BD02B8</td>
+<td align="left">2012-06-29</td>
 </tr>
 <tr class="even">
 <td align="left">Mendoza, Jessica</td>
-<td align="left">c5V?QJ51BA90S5</td>
-<td align="left">2014-01-26</td>
+<td align="left">q0V?C05AA05Y9</td>
+<td align="left">2017-01-07</td>
 </tr>
 <tr class="odd">
 <td align="left">Rice, Jamissa</td>
-<td align="left">g9M.QA12CC09B0</td>
-<td align="left">2019-08-18</td>
+<td align="left">d2C-L01XC29X9</td>
+<td align="left">2017-05-28</td>
 </tr>
 <tr class="even">
 <td align="left">al-Asmar, Abdur Raheem</td>
-<td align="left">c6S-QN06BX14N9</td>
-<td align="left">2016-06-05</td>
+<td align="left">z4A-QI07AA03M4</td>
+<td align="left">2012-06-14</td>
 </tr>
 <tr class="odd">
 <td align="left">Bivings, Devin</td>
-<td align="left">b6O-QC07EF1</td>
-<td align="left">2015-04-30</td>
+<td align="left">q0C-QD06BB11R3</td>
+<td align="left">2014-01-10</td>
 </tr>
 <tr class="even">
 <td align="left">Harder, Rio</td>
-<td align="left">c2L?B02AA02F4</td>
-<td align="left">2013-04-30</td>
+<td align="left">e3T.M01CCX7</td>
+<td align="left">2014-10-30</td>
 </tr>
 </tbody>
 </table>
@@ -790,7 +800,7 @@
 
 <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="fu"><a href="../reference/categorize.html">categorize</a></span>(<span class="kw">ex_people</span>, <span class="kw">ex_atc</span>, <span class="kw">rxriskv</span>, id = <span class="st">"name"</span>)<span class="op">$</span><span class="kw">index_pratt</span>)
 <span class="co">#&gt; Classification based on: regex_pratt</span>
-<span class="co">#&gt; [1] 0</span>
+<span class="co">#&gt; [1] NA</span>
 </pre></div>
 <p>Thus, no codes are recognized (every one got index = 0). By default, codes are only recognized if found immediate in its corresponding column. This can be controlled by arguments <code>start</code> and <code>stop</code> specified via <code>cc_args</code>:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit">
