@@ -98,9 +98,6 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/Comorbidity.html">Comorbidity</a>
-    </li>
-    <li>
       <a href="../articles/classcodes.html">Classcodes objects</a>
     </li>
   </ul>
@@ -163,12 +160,14 @@
       <td><p>name of column with regular expressions to use for
 classification, either with or without prefix <code>regex_</code>.
 <code>NULL</code> (default) uses the first classcodes column with prefix "regex".
-This should be a sensible choice for default classcodes object included in the package.</p></td>
+This should be a sensible choice for default classcodes object included
+in the package.</p></td>
     </tr>
     <tr>
       <th>start, stop</th>
-      <td><p>should codes start/end with the specified regular expressions?
-If <code>TRUE</code>, column "regex" is prefixed/suffixed by "^"/"$".</p></td>
+      <td><p>should codes start/end with the specified regular
+expressions? If <code>TRUE</code>, column "regex" is prefixed/suffixed
+by "^"/"$".</p></td>
     </tr>
     <tr>
       <th>tech_names</th>
