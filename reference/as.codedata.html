@@ -132,7 +132,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Make structured code data set based on <code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code>.</p>
+    <p>Make structured code data set based on <a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>as.codedata</span>(<span class='kw'>x</span>, <span class='kw'>...</span>, .setkeys = <span class='fl'>TRUE</span>, alnum = <span class='fl'>FALSE</span>)
@@ -144,8 +144,8 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p><code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code> with columns "id" (character), "code",
-and optional "code_date" (Date).</p></td>
+      <td><p><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> with columns <code>id</code> (character), <code>code</code>,
+and optional <code>code_date</code> (Date).</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -167,26 +167,29 @@ and optional "code_date" (Date).</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>data.table</code> with columns: "id" (character), "code" and
-  optionally "code_date" (Date)
-  Possible additional columns from <code>x</code> are preserved.</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p>npr2codedata</p></div>
+    <p>data.table with columns: <code>id</code> (character), <code>code</code> and
+optionally <code>code_date</code> (Date)
+Possible additional columns from <code>x</code> are preserved.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='kw'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
-  id = <span class='st'>"1"</span>,
-  code_date = <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"2017-02-02"</span>),
-  code = <span class='st'>"a"</span>,
-  stringsAsFactors = <span class='fl'>FALSE</span>
-)
+<span class='kw'>x</span> <span class='op'>&lt;-</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
+    id               = <span class='st'>"1"</span>,
+    code_date        = <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"2017-02-02"</span>),
+    code             = <span class='st'>"a"</span>,
+    stringsAsFactors = <span class='fl'>FALSE</span>
+  )
 <span class='fu'>as.codedata</span>(<span class='kw'>x</span>)</div><div class='output co'>#&gt;    id  code_date code
 #&gt; 1:  1 2017-02-02    a</div><div class='input'>
 <span class='co'># Drop dates outside specified limits</span>
-<span class='kw'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(id = <span class='st'>"2"</span>, code_date = <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"3017-02-02"</span>), code = <span class='st'>"b"</span>,
-  stringsAsFactors = <span class='fl'>FALSE</span>)
+<span class='kw'>y</span> <span class='op'>&lt;-</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
+    id               = <span class='st'>"2"</span>,
+    code_date        = <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"3017-02-02"</span>),
+    code             = <span class='st'>"b"</span>,
+    stringsAsFactors = <span class='fl'>FALSE</span>
+  )
 <span class='kw'>z</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span>(<span class='kw'>x</span>, <span class='kw'>y</span>)
 <span class='fu'>as.codedata</span>(<span class='kw'>z</span>)</div><div class='output co'>#&gt;    id  code_date code
 #&gt; 1:  1 2017-02-02    a</div><div class='input'></div></pre>

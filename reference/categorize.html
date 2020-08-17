@@ -41,10 +41,10 @@
 
 <meta property="og:title" content="Categorize cases based on external data and classification scheme — categorize" />
 <meta property="og:description" content="This is the main function of the package, which relies of a triad of objects:
-(1) data) with unit id:s and possible dates of interest;
+(1) data with unit id:s and possible dates of interest;
 (2) codedata for corresponding
 units and with optional dates of interest and;
-(3) a classification scheme ('classcodes' object; cc) with regular
+(3) a classification scheme (classcodes object; cc) with regular
 expressions to identify and categorize relevant codes." />
 
 
@@ -138,10 +138,10 @@ expressions to identify and categorize relevant codes." />
 
     <div class="ref-description">
     <p>This is the main function of the package, which relies of a triad of objects:
-(1) <code>data</code>) with unit id:s and possible dates of interest;
+(1) <code>data</code> with unit id:s and possible dates of interest;
 (2) <code>codedata</code> for corresponding
 units and with optional dates of interest and;
-(3) a classification scheme ('classcodes' object; <code>cc</code>) with regular
+(3) a classification scheme (<code><a href='classcodes.html'>classcodes</a></code> object; <code>cc</code>) with regular
 expressions to identify and categorize relevant codes.</p>
     </div>
 
@@ -164,11 +164,11 @@ expressions to identify and categorize relevant codes.</p>
       <td><p>data frame with mandatory id column
 (identified by argument <code>id</code>),
 and semi-optional column with date of interest
-(identified by argument <code>date</code> if <code>days != NULL</code>).</p></td>
+(identified by argument <code>date</code> if  <code>days != NULL</code>).</p></td>
     </tr>
     <tr>
       <th>codedata</th>
-      <td><p>external code data (see <code><a href='as.codedata.html'>as.codedata</a></code>)</p></td>
+      <td><p>external code data (see <code><a href='as.codedata.html'>as.codedata()</a></code>)</p></td>
     </tr>
     <tr>
       <th>cc</th>
@@ -180,31 +180,29 @@ and semi-optional column with date of interest
     </tr>
     <tr>
       <th>index</th>
-      <td><p>control possible inclusion of index vector.
-Set to <code>FALSE</code> if no index should be calculated, otherwise a value
-passed to argument
-<code>by</code> in function <code><a href='index_fun.html'>index</a></code>. It is possible to
-include several indices as a character vector.
-<code>NULL</code> will include all available indices as specified by the
-"indices" attribute of the <code>cc</code> object (<code><a href='https://rdrr.io/r/base/attr.html'>attr(cc, "indices")</a></code>)</p></td>
+      <td><p>A character vector of index values to calculate (passed to argument
+<code>by</code> in function <code><a href='index_fun.html'>index()</a></code>.</p>
+<p>Set to <code>FALSE</code> if no index should be calculated.</p>
+<p>If <code>NULL</code>, the default, all available indices (from <code><a href='https://rdrr.io/r/base/attr.html'>attr(cc, "indices")</a></code>
+are provided. A message lists the indices so that you can check they're
+correct; suppress the message by supplying <code>index</code> explicitly.</p></td>
     </tr>
     <tr>
       <th>sort</th>
       <td><p>logical. Should output be sorted by the 'id' column?
-(This could effect computational speed for large data sets.)
+(This could affect computational speed for large data sets.
 Data is sorted by 'id' internally. It is therefore faster to keep the
 output sorted this way, but this might be inconvenient if the original
-order was intended. Set to <code>FALSE</code> in order to not shuffle the
-input data.</p></td>
+order was important.)</p></td>
     </tr>
     <tr>
       <th>codify_args</th>
-      <td><p>List of named arguments passed to <code><a href='codify.html'>codify</a></code></p></td>
+      <td><p>List of named arguments passed to <code><a href='codify.html'>codify()</a></code></p></td>
     </tr>
     <tr>
       <th>cc_args</th>
       <td><p>List with named arguments passed to
-<code><a href='set_classcodes.html'>set_classcodes</a></code></p></td>
+<code><a href='set_classcodes.html'>set_classcodes()</a></code></p></td>
     </tr>
     </table>
 
@@ -212,19 +210,18 @@ input data.</p></td>
 
     <p>Object of class <code>data.table</code> made from <code>data</code> combined with
 logical columns indicating membership of categories identified by the
-<code>classcodes</code> object (the <code>cc</code> argument).
-Indices are also included if specified by the 'index' argument.</p>
+<code>classcodes</code> object (the <code>cc</code></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The function combines the three underlying steps performed by
-<code><a href='codify.html'>codify</a></code>, <code><a href='classify.html'>classify</a></code> and <code><a href='index_fun.html'>index_fun</a></code>.
- Relevant arguments are passed forward to those functions by
- <code>codify_args</code> and <code>cc_args</code>.</p>
+<code><a href='codify.html'>codify()</a></code>, <code><a href='classify.html'>classify()</a></code> and <code><a href='index_fun.html'>index()</a></code>.
+Relevant arguments are passed to those functions by
+<code>codify_args</code> and <code>cc_args</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>For more details see the help vignette:
-<code><a href='../articles/coder.html'>vignette("coder", package = "coder")</a></code> and the package website
-<a href='https://eribul.github.io/coder'>https://eribul.github.io/coder</a></p>
+<code><a href='../articles/coder.html'>vignette("coder", package = "coder")</a></code> and the
+package website <a href='https://eribul.github.io/coder'>https://eribul.github.io/coder</a>.</p>
 <p>Other verbs: 
 <code><a href='classify.html'>classify</a>()</code>,
 <code><a href='codify.html'>codify</a>()</code>,

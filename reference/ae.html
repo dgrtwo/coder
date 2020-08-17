@@ -42,7 +42,7 @@ and KVA codes — ae • coder</title>
 
 <meta property="og:title" content="Classcodes for adverse events after knee and hip arthroplasty based on ICD-10
 and KVA codes — ae" />
-<meta property="og:description" content="classcodes objects to use with classify" />
+<meta property="og:description" content="A classcodes object to use with classify()." />
 
 
 
@@ -135,7 +135,7 @@ and KVA codes</h1>
     </div>
 
     <div class="ref-description">
-    <p><code><a href='classcodes.html'>classcodes</a></code> objects to use with <code><a href='classify.html'>classify</a></code></p>
+    <p>A <code><a href='classcodes.html'>classcodes</a></code> object to use with <code><a href='classify.html'>classify()</a></code>.</p>
     </div>
 
     <pre class="usage"><span class='kw'>knee_ae</span>
@@ -146,14 +146,14 @@ and KVA codes</h1>
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>Data frame with 3 columns:</p><dl>
-  <dt>group</dt><dd><p>Different types of adverse events (see reference section)</p></dd>
-  <dt>regex_icd10</dt><dd><p>regular expressions identifying ICD-10 codes for each
-    group</p></dd>
- <dt>regex_icd10_fracture</dt><dd><p>regular expressions for fracture patients.
-   Essentially the same as <code>regex</code> but with some additional codes for
-   group "DM1 other"</p></dd>
- <dt>regex_kva</dt><dd><p>regular expressions identifying KVA codes</p></dd>
-  <dt>condition</dt><dd><p>special conditions are used, see below.</p></dd>
+<dt>group</dt><dd><p>Different types of adverse events (see reference section)</p></dd>
+<dt>regex_icd10</dt><dd><p>regular expressions identifying ICD-10 codes for each
+group</p></dd>
+<dt>regex_icd10_fracture</dt><dd><p>regular expressions for fracture patients.
+Essentially the same as <code>regex</code> but with some additional codes for
+group "DM1 other"</p></dd>
+<dt>regex_kva</dt><dd><p>regular expressions identifying KVA codes</p></dd>
+<dt>condition</dt><dd><p>special conditions are used, see below.</p></dd>
 
 </dl>
 
@@ -180,24 +180,24 @@ some additional codes for DM 1 (N300, N308, N309 and N390).</p>
 Those require non-standard modifications
 of the classcodes data prior to categorization.</p>
 <dl>
- <dt>hbdia1_hdia</dt><dd><p><code>TRUE</code> if the code was
- given as any type of diagnose during hospital visit for index operation,
- or as main diagnose for later visits, otherwise <code>FALSE</code></p></dd>
- <dt>late_hdia</dt><dd><p><code>TRUE</code> if the code was
- given as main diagnose at a later visit after the index operation,
- otherwise <code>FALSE</code></p></dd>
- <dt>post_op</dt><dd><p><code>TRUE</code> if the code was
- given at a later visit after the index operation, otherwise <code>FALSE</code></p></dd>
+<dt>hbdia1_hdia</dt><dd><p><code>TRUE</code> if the code was
+given as any type of diagnose during hospital visit for index operation,
+or as main diagnose for later visits, otherwise <code>FALSE</code></p></dd>
+<dt>late_hdia</dt><dd><p><code>TRUE</code> if the code was
+given as main diagnose at a later visit after the index operation,
+otherwise <code>FALSE</code></p></dd>
+<dt>post_op</dt><dd><p><code>TRUE</code> if the code was
+given at a later visit after the index operation, otherwise <code>FALSE</code></p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Magneli M, Unbeck M, Rogmark C, Rolfson O, Hommel A, Samuelsson B, et al.
-    Validation of adverse events after hip arthroplasty:
-    a Swedish multi-centre cohort study.
-    BMJ Open. 2019 Mar 7;9(3):e023773.
-    Available from: <a href='http://www.ncbi.nlm.nih.gov/pubmed/30850403'>http://www.ncbi.nlm.nih.gov/pubmed/30850403</a></p>
+Validation of adverse events after hip arthroplasty:
+a Swedish multi-centre cohort study.
+BMJ Open. 2019 Mar 7;9(3):e023773.
+Available from: <a href='http://www.ncbi.nlm.nih.gov/pubmed/30850403'>http://www.ncbi.nlm.nih.gov/pubmed/30850403</a></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>hip_ae_hailer</p>

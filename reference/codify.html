@@ -142,12 +142,12 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p><code><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></code> with at least case id, and optional
+      <td><p><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> with at least case id, and optional
 date of interest</p></td>
     </tr>
     <tr>
       <th>codedata</th>
-      <td><p>output from <code><a href='as.codedata.html'>as.codedata</a></code>.</p></td>
+      <td><p>output from <code><a href='as.codedata.html'>as.codedata()</a></code>.</p></td>
     </tr>
     <tr>
       <th>id, date</th>
@@ -161,7 +161,7 @@ of relevant days relative to <code>date</code>. See "Relevant period".</p></td>
     </tr>
     <tr>
       <th>.copy</th>
-      <td><p>Should the object be copied internally by <code>copy</code>?
+      <td><p>Should the object be copied internally by <code><a href='https://Rdatatable.gitlab.io/data.table/reference/copy.html'>data.table::copy()</a></code>?
 <code>NA</code> (by default) means that objects smaller than 1 GB are copied.
 If the size is larger, the argument must be set explicitly. Set <code>TRUE</code>
 to make copies regardless of object size. This is recommended if enough RAM
@@ -179,23 +179,24 @@ but the object will be changed by reference.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>data</code> (coerced to <code>data.table</code>) with additional columns:
-  <code>code, code_date</code>: left joined from <code>codedata</code> or <code>NA</code>
-  if no match within period. <code>in_period</code>: Boolean indicator if the case
-  had at least one code within the specified period.</p>
+    <p><code>data</code> (coerced to <code><a href='https://Rdatatable.gitlab.io/data.table/reference/data.table.html'>data.table::data.table()</a></code> with additional columns:
+<code>code, code_date</code>: left joined from <code>codedata</code> or <code>NA</code>
+if no match within period. <code>in_period</code>: Boolean indicator if the case
+had at least one code within the specified period.</p>
 <p>The output has one row for each combination of "id" from <code>data</code> and
-  "code" from <code>codedata</code>. Rows from <code>data</code> might be repeated
-   accordingly.</p>
+"code" from <code>codedata</code>. Rows from <code>data</code> might be repeated
+accordingly.</p>
     <h2 class="hasAnchor" id="relevant-period"><a class="anchor" href="#relevant-period"></a>Relevant period</h2>
 
     
 
 <p>Some examples for argument <code>days</code>:</p><ul>
 <li><p><code><a href='https://rdrr.io/r/base/c.html'>c(-365, -1)</a></code>: window of one year prior to the <code>date</code>
-      column of <code>data</code>.            Useful for patient co-morbidity.</p></li>
+column of <code>data</code>. Useful for patient co-morbidity.</p></li>
 <li><p><code><a href='https://rdrr.io/r/base/c.html'>c(1, 30)</a></code>: window of 30 days after <code>date</code>.
-      Useful for adverse events after a surgical procedure.</p></li>
+Useful for adverse events after a surgical procedure.</p></li>
 <li><p><code><a href='https://rdrr.io/r/base/c.html'>c(-Inf, Inf)</a></code>: no limitation on non missing dates.</p></li>
+<li><p></p></li>
 <li><p><code>NULL</code>: no time limitation at all.</p></li>
 </ul>
 
