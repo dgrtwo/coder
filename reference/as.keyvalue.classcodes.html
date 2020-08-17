@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Make keyvalue object from classcodes object — as.keyvalue.classcodes" />
-<meta property="og:description" content="Make keyvalue object from classcodes object" />
+<meta property="og:description" content="S3-method for generic decoder::as.keyvalue()" />
 
 
 
@@ -132,7 +132,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Make keyvalue object from classcodes object</p>
+    <p>S3-method for generic <code><a href='https://rdrr.io/pkg/decoder/man/keyvalue.html'>decoder::as.keyvalue()</a></code></p>
     </div>
 
     <pre class="usage"><span class='co'># S3 method for classcodes</span>
@@ -153,7 +153,7 @@ or a name (character vector of length one) keyvalue object from package
     </tr>
     <tr>
       <th>...</th>
-      <td><p>arguments passed to <code><a href='summary.classcodes.html'>summary.classcodes</a></code></p></td>
+      <td><p>arguments passed to <code><a href='summary.classcodes.html'>summary.classcodes()</a></code></p></td>
     </tr>
     </table>
 
@@ -164,6 +164,11 @@ or a name (character vector of length one) keyvalue object from package
 <code><a href='filter_dates.html'>filter_dates</a>()</code>,
 <code><a href='spss2date.html'>spss2date</a>()</code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># List all codes with corresponding classes as recognized by the Elixhauser</span>
+<span class='co'># comorbidity classification according to the Swedish version of the</span>
+<span class='co'># international classification of diseases version 10 (ICD-10-SE)</span>
+<span class='fu'>as.keyvalue</span>(<span class='kw'>elixhauser</span>, <span class='st'>"icd10se"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in as.keyvalue(elixhauser, "icd10se"): could not find function "as.keyvalue"</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
