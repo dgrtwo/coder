@@ -97,11 +97,19 @@
 
     
     
-<p>A typical use case of the <code>coder</code> package would consider patient data and comorbidity as described in the package <a href="https://eribul.github.io/coder/">readme</a>.</p>
-<p>The concept of comorbidity is often attributed to <a href="https://doi.org/10.1016/0021-9681(70)90054-8">Feinstein</a>:</p>
-<blockquote>
-<p>[T]he term co-morbidity will refer to any distinct additional clinical entity that has existed or that may occur during the clinical course of a patient who has the index disease under study.</p>
-</blockquote>
+<div id="introduction" class="section level1">
+<h1 class="hasAnchor">
+<a href="#introduction" class="anchor"></a>Introduction</h1>
+<div id="triad-of-objects" class="section level2">
+<h2 class="hasAnchor">
+<a href="#triad-of-objects" class="anchor"></a>Triad of objects</h2>
+<p>Functions of the package relies on a triad of objects:</p>
+<ol style="list-style-type: decimal">
+<li>Case data with unit id:s and possible dates of interest</li>
+<li>External code data for corresponding units in (1) and with optional dates of interest and</li>
+<li>A classification scheme (‘classcodes’ object) with regular expressions to identify and categorize relevant codes from (2).</li>
+</ol>
+<p>It is easy to introduce new classification schemes (‘classcodes’ objects) or to use default schemes included in the package. Use cases includes patient categorization based on comorbidity indices such as Charlson, Elixhauser, RxRisk V, or the co-morbidity-polypharmacy score (CPS), as well as adverse events after hip and knee arthroplasty surgery.</p>
 <p>The <code>coder</code> package contains some default classcodes objects for co-morbidity:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
 
@@ -152,10 +160,35 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div id="triad-of-functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#triad-of-functions" class="anchor"></a>Triad of functions</h2>
+<p>There are three important functions to control the intended work flow of the package:</p>
+<ol style="list-style-type: lower-roman">
+<li>
+<code><a href="../reference/codify.html">codify()</a></code> will merge object (1) and (2) for a coded data set of the intended format. If optional dates are specified, those will be used to construct time windows in order to filter out only the important dates (i.e. comorbidity during one year before surgery or adverse events 90 days after).</li>
+<li>
+<code><a href="../reference/classify.html">classify()</a></code> will then use the coded data and classify it using the <code>classcodes</code> object (3) (i.e. to code comorbidity data by the Charlson or Elixhauser comorbidity classifications, see below).</li>
+<li>
+<code><a href="../reference/index_fun.html">index()</a></code> is a third optional step to summarize the individual <code>classcodes</code> categories to a (possibly weighted) index sum for each coded item (i.e. to calculate the Charlson comorbidity index for each patient).</li>
+</ol>
+<p>Those steps could be performed explicitly as <code>codify() %&gt;% classify() %&gt;% index()</code> or implicitly by the main function <code><a href="../reference/categorize.html">categorize()</a></code> combining all steps automatically.</p>
+</div>
+</div>
+<div id="comorbidity-use-case" class="section level1">
+<h1 class="hasAnchor">
+<a href="#comorbidity-use-case" class="anchor"></a>Comorbidity use case</h1>
+<p>A typical use case of the <code>coder</code> package would consider patient data and comorbidity as described in the package <a href="https://eribul.github.io/coder/">readme</a>.</p>
+<p>The concept of comorbidity is often attributed to <a href="https://doi.org/10.1016/0021-9681(70)90054-8">Feinstein</a>:</p>
+<blockquote>
+<p>[T]he term co-morbidity will refer to any distinct additional clinical entity that has existed or that may occur during the clinical course of a patient who has the index disease under study.</p>
+</blockquote>
+</div>
 <div id="charlson-and-elixhauser" class="section level1">
 <h1 class="hasAnchor">
 <a href="#charlson-and-elixhauser" class="anchor"></a>Charlson and Elixhauser</h1>
-<p>The <a href="https://doi.org/10.1016/0021-9681(87)90171-8">Charlson</a> and <a href="https://www.jstor.org/stable/3766985">Elixhauser</a> co-morbidity indices are two examples used in medical research. Each index consist of several medical conditions, possibly summarized by a (weighted) index. Each condition is defined by a set of medical codes, such as described by <a href="https://dx.doi.org/10.1097/01.mlr.0000182534.19832.83">Quan et al.</a> and many others. Different versions of the International Classification of Diseases (ICD) codes are often used.</p>
+<p>The <a href="https://doi.org/10.1016/0021-9681(87)90171-8">Charlson</a> and <a href="https://www.jstor.org/stable/3766985">Elixhauser</a> comorbidity indices are two examples used in medical research. Each index consist of several medical conditions, possibly summarized by a (weighted) index. Each condition is defined by a set of medical codes, such as described by <a href="https://dx.doi.org/10.1097/01.mlr.0000182534.19832.83">Quan et al.</a> and many others. Different versions of the International Classification of Diseases (ICD) codes are often used.</p>
 <p>The <code>coder</code> package provides substantial functionality for both Charlson and Elixhauser, although we will not focus on those indices here, since several other R packages have similar implementations as well:</p>
 <ul>
 <li><a href="https://CRAN.R-project.org/package=icd">icd (CRAN)</a></li>
@@ -175,7 +208,7 @@
 <div id="patients" class="section level2">
 <h2 class="hasAnchor">
 <a href="#patients" class="anchor"></a>Patients</h2>
-<p><code>ex_people</code> contains 100 patients (with random names) who received surgery at given (random) dates:</p>
+<p><code>ex_people</code> contains 100 patients (with random names from the <a href="https://centerforassessment.github.io/randomNames/"><code>randomNames</code></a> package) who received surgery at given (random) dates:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
 <span class="kw">knitr</span>::<span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="kw">ex_people</span>))
 </pre></div>
@@ -211,7 +244,7 @@
 </tr>
 </tbody>
 </table>
-<p>Let’s generate some sample ATC data for 90 of the 100 individuals, such that each patient can have zero (the excluded 10 individuals), one, or several codes prescribed at different dates:</p>
+<p>Let’s generate some sample ATC data for 90 of the 100 individuals, such that each patient can have zero (the excluded 10 individuals), one, or several codes prescribed at different dates. The <a href="https://cran.r-project.org/package=decoder"><code>decoder</code> (CRAN)</a> package contains a list of relevant codes to use (<code>decoder::astc</code>). Assume that each ATC code corresponds to (random) prescription dates (<code>code_date</code>) during 10 years before or 1 year after the median date of surgery.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="fl">123</span>)
 <span class="kw">N</span> <span class="op">&lt;-</span> <span class="fl">10000</span>
@@ -705,9 +738,16 @@
 </tr>
 </tbody>
 </table>
-<p>The first two columns are identical to <code>ex_people</code> (except row order, which could be preserved by <code>sort = FALSE</code>). Additional columns indicate whether patients had any of the individual co-morbidities identified by Rx Risk V. Patients without any ATC data have <code>NA</code> values but, which might be substituted with <code>FALSE</code>. The last columns contain summarized index values (weighted sums of individual co-morbidities). Let’s summarize the distribution of <code>index_pratt</code> (<a href="https://dx.doi.org/10.1136/bmjopen-2017-021122">Pratt et al.</a>):</p>
+<p>The first two columns are identical to <code>ex_people</code> (except row order, which could be preserved by <code>sort = FALSE</code>). Additional columns indicate whether patients had any of the individual comorbidities identified by Rx Risk V. Patients without any ATC data (the 10 excluded above) have <code>NA</code> values but, which might be substituted with <code>FALSE</code>. The last columns contain summarized index values (weighted sums of individual comorbidities). Let’s summarize the distribution of <code>index_pratt</code> (<a href="https://dx.doi.org/10.1136/bmjopen-2017-021122">Pratt et al.</a>):</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">hist2</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">x</span>) <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span>(<span class="kw">x</span><span class="op">$</span><span class="kw">index_pratt</span>, main = <span class="kw">NULL</span>, xlab = <span class="st">"RxRisk V"</span>, col = <span class="st">"lightblue"</span>)
+<span class="kw">hist2</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">x</span>) {
+  <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span>(
+    <span class="kw">x</span><span class="op">$</span><span class="kw">index_pratt</span>, 
+    main = <span class="kw">NULL</span>, 
+    xlab = <span class="st">"RxRisk V"</span>, 
+    col  = <span class="st">"lightblue"</span>
+  )
+}
 <span class="fu">hist2</span>(<span class="kw">default</span>)
 </pre></div>
 <p><img src="coder_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
@@ -715,7 +755,7 @@
 <div id="specified-time-window" class="section level1">
 <h1 class="hasAnchor">
 <a href="#specified-time-window" class="anchor"></a>Specified time-window</h1>
-<p>Note however that some prescriptions might have been filed long before surgery, or even after. Those are less relevant for co-morbidities at surgery. We can limit the categorization to a time window of one year prior to surgery.</p>
+<p>Note however that some prescriptions might have been filed long before surgery, or even after. Those are less relevant for comorbidities present at surgery. We can limit the categorization to a time window of one year prior to surgery.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="fu">hist2</span>(
   <span class="fu"><a href="../reference/categorize.html">categorize</a></span>(
@@ -730,23 +770,45 @@
 <div id="alternative-classification" class="section level1">
 <h1 class="hasAnchor">
 <a href="#alternative-classification" class="anchor"></a>Alternative classification</h1>
-<p>Co-morbidities are identified from ATC codes captured by regular expression. Codes identified by <code>regex_pratt</code> are used by default. Let’s use an alternative version adopted from <a href="https://dx.doi.org/10.1016/j.diabres.2009.10.019">Caughey</a>.</p>
+<p>Comorbidities are identified from ATC codes captured by regular expression. Codes identified by <code>regex_pratt</code> are used by default. Let’s use an alternative version adopted from <a href="https://dx.doi.org/10.1016/j.diabres.2009.10.019">Caughey</a>.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit">
 <span class="fu">hist2</span>(
   <span class="fu"><a href="../reference/categorize.html">categorize</a></span>(
-    <span class="kw">ex_people</span>, <span class="kw">ex_atc</span>, <span class="kw">rxriskv</span>, id = <span class="st">"name"</span>, 
+    <span class="kw">ex_people</span>, 
+    <span class="kw">ex_atc</span>, 
+    <span class="kw">rxriskv</span>, 
+    id          = <span class="st">"name"</span>, 
     codify_args = <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(date = <span class="st">"event"</span>, days = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="fl">365</span>, <span class="op">-</span><span class="fl">1</span>)),
-    cc_args = <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(regex = <span class="st">"regex_caughey"</span>)
+    cc_args     = <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(regex = <span class="st">"regex_caughey"</span>)
   )
 )
 </pre></div>
 <p><img src="coder_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
 </div>
+<div id="specified-index" class="section level1">
+<h1 class="hasAnchor">
+<a href="#specified-index" class="anchor"></a>Specified index</h1>
+<p>We did not specify the index above, wherefore all available indices were provided by default. We might go back to Pratts classification scheme (<code>regex_pratt</code>) and only calculate the corresponding index <code>index_pratt</code>. Let´s also perform the three computational steps explicitly instead of using the combining <code>categorize</code> function and tabulate the result</p>
+<div class="sourceCode" id="cb8"><pre class="downlit">
+<span class="kw">`%&gt;%`</span> <span class="op">&lt;-</span> <span class="kw">magrittr</span>::<span class="kw">`%&gt;%`</span>
+<span class="fu"><a href="../reference/codify.html">codify</a></span>(<span class="kw">ex_people</span>, <span class="kw">ex_atc</span>, id = <span class="st">"name"</span>, date = <span class="st">"event"</span>, days = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="fl">365</span>, <span class="op">-</span><span class="fl">1</span>)) <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="../reference/classify.html">classify</a></span>(<span class="kw">rxriskv</span>) <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="../reference/index_fun.html">index</a></span>(<span class="st">"pratt"</span>) <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span>()
+<span class="co">#&gt; Warning in classify.data.frame(., rxriskv): 'classify' does not preserve row</span>
+<span class="co">#&gt; order ('categorize' does!)</span>
+<span class="co">#&gt; Classification based on: regex_pratt</span>
+<span class="co">#&gt; Classification based on: regex_pratt</span>
+<span class="co">#&gt; .</span>
+<span class="co">#&gt; -1  0  1  2  3  5  6  7  8  9 </span>
+<span class="co">#&gt;  8 39  5 23  6  2  4  1  1  1</span>
+</pre></div>
+</div>
 <div id="dirty-code-data" class="section level1">
 <h1 class="hasAnchor">
 <a href="#dirty-code-data" class="anchor"></a>Dirty code data</h1>
 <p>Let’s assume that our code data is not as clean as simulated above.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit">
+<div class="sourceCode" id="cb9"><pre class="downlit">
 <span class="kw">s</span> <span class="op">&lt;-</span> <span class="fu">function</span>(<span class="kw">x</span>) <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="kw">x</span>, <span class="kw">N</span>, replace = <span class="fl">TRUE</span>)
 
 <span class="kw">ex_atc</span><span class="op">$</span><span class="kw">code</span> <span class="op">&lt;-</span> 
@@ -796,14 +858,14 @@
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb9"><pre class="downlit">
+<div class="sourceCode" id="cb10"><pre class="downlit">
 
 <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="fu"><a href="../reference/categorize.html">categorize</a></span>(<span class="kw">ex_people</span>, <span class="kw">ex_atc</span>, <span class="kw">rxriskv</span>, id = <span class="st">"name"</span>)<span class="op">$</span><span class="kw">index_pratt</span>)
 <span class="co">#&gt; Classification based on: regex_pratt</span>
 <span class="co">#&gt; [1] NA</span>
 </pre></div>
 <p>Thus, no codes are recognized (every one got index = 0). By default, codes are only recognized if found immediate in its corresponding column. This can be controlled by arguments <code>start</code> and <code>stop</code> specified via <code>cc_args</code>:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit">
+<div class="sourceCode" id="cb11"><pre class="downlit">
 <span class="fu">hist2</span>(
   <span class="fu"><a href="../reference/categorize.html">categorize</a></span>(
     <span class="kw">ex_people</span>, <span class="kw">ex_atc</span>, <span class="kw">rxriskv</span>, id = <span class="st">"name"</span>,
@@ -812,7 +874,7 @@
 )
 <span class="co">#&gt; Classification based on: regex_pratt</span>
 </pre></div>
-<p><img src="coder_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
+<p><img src="coder_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
 </div>
   </div>
 
