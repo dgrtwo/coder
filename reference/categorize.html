@@ -40,7 +40,12 @@
 
 
 <meta property="og:title" content="Categorize cases based on external data and classification scheme — categorize" />
-<meta property="og:description" content="Categorize cases based on external data and classification scheme" />
+<meta property="og:description" content="This is the main function of the package, which relies of a triad of objects:
+(1) data) with unit id:s and possible dates of interest;
+(2) codedata for corresponding
+units and with optional dates of interest and;
+(3) a classification scheme ('classcodes' object; cc) with regular
+expressions to identify and categorize relevant codes." />
 
 
 
@@ -132,7 +137,12 @@
     </div>
 
     <div class="ref-description">
-    <p>Categorize cases based on external data and classification scheme</p>
+    <p>This is the main function of the package, which relies of a triad of objects:
+(1) <code>data</code>) with unit id:s and possible dates of interest;
+(2) <code>codedata</code> for corresponding
+units and with optional dates of interest and;
+(3) a classification scheme ('classcodes' object; <code>cc</code>) with regular
+expressions to identify and categorize relevant codes.</p>
     </div>
 
     <pre class="usage"><span class='fu'>categorize</span>(
@@ -204,9 +214,18 @@ input data.</p></td>
 logical columns indicating membership of categories identified by the
 <code>classcodes</code> object (the <code>cc</code> argument).
 Indices are also included if specified by the 'index' argument.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The function combines the three underlying steps performed by
+<code><a href='codify.html'>codify</a></code>, <code><a href='classify.html'>classify</a></code> and <code><a href='index_fun.html'>index_fun</a></code>.
+ Relevant arguments are passed forward to those functions by
+ <code>codify_args</code> and <code>cc_args</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other verbs: 
+    <div class='dont-index'><p>For more details see the help vignette:
+<code><a href='../articles/coder.html'>vignette("coder", package = "coder")</a></code> and the package website
+<a href='https://eribul.github.io/coder'>https://eribul.github.io/coder</a></p>
+<p>Other verbs: 
 <code><a href='classify.html'>classify</a>()</code>,
 <code><a href='codify.html'>codify</a>()</code>,
 <code><a href='index_fun.html'>index_fun</a></code></p></div>
