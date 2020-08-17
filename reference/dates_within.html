@@ -145,8 +145,18 @@
       <td><p>Date vector</p></td>
     </tr>
     <tr>
-      <th>from, to</th>
-      <td><p>first and last date of interval to compare with</p></td>
+      <th>from</th>
+      <td><p>first date of interval to compare with (<code>1970-01-01</code> by default,
+since we assume that little data was recorded before 'epoch'; this is a bold
+assumption, however, which should be explicitly re-considered for relevant
+applications)</p></td>
+    </tr>
+    <tr>
+      <th>to</th>
+      <td><p>last date of interval to compare with
+(the current data from <code><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date()</a></code>, by default,
+since we assume that future events are unknown,
+thus indicating coding errors)</p></td>
     </tr>
     </table>
 

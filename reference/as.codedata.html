@@ -150,8 +150,14 @@ and optional <code>code_date</code> (Date).</p></td>
     <tr>
       <th>...</th>
       <td><p>Arguments passed on to <code><a href='dates_within.html'>dates_within</a></code></p><dl>
-    <dt><code>from</code></dt><dd><p>first and last date of interval to compare with</p></dd>
-    <dt><code>to</code></dt><dd><p>first and last date of interval to compare with</p></dd>
+    <dt><code>from</code></dt><dd><p>first date of interval to compare with (<code>1970-01-01</code> by default,
+since we assume that little data was recorded before 'epoch'; this is a bold
+assumption, however, which should be explicitly re-considered for relevant
+applications)</p></dd>
+    <dt><code>to</code></dt><dd><p>last date of interval to compare with
+(the current data from <code><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date()</a></code>, by default,
+since we assume that future events are unknown,
+thus indicating coding errors)</p></dd>
   
 </dl></td>
     </tr>
