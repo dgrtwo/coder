@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">coder</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.10</span>
       </span>
     </div>
 
@@ -140,43 +140,42 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 17 rows and 8 variables:</p><dl>
-<dt>group</dt><dd><p>comorbidity groups</p></dd>
-<dt>description</dt><dd><p>Verbal description of codes as described by
-Deyo et al. (1992).</p></dd>
-<dt>regex_icd10</dt><dd><p>regular expressions identifying ICD-10 codes of each
+    <p>A data frame with 17 rows and 8 variables:</p><ul>
+<li><p><code>group:</code> comorbidity groups</p></li>
+<li><p><code>description:</code> Verbal description of codes as described by
+Deyo et al. (1992).</p></li>
+<li><p><code>regex_icd10:</code> regular expressions identifying ICD-10 codes of each
 group as decoded from Quan et al. 2005. Note that this classification was
 not originally used with all weights! To simply use this classification
 table with weights other than <code>quan_original</code> and <code>quan_updated</code>
 might therefore lead to different results than originally intended for each
-index.</p></dd>
-<dt>regex_icd9cm_deyo</dt><dd><p>Codes from table 1 column "Deyo's ICD-9-CM"
+index.</p></li>
+<li><p><code>regex_icd9cm_deyo:</code>Codes from table 1 column "Deyo's ICD-9-CM"
 in Quan et al. (2005).
-Procedure code 38.48 for peripheral vascular disease ignored.</p></dd>
-<dt>regex_icd9cm_enhanced</dt><dd><p>Codes from table 1 column "Enhanced ICD-9-CM"
-in Quan et al. (2005).</p></dd>
-<dt>regex_icd10_rcs</dt><dd><p>Codification by Armitage (2010).
+Procedure code 38.48 for peripheral vascular disease ignored.</p></li>
+<li><p><code>regex_icd9cm_enhanced:</code> Codes from table 1 column "Enhanced ICD-9-CM"
+in Quan et al. (2005).</p></li>
+<li><p><code>regex_icd10_rcs:</code> Codification by Armitage (2010).
 Note that Peptic ulcer disease is not included.
 All liver diseases (including mild) are included in
 "moderate or severe liver disease".
-All diabetes is included in "diabetes complication"</p></dd>
-<dt>regex_icd8_brusselaers</dt><dd><p>Back translated version from ICD-10 to
+All diabetes is included in "diabetes complication"</p></li>
+<li><p><code>regex_icd8_brusselaers:</code> Back translated version from ICD-10 to
 ICD-8 by Brusselaers et al. (2017).
 "Moderate and severe liver disease" contains all liver disease and
-"diabetes complication" contains all diabetes.</p></dd>
-<dt>regex_icd9_brusselaers</dt><dd><p>Back translated version from ICD-10 to
+"diabetes complication" contains all diabetes.</p></li>
+<li><p><code>regex_icd9_brusselaers:</code> Back translated version from ICD-10 to
 ICD-9 by Brusselaers et al. (2017).
 "Moderate and severe liver disease" contains all liver disease and
-"diabetes complication" contains all diabetes.</p></dd>
-<dt>index_charlson</dt><dd><p>original weights as suggested by Charlson et al.
-(1987)<em></em>
-index_deyo_ramanoweights suggested by Deyo and Romano</p></dd>
-<dt>index_dhoore</dt><dd><p>weights suggested by D'Hoore*</p></dd>
-<dt>index_ghali</dt><dd><p>weights suggested by Ghali*</p></dd>
-<dt>index_quan_original</dt><dd><p>weights suggested by Quan (2005)</p></dd>
-<dt>index_quan_updated</dt><dd><p>weights suggested by Quan (2011)</p></dd>
-
-</dl>
+"diabetes complication" contains all diabetes.</p></li>
+<li><p><code>index_charlson:</code> original weights as suggested by Charlson et al.
+(1987)*</p></li>
+<li><p><code>index_deyo_ramano:</code> weights suggested by Deyo and Romano*</p></li>
+<li><p><code>index_dhoore:</code> weights suggested by D'Hoore*</p></li>
+<li><p><code>index_ghali:</code> weights suggested by Ghali*</p></li>
+<li><p><code>index_quan_original:</code> weights suggested by Quan (2005)</p></li>
+<li><p><code>index_quan_updated:</code> weights suggested by Quan (2011)</p></li>
+</ul>
 <ul>
 <li><p>Weights decoded from Yurkovich et al. (2015).</p></li>
 </ul>

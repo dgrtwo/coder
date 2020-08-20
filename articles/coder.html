@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">coder</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.10</span>
       </span>
     </div>
 
@@ -88,7 +88,7 @@
       <h1 data-toc-skip>coder</h1>
                         <h4 class="author">Erik Bulow</h4>
             
-            <h4 class="date">2020-08-17</h4>
+            <h4 class="date">2020-08-20</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/eribul/coder/blob/master/vignettes/coder.Rmd"><code>vignettes/coder.Rmd</code></a></small>
       <div class="hidden name"><code>coder.Rmd</code></div>
@@ -800,9 +800,6 @@
 <a href="#specified-index" class="anchor"></a>Specified index</h1>
 <p>We did not specify the index above, wherefore all available indices were provided by default. We might go back to Pratt’s classification scheme (<code>regex_pratt</code>) and only calculate the corresponding index <code>index_pratt</code>. Let´s also perform the three computational steps explicitly instead of using the combining <code>categorize</code> function and tabulate the result</p>
 <div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="co"># Import the magritr pipe for convenience</span>
-<span class="kw">`%&gt;%`</span> <span class="op">&lt;-</span> <span class="kw">magrittr</span>::<span class="kw">`%&gt;%`</span>
-
 <span class="fu"><a href="../reference/codify.html">codify</a></span>(<span class="kw">ex_people</span>, <span class="kw">ex_atc</span>, id = <span class="st">"name"</span>, date = <span class="st">"event"</span>, days = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="op">-</span><span class="fl">365</span>, <span class="op">-</span><span class="fl">1</span>)) <span class="op">%&gt;%</span> 
   <span class="fu"><a href="../reference/classify.html">classify</a></span>(<span class="kw">rxriskv</span>) <span class="op">%&gt;%</span> 
   <span class="fu"><a href="../reference/index_fun.html">index</a></span>(<span class="st">"pratt"</span>) <span class="op">%&gt;%</span> 
