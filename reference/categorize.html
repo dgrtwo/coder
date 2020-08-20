@@ -145,25 +145,38 @@ units and with optional dates of interest and;
 expressions to identify and categorize relevant codes.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>categorize</span>(
-  <span class='kw'>data</span>,
-  <span class='kw'>codedata</span>,
+    <pre class="usage"><span class='fu'>categorize</span>(<span class='kw'>...</span>)
+
+<span class='co'># S3 method for data.frame</span>
+<span class='fu'>categorize</span>(<span class='kw'>data</span>, <span class='kw'>...</span>)
+
+<span class='co'># S3 method for data.table</span>
+<span class='fu'>categorize</span>(<span class='kw'>data</span>, <span class='kw'>codedata</span>, <span class='kw'>cc</span>, <span class='kw'>id</span>, <span class='kw'>...</span>, codify_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>())
+
+<span class='co'># S3 method for codified</span>
+<span class='fu'>categorize</span>(
+  <span class='kw'>codified</span>,
   <span class='kw'>cc</span>,
   <span class='kw'>id</span>,
+  <span class='kw'>...</span>,
   index = <span class='kw'>NULL</span>,
   sort = <span class='fl'>TRUE</span>,
-  codify_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(),
-  cc_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>()
+  cc_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(),
+  .data_cols = <span class='kw'>NULL</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>...</th>
+      <td><p>arguments passed between methods</p></td>
+    </tr>
+    <tr>
       <th>data</th>
-      <td><p>data frame with mandatory id column
+      <td><p><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> or <a href='https://Rdatatable.gitlab.io/data.table/reference/data.table.html'>data.table::data.table</a> with mandatory id column
 (identified by argument <code>id</code>),
-and semi-optional column with date of interest
+and optional column with date of interest
 (identified by argument <code>date</code> if  <code>days != NULL</code>).</p></td>
     </tr>
     <tr>
@@ -177,6 +190,14 @@ and semi-optional column with date of interest
     <tr>
       <th>id</th>
       <td><p>name of code/id columns (in <code>codified</code>).</p></td>
+    </tr>
+    <tr>
+      <th>codify_args</th>
+      <td><p>List of named arguments passed to <code><a href='codify.html'>codify()</a></code></p></td>
+    </tr>
+    <tr>
+      <th>codified</th>
+      <td><p>output from <code><a href='codify.html'>codify()</a></code></p></td>
     </tr>
     <tr>
       <th>index</th>
@@ -196,13 +217,13 @@ output sorted this way, but this might be inconvenient if the original
 order was important.)</p></td>
     </tr>
     <tr>
-      <th>codify_args</th>
-      <td><p>List of named arguments passed to <code><a href='codify.html'>codify()</a></code></p></td>
-    </tr>
-    <tr>
       <th>cc_args</th>
       <td><p>List with named arguments passed to
 <code><a href='set_classcodes.html'>set_classcodes()</a></code></p></td>
+    </tr>
+    <tr>
+      <th>.data_cols</th>
+      <td><p>used internally</p></td>
     </tr>
     </table>
 
@@ -230,7 +251,7 @@ package website <a href='https://eribul.github.io/coder'>https://eribul.github.i
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Add Elixhauser based on all registered ICD10-codes</span>
-<span class='fu'>categorize</span>(<span class='kw'>ex_people</span>, <span class='kw'>ex_icd10</span>, <span class='st'>"elixhauser"</span>, id = <span class='st'>"name"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt;                           name      event congestive heart failure
+<span class='fu'>categorize</span>(<span class='kw'>ex_people</span>, <span class='kw'>ex_icd10</span>, <span class='st'>"elixhauser"</span>, id = <span class='st'>"name"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Both '.data_cols' and '...data_cols' exist in calling scope. Please remove the '...data_cols' variable in calling scope for clarity.</span></div><div class='output co'>#&gt;                           name      event congestive heart failure
 #&gt;   1:        Alexander, Bethany 2019-08-19                    FALSE
 #&gt;   2:           Arguello, Tommy 2020-05-16                    FALSE
 #&gt;   3:             Austin, Maeve 2020-05-09                    FALSE
@@ -1360,7 +1381,7 @@ package website <a href='https://eribul.github.io/coder'>https://eribul.github.i
   index = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"quan_original"</span>, <span class='st'>"quan_updated"</span>),
   codify_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(date = <span class='st'>"event"</span>, days = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='op'>-</span><span class='fl'>30</span>, <span class='op'>-</span><span class='fl'>1</span>)),
   cc_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(tech_names = <span class='fl'>TRUE</span>)
-)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt;                           name      event
+)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Both '.data_cols' and '...data_cols' exist in calling scope. Please remove the '...data_cols' variable in calling scope for clarity.</span></div><div class='output co'>#&gt;                           name      event
 #&gt;   1:        Alexander, Bethany 2019-08-19
 #&gt;   2:           Arguello, Tommy 2020-05-16
 #&gt;   3:             Austin, Maeve 2020-05-09

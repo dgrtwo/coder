@@ -179,7 +179,8 @@ but the object will be changed by reference.</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>data</code> (coerced to <code><a href='https://Rdatatable.gitlab.io/data.table/reference/data.table.html'>data.table::data.table()</a></code> with additional columns:
+    <p>Object of class <code>codified</code> (inheriting from <a href='https://Rdatatable.gitlab.io/data.table/reference/data.table.html'>data.table::data.table</a>).
+Essentially <code>data</code> with additional columns:
 <code>code, code_date</code>: left joined from <code>codedata</code> or <code>NA</code>
 if no match within period. <code>in_period</code>: Boolean indicator if the case
 had at least one code within the specified period.</p>
@@ -207,7 +208,7 @@ Useful for adverse events after a surgical procedure.</p></li>
 <code><a href='index_fun.html'>index_fun</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>codify</span>(<span class='kw'>ex_people</span>, <span class='kw'>ex_icd10</span>, id = <span class='st'>"name"</span>, date = <span class='st'>"event"</span>, days = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='op'>-</span><span class='fl'>365</span>, <span class='fl'>0</span>))</div><div class='output co'>#&gt;                    name       date  code_date    code  hdia in_period
+    <pre class="examples"><div class='input'><span class='fu'>codify</span>(<span class='kw'>ex_people</span>, <span class='kw'>ex_icd10</span>, id = <span class='st'>"name"</span>, date = <span class='st'>"event"</span>, days = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='op'>-</span><span class='fl'>365</span>, <span class='fl'>0</span>))</div><div class='output co'>#&gt;                    name      event  code_date    code  hdia in_period
 #&gt;   1: Alexander, Bethany 2019-08-19 2019-07-09 S62126K FALSE      TRUE
 #&gt;   2: Alexander, Bethany 2019-08-19 2019-08-13  I70718 FALSE      TRUE
 #&gt;   3:    Arguello, Tommy 2020-05-16 2019-05-28 S32464D FALSE      TRUE
