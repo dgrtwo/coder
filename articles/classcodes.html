@@ -240,28 +240,31 @@
 <div id="visualise-graphically" class="section level2">
 <h2 class="hasAnchor">
 <a href="#visualise-graphically" class="anchor"></a>Visualise graphically</h2>
-<p>Regular expressions might be difficult to interpret but can be visualized by <code><a href="../reference/visualize.html">visualize()</a></code>. This will usually display a web page in the default browser (here suppressed by <code>show = FALSE</code>):</p>
+<p>Regular expressions might be difficult to interpret but can be visualized by <code><a href="https://rdrr.io/pkg/generics/man/visualize.html">visualize()</a></code>. This will usually display a web page in the default browser (here suppressed by <code>show = FALSE</code>):</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">url</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/visualize.html">visualize</a></span>(<span class="kw">charlson</span>, show = <span class="fl">FALSE</span>, regex = <span class="st">"regex_icd10"</span>)
+<span class="kw">url</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/generics/man/visualize.html">visualize</a></span>(<span class="kw">charlson</span>, show = <span class="fl">FALSE</span>, regex = <span class="st">"regex_icd10"</span>)
+<span class="co">#&gt; Warning: Unknown or uninitialised column: `regex`.</span>
 </pre></div>
-<p>Here, we can open the <code>url</code> “manually” by a link to the <a href="https://jex.im/regulex/#!embed=true&amp;flags=&amp;re=%5E(I2(%5B12%5D%7C52))%7C%5E(I(099%7C1(10%7C3%5B02%5D)%7C255%7C4(2%5B05-9%5D%7C3)%7C50)%7CP290)%7C%5E(I7(%5B01%5D%7C3%5B189%5D%7C71%7C9%5B02%5D)%7CK55%5B189%5D%7CZ95%5B89%5D)%7C%5E(G4%5B56%5D%7CH340%7CI6)%7C%5E(F0(%5B0-3%5D%7C51)%7CG3(0%7C11))%7C%5E((I27%5B89%5D)%7CJ(4%5B0-7%5D%7C6(%5B0-7%5D%7C84)%7C70%5B13%5D))%7C%5E(M(0%5B56%5D%7C3(15%7C%5B2-4%5D%7C5%5B13%5D%7C60)))%7C%5E(K2%5B5-8%5D)%7C%5E(B18%7CK7(0%5B0-39%5D%7C1%5B3457%5D%7C%5B34%5D%7C6%5B023489%5D)%7CZ944)%7C%5E(E1%5B0-4%5D%5B01689%5D)%7C%5E(G(041%7C114%7C8(0%5B12%5D%7C%5B12%5D%7C3%5B0-49%5D)))%7C%5E(I1(20%7C31)%7CN(0(%5B35%5D%5B2-7%5D)%7C1%5B89%5D%7C250)%7CZ(49%5B012%5D%7C9(40%7C92)))%7C%5E(E1%5B0-4%5D%5B2-57%5D)%7C%5E(C(%5B01%5D%7C2%5B0-6%5D%7C3%5B0-47-9%5D%7C4%5B0135-9%5D%7C5%5B0-8%5D%7C6%7C7%5B0-6%5D%7C8%5B1-58%5D%7C9%5B0-7%5D))%7C%5E(I(8(5%5B09%5D%7C64)%7C982)%7CK7(04%7C%5B12%5D1%7C29%7C6%5B5-7%5D))%7C%5E(C(7%5B7-9%5D%7C80))%7C%5E(B2%5B0124%5D)">JavaScript Regular Expression Parser &amp; Visualizer</a>. The displayed visualization is rather complex, however, wherefore a further simplification might be needed before actual understanding of the concept. We can chose to inspect the regular expression for myocardial infarction as codified by <code>regex_icd9cm_deyo</code>:</p>
+<p>Here, we can open the <code>url</code> “manually” by a link to the <a href="https://jex.im/regulex/#!embed=true&amp;flags=&amp;re=">JavaScript Regular Expression Parser &amp; Visualizer</a>. The displayed visualization is rather complex, however, wherefore a further simplification might be needed before actual understanding of the concept. We can chose to inspect the regular expression for myocardial infarction as codified by <code>regex_icd9cm_deyo</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="fu"><a href="../reference/visualize.html">visualize</a></span>(
+<span class="fu"><a href="https://rdrr.io/pkg/generics/man/visualize.html">visualize</a></span>(
   <span class="kw">charlson</span>, 
   group    = <span class="st">"myocardial infarction"</span>, 
   show     = <span class="fl">FALSE</span>, 
   regex    = <span class="st">"regex_icd9cm_deyo"</span>
 )
+<span class="co">#&gt; Warning: Unknown or uninitialised column: `regex`.</span>
 </pre></div>
 <p><img src="regexp_charlson_ci_icd9.png"><!-- --></p>
 <p>Here <code><a href="https://rdrr.io/r/base/Arithmetic.html">^</a></code> indicates the beginning of the character string, followed by a literal <code>41</code> and either a <code>0</code> or <code>2</code>. The corresponding code according to ICD-10 is:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="fu"><a href="../reference/visualize.html">visualize</a></span>(
+<span class="fu"><a href="https://rdrr.io/pkg/generics/man/visualize.html">visualize</a></span>(
   <span class="kw">charlson</span>, 
   group    = <span class="st">"myocardial infarction"</span>, 
   show     = <span class="fl">FALSE</span>, 
   regex    = <span class="st">"regex_icd10"</span>
 )
+<span class="co">#&gt; Warning: Unknown or uninitialised column: `regex`.</span>
 </pre></div>
 <p><img src="regexp_charlson_ci_icd10.png"><!-- --></p>
 <p>ICD-10 codes identifying myocardial infarction thus starts with <code>I2</code> followed by either <code>1</code>, <code>2</code> or <code>52</code>. The vertical bar, <code><a href="https://rdrr.io/r/base/Logic.html">|</a></code>, in the regular expression indicates a logical “or” within the parenthesis (as used for expressions longer than single characters).</p>
@@ -470,78 +473,63 @@
 </pre></div>
 <table class="table">
 <colgroup>
-<col width="2%">
-<col width="51%">
-<col width="46%">
+<col width="52%">
+<col width="47%">
 </colgroup>
 <thead><tr class="header">
-<th align="left"></th>
 <th align="left">group</th>
 <th align="left">regex</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">1</td>
 <td align="left">charlson_regex_icd8_brusselaers_myocardial_infarction</td>
 <td align="left">(41[0-2])$</td>
 </tr>
 <tr class="even">
-<td align="left">2</td>
 <td align="left">charlson_regex_icd8_brusselaers_congestive_heart_failure</td>
 <td align="left">(4270|428)$</td>
 </tr>
 <tr class="odd">
-<td align="left">3</td>
 <td align="left">charlson_regex_icd8_brusselaers_peripheral_vascular_disease</td>
 <td align="left">(44[0-5])$</td>
 </tr>
 <tr class="even">
-<td align="left">4</td>
 <td align="left">charlson_regex_icd8_brusselaers_cerebrovascular_disease</td>
 <td align="left">(43[0-8])$</td>
 </tr>
 <tr class="odd">
-<td align="left">5</td>
 <td align="left">charlson_regex_icd8_brusselaers_dementia</td>
 <td align="left">(290[01])$</td>
 </tr>
 <tr class="even">
-<td align="left">6</td>
 <td align="left">charlson_regex_icd8_brusselaers_chronic_pulmonary_disease</td>
 <td align="left">(49[0-3]|51[5-8])$</td>
 </tr>
 <tr class="odd">
-<td align="left">7</td>
 <td align="left">charlson_regex_icd8_brusselaers_rheumatic_disease</td>
 <td align="left">(7(1[0-2]|34))$</td>
 </tr>
 <tr class="even">
-<td align="left">11</td>
 <td align="left">charlson_regex_icd8_brusselaers_hemiplegia_or_paraplegia</td>
 <td align="left">(344)$</td>
 </tr>
 <tr class="odd">
-<td align="left">12</td>
 <td align="left">charlson_regex_icd8_brusselaers_renal_disease</td>
 <td align="left">(40[34]|58[0-3]|792)$</td>
 </tr>
 <tr class="even">
-<td align="left">13</td>
 <td align="left">charlson_regex_icd8_brusselaers_diabetes_complication</td>
 <td align="left">(250)$</td>
 </tr>
 <tr class="odd">
-<td align="left">14</td>
 <td align="left">charlson_regex_icd8_brusselaers_malignancy</td>
 <td align="left">(1([4-68][0-9]|7[0-24-9]|9[0-4])|20[0-7])$</td>
 </tr>
 <tr class="even">
-<td align="left">15</td>
 <td align="left">charlson_regex_icd8_brusselaers_moderate_or_severe_liver_disease</td>
 <td align="left">(070|4560|51[1-3])$</td>
 </tr>
 <tr class="odd">
-<td align="left">16</td>
 <td align="left">charlson_regex_icd8_brusselaers_metastatic_solid_tumor</td>
 <td align="left">(19[6-9])$</td>
 </tr>
