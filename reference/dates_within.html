@@ -146,14 +146,14 @@
     </tr>
     <tr>
       <th>from</th>
-      <td><p>first date of interval to compare with (<code>1970-01-01</code> by default,
-since we assume that little data was recorded before 'epoch'; this is a bold
-assumption, however, which should be explicitly re-considered for relevant
-applications)</p></td>
+      <td><p>lower date limit to filter out irrelevant dates
+(<code>1970-01-01</code> by default, since we assume that little data was recorded
+before 'epoch'; this is a bold assumption, however, which should be
+explicitly re-considered for relevant applications)</p></td>
     </tr>
     <tr>
       <th>to</th>
-      <td><p>last date of interval to compare with
+      <td><p>upper date limit to filter out irrelevant dates
 (the current data from <code><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date()</a></code>, by default,
 since we assume that future events are unknown,
 thus indicating coding errors)</p></td>
@@ -174,7 +174,7 @@ thus indicating coding errors)</p></td>
     <pre class="examples"><div class='input'>
 <span class='co'>#                 valid         future      too early</span>
 <span class='kw'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2017-02-02"</span>, <span class='st'>"2050-02-02"</span>, <span class='st'>"1969-02-02"</span>))
-<span class='fu'>dates_within</span>(<span class='kw'>x</span>) <span class='co'># TRUE FALSE FALSE</span></div><div class='output co'>#&gt; [1]  TRUE FALSE FALSE</div><div class='input'><span class='fu'>dates_within</span>(<span class='kw'>x</span>, from = <span class='st'>"2000-01-01"</span>, to = <span class='st'>"2100-01-01"</span>) <span class='co'>#  TRUE  TRUE FALSE</span></div><div class='output co'>#&gt; [1]  TRUE  TRUE FALSE</div></pre>
+<span class='kw'>coder</span>:::<span class='fu'>dates_within</span>(<span class='kw'>x</span>) <span class='co'># TRUE FALSE FALSE</span></div><div class='output co'>#&gt; [1]  TRUE FALSE FALSE</div><div class='input'><span class='kw'>coder</span>:::<span class='fu'>dates_within</span>(<span class='kw'>x</span>, from = <span class='st'>"2000-01-01"</span>, to = <span class='st'>"2100-01-01"</span>) <span class='co'>#  TRUE  TRUE FALSE</span></div><div class='output co'>#&gt; [1]  TRUE  TRUE FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Code data — as.codedata" />
-<meta property="og:description" content="Make structured code data set based on data.frame." />
+<meta property="og:description" content="Make structured code data set." />
 
 
 
@@ -132,10 +132,22 @@
     </div>
 
     <div class="ref-description">
-    <p>Make structured code data set based on <a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a>.</p>
+    <p>Make structured code data set.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>as.codedata</span>(<span class='kw'>x</span>, <span class='kw'>...</span>, .setkeys = <span class='fl'>TRUE</span>, alnum = <span class='fl'>FALSE</span>)
+    <pre class="usage"><span class='fu'>as.codedata</span>(<span class='kw'>x</span>, <span class='kw'>...</span>)
+
+<span class='co'># S3 method for data.table</span>
+<span class='fu'>as.codedata</span>(
+  <span class='kw'>x</span>,
+  id = <span class='st'>"id"</span>,
+  code = <span class='st'>"code"</span>,
+  code_date = <span class='co'>if</span> (<span class='kw'>utils</span>::<span class='fu'><a href='https://rdrr.io/r/utils/hasName.html'>hasName</a></span>(<span class='kw'>x</span>, <span class='st'>"code_date"</span>)) <span class='st'>"code_date"</span> <span class='co'>else</span> <span class='kw'>NULL</span>,
+  period = <span class='kw'>NULL</span>,
+  .setkeys = <span class='fl'>TRUE</span>,
+  alnum = <span class='fl'>FALSE</span>,
+  <span class='kw'>...</span>
+)
 
 <span class='fu'>is.codedata</span>(<span class='kw'>x</span>)</pre>
 
@@ -144,22 +156,28 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> with columns <code>id</code> (character), <code>code</code>,
+      <td><p>data table/frame with columns <code>id</code> (character), <code>code</code>,
 and optional <code>code_date</code> (Date).</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Arguments passed on to <code><a href='dates_within.html'>dates_within</a></code></p><dl>
-    <dt><code>from</code></dt><dd><p>first date of interval to compare with (<code>1970-01-01</code> by default,
-since we assume that little data was recorded before 'epoch'; this is a bold
-assumption, however, which should be explicitly re-considered for relevant
-applications)</p></dd>
-    <dt><code>to</code></dt><dd><p>last date of interval to compare with
-(the current data from <code><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date()</a></code>, by default,
-since we assume that future events are unknown,
-thus indicating coding errors)</p></dd>
-  
-</dl></td>
+      <td><p>arguments passed between methods</p></td>
+    </tr>
+    <tr>
+      <th>id, code</th>
+      <td><p>column names (from <code>x</code>) with case id:s (character) and
+codes of interest.</p></td>
+    </tr>
+    <tr>
+      <th>code_date</th>
+      <td><p>optional column name (from <code>x</code>) with relevant dates
+corresponding to each code. If there is a column named <code>code_date</code> this will
+be used by default.</p></td>
+    </tr>
+    <tr>
+      <th>period</th>
+      <td><p>optional date vector of length two with lower and upper limits
+for inclusion period</p></td>
     </tr>
     <tr>
       <th>.setkeys</th>
@@ -182,13 +200,13 @@ Possible additional columns from <code>x</code> are preserved.</p>
 <span class='kw'>x</span> <span class='op'>&lt;-</span>
   <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
     id               = <span class='st'>"1"</span>,
-    code_date        = <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"2017-02-02"</span>),
+    code_date        = <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"2017-01-01"</span>),
     code             = <span class='st'>"a"</span>,
     stringsAsFactors = <span class='fl'>FALSE</span>
   )
 <span class='fu'>as.codedata</span>(<span class='kw'>x</span>)</div><div class='output co'>#&gt;    id  code_date code
-#&gt; 1:  1 2017-02-02    a</div><div class='input'>
-<span class='co'># Drop dates outside specified limits</span>
+#&gt; 1:  1 2017-01-01    a</div><div class='input'>
+<span class='co'># Ignore codes for dates outside specified limits</span>
 <span class='kw'>y</span> <span class='op'>&lt;-</span>
   <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
     id               = <span class='st'>"2"</span>,
@@ -197,8 +215,8 @@ Possible additional columns from <code>x</code> are preserved.</p>
     stringsAsFactors = <span class='fl'>FALSE</span>
   )
 <span class='kw'>z</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span>(<span class='kw'>x</span>, <span class='kw'>y</span>)
-<span class='fu'>as.codedata</span>(<span class='kw'>z</span>)</div><div class='output co'>#&gt;    id  code_date code
-#&gt; 1:  1 2017-02-02    a</div><div class='input'></div></pre>
+<span class='fu'>as.codedata</span>(<span class='kw'>z</span>, period = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"1970-01-01"</span>), <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>()))</div><div class='output co'>#&gt;    id  code_date code
+#&gt; 1:  1 2017-01-01    a</div><div class='input'></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

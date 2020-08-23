@@ -153,11 +153,11 @@
     <tr>
       <th>...</th>
       <td><p>Arguments passed on to <code><a href='dates_within.html'>dates_within</a></code></p><dl>
-    <dt><code>from</code></dt><dd><p>first date of interval to compare with (<code>1970-01-01</code> by default,
-since we assume that little data was recorded before 'epoch'; this is a bold
-assumption, however, which should be explicitly re-considered for relevant
-applications)</p></dd>
-    <dt><code>to</code></dt><dd><p>last date of interval to compare with
+    <dt><code>from</code></dt><dd><p>lower date limit to filter out irrelevant dates
+(<code>1970-01-01</code> by default, since we assume that little data was recorded
+before 'epoch'; this is a bold assumption, however, which should be
+explicitly re-considered for relevant applications)</p></dd>
+    <dt><code>to</code></dt><dd><p>upper date limit to filter out irrelevant dates
 (the current data from <code><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date()</a></code>, by default,
 since we assume that future events are unknown,
 thus indicating coding errors)</p></dd>
@@ -186,7 +186,7 @@ with rows with dates within limits.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>#                 valid         future      too early</span>
 <span class='kw'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2017-02-02"</span>, <span class='st'>"2050-02-02"</span>, <span class='st'>"1969-02-02"</span>))
-<span class='fu'>filter_dates</span>(<span class='kw'>x</span>) <span class='co'># "2017-02-02" NA           NA</span></div><div class='output co'>#&gt; [1] "2017-02-02" NA           NA          </div><div class='input'><span class='fu'>filter_dates</span>(<span class='kw'>x</span>, na.rm = <span class='fl'>TRUE</span>) <span class='co'># "2017-02-02"</span></div><div class='output co'>#&gt; [1] "2017-02-02"</div><div class='input'><span class='fu'>filter_dates</span>(<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(date = <span class='kw'>x</span>, foo  = <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: Dates outside specified limits dropped (set with from/to)!</span></div><div class='output co'>#&gt;         date foo
+<span class='kw'>coder</span>:::<span class='fu'>filter_dates</span>(<span class='kw'>x</span>) <span class='co'># "2017-02-02" NA           NA</span></div><div class='output co'>#&gt; [1] "2017-02-02" NA           NA          </div><div class='input'><span class='kw'>coder</span>:::<span class='fu'>filter_dates</span>(<span class='kw'>x</span>, na.rm = <span class='fl'>TRUE</span>) <span class='co'># "2017-02-02"</span></div><div class='output co'>#&gt; [1] "2017-02-02"</div><div class='input'><span class='kw'>coder</span>:::<span class='fu'>filter_dates</span>(<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(date = <span class='kw'>x</span>, foo  = <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span>))</div><div class='output co'>#&gt; <span class='warning'>Warning: Dates outside specified limits dropped (set with from/to)!</span></div><div class='output co'>#&gt;         date foo
 #&gt; 1 2017-02-02   1</div><div class='input'></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
