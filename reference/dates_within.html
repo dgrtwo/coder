@@ -79,12 +79,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/coder.html">Get started</a>
 </li>
 <li>
@@ -174,7 +168,9 @@ thus indicating coding errors)</p></td>
     <pre class="examples"><div class='input'>
 <span class='co'>#                 valid         future      too early</span>
 <span class='kw'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2017-02-02"</span>, <span class='st'>"2050-02-02"</span>, <span class='st'>"1969-02-02"</span>))
-<span class='kw'>coder</span>:::<span class='fu'>dates_within</span>(<span class='kw'>x</span>) <span class='co'># TRUE FALSE FALSE</span></div><div class='output co'>#&gt; [1]  TRUE FALSE FALSE</div><div class='input'><span class='kw'>coder</span>:::<span class='fu'>dates_within</span>(<span class='kw'>x</span>, from = <span class='st'>"2000-01-01"</span>, to = <span class='st'>"2100-01-01"</span>) <span class='co'>#  TRUE  TRUE FALSE</span></div><div class='output co'>#&gt; [1]  TRUE  TRUE FALSE</div></pre>
+<span class='kw'>coder</span>:::<span class='fu'>dates_within</span>(<span class='kw'>x</span>) <span class='co'># TRUE FALSE FALSE</span>
+</div><div class='output co'>#&gt; [1]  TRUE FALSE FALSE</div><div class='input'><span class='kw'>coder</span>:::<span class='fu'>dates_within</span>(<span class='kw'>x</span>, from = <span class='st'>"2000-01-01"</span>, to = <span class='st'>"2100-01-01"</span>) <span class='co'>#  TRUE  TRUE FALSE</span>
+</div><div class='output co'>#&gt; [1]  TRUE  TRUE FALSE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -190,7 +186,7 @@ thus indicating coding errors)</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

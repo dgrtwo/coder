@@ -79,12 +79,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/coder.html">Get started</a>
 </li>
 <li>
@@ -182,7 +176,8 @@ between groups and individual codes</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># All codes from ICD-10-CM used by Elixhauser</span>
-<span class='fu'>codebook</span>(<span class='kw'>elixhauser</span>, <span class='st'>"icd10cm"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; $readme
+<span class='fu'>codebook</span>(<span class='kw'>elixhauser</span>, <span class='st'>"icd10cm"</span>)
+</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; $readme
 #&gt;         tab      column                                        description
 #&gt; 1   summary       group                             Group to categorize by
 #&gt; 2   summary           n Number of identified codes contained in this group
@@ -9646,7 +9641,8 @@ between groups and individual codes</p>
 <span class='co'># All codes from ICD-9-CM Disease part used by Elixhauser enhanced version</span>
 <span class='fu'>codebook</span>(<span class='kw'>elixhauser</span>, <span class='st'>"icd9cmd"</span>,
   cc_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(regex = <span class='st'>"regex_icd9cm_enhanced"</span>)
-)</div><div class='output co'>#&gt; $readme
+)
+</div><div class='output co'>#&gt; $readme
 #&gt;         tab      column                                        description
 #&gt; 1   summary       group                             Group to categorize by
 #&gt; 2   summary           n Number of identified codes contained in this group
@@ -10990,7 +10986,7 @@ between groups and individual codes</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

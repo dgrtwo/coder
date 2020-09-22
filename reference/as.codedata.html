@@ -79,12 +79,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/coder.html">Get started</a>
 </li>
 <li>
@@ -204,7 +198,8 @@ Possible additional columns from <code>x</code> are preserved.</p>
     code             = <span class='st'>"a"</span>,
     stringsAsFactors = <span class='fl'>FALSE</span>
   )
-<span class='fu'>as.codedata</span>(<span class='kw'>x</span>)</div><div class='output co'>#&gt;    id  code_date code
+<span class='fu'>as.codedata</span>(<span class='kw'>x</span>)
+</div><div class='output co'>#&gt;    id  code_date code
 #&gt; 1:  1 2017-01-01    a</div><div class='input'>
 <span class='co'># Ignore codes for dates outside specified limits</span>
 <span class='kw'>y</span> <span class='op'>&lt;-</span>
@@ -215,8 +210,10 @@ Possible additional columns from <code>x</code> are preserved.</p>
     stringsAsFactors = <span class='fl'>FALSE</span>
   )
 <span class='kw'>z</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span>(<span class='kw'>x</span>, <span class='kw'>y</span>)
-<span class='fu'>as.codedata</span>(<span class='kw'>z</span>, period = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"1970-01-01"</span>), <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>()))</div><div class='output co'>#&gt;    id  code_date code
-#&gt; 1:  1 2017-01-01    a</div><div class='input'></div></pre>
+<span class='fu'>as.codedata</span>(<span class='kw'>z</span>, period = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>"1970-01-01"</span>), <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span>()))
+</div><div class='output co'>#&gt;    id  code_date code
+#&gt; 1:  1 2017-01-01    a</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -232,7 +229,7 @@ Possible additional columns from <code>x</code> are preserved.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

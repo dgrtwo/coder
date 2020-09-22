@@ -79,12 +79,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/coder.html">Get started</a>
 </li>
 <li>
@@ -208,18 +202,19 @@ Useful for adverse events after a surgical procedure.</p></li>
 <code><a href='index_fun.html'>index_fun</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>codify</span>(<span class='kw'>ex_people</span>, <span class='kw'>ex_icd10</span>, id = <span class='st'>"name"</span>, date = <span class='st'>"event"</span>, days = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='op'>-</span><span class='fl'>365</span>, <span class='fl'>0</span>))</div><div class='output co'>#&gt;                    name      event  code_date    code  hdia in_period
-#&gt;   1: Alexander, Bethany 2019-08-19 2019-07-09 S62126K FALSE      TRUE
-#&gt;   2: Alexander, Bethany 2019-08-19 2019-08-13  I70718 FALSE      TRUE
-#&gt;   3:    Arguello, Tommy 2020-05-16 2019-05-28 S32464D FALSE      TRUE
-#&gt;   4:    Arguello, Tommy 2020-05-16 2019-10-27  M02152 FALSE      TRUE
-#&gt;   5:    Arguello, Tommy 2020-05-16 2020-02-02 T84192A FALSE      TRUE
+    <pre class="examples"><div class='input'><span class='fu'>codify</span>(<span class='kw'>ex_people</span>, <span class='kw'>ex_icd10</span>, id = <span class='st'>"name"</span>, date = <span class='st'>"event"</span>, days = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='op'>-</span><span class='fl'>365</span>, <span class='fl'>0</span>))
+</div><div class='output co'>#&gt;                    name      event  code_date    code  hdia in_period
+#&gt;   1: Alexander, Bethany 2019-10-01 2019-08-21 S62126K FALSE      TRUE
+#&gt;   2: Alexander, Bethany 2019-10-01 2019-09-25  I70718 FALSE      TRUE
+#&gt;   3:    Arguello, Tommy 2020-06-28 2019-07-10 S32464D FALSE      TRUE
+#&gt;   4:    Arguello, Tommy 2020-06-28 2019-12-09  M02152 FALSE      TRUE
+#&gt;   5:    Arguello, Tommy 2020-06-28 2020-03-16 T84192A FALSE      TRUE
 #&gt;  ---                                                                 
-#&gt; 365:   el-Zaki, Huwaida 2020-06-03 2019-07-21  M11821 FALSE      TRUE
-#&gt; 366:   el-Zaki, Huwaida 2020-06-03 2019-07-21 O368923 FALSE      TRUE
-#&gt; 367:   el-Zaki, Huwaida 2020-06-03 2019-10-05 T23609D FALSE      TRUE
-#&gt; 368:   el-Zaki, Huwaida 2020-06-03 2019-11-22 S7491XD FALSE      TRUE
-#&gt; 369:   el-Zaki, Huwaida 2020-06-03 2020-04-30    C751 FALSE      TRUE</div></pre>
+#&gt; 365:   el-Zaki, Huwaida 2020-07-16 2019-09-02  M11821 FALSE      TRUE
+#&gt; 366:   el-Zaki, Huwaida 2020-07-16 2019-09-02 O368923 FALSE      TRUE
+#&gt; 367:   el-Zaki, Huwaida 2020-07-16 2019-11-17 T23609D FALSE      TRUE
+#&gt; 368:   el-Zaki, Huwaida 2020-07-16 2020-01-04 S7491XD FALSE      TRUE
+#&gt; 369:   el-Zaki, Huwaida 2020-07-16 2020-06-12    C751 FALSE      TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -235,7 +230,7 @@ Useful for adverse events after a surgical procedure.</p></li>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

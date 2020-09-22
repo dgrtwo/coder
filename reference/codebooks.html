@@ -79,12 +79,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/coder.html">Get started</a>
 </li>
 <li>
@@ -168,10 +162,12 @@ Only one 'README' object is kept however and renamed as such.</p>
 <code><a href='visualize.classcodes.html'>visualize.classcodes</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>c1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='codebook.html'>codebook</a></span>(<span class='kw'>elixhauser</span>, <span class='st'>"icd10cm"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='kw'>c2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='codebook.html'>codebook</a></span>(<span class='kw'>elixhauser</span>, <span class='st'>"icd9cmd"</span>,
+    <pre class="examples"><div class='input'><span class='kw'>c1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='codebook.html'>codebook</a></span>(<span class='kw'>elixhauser</span>, <span class='st'>"icd10cm"</span>)
+</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='kw'>c2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='codebook.html'>codebook</a></span>(<span class='kw'>elixhauser</span>, <span class='st'>"icd9cmd"</span>,
   cc_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(regex = <span class='st'>"regex_icd9cm_enhanced"</span>)
   )
-<span class='fu'>codebooks</span>(elix_icd10 = <span class='kw'>c1</span>, elix_icd9cm = <span class='kw'>c2</span>)</div><div class='output co'>#&gt; $README
+<span class='fu'>codebooks</span>(elix_icd10 = <span class='kw'>c1</span>, elix_icd9cm = <span class='kw'>c2</span>)
+</div><div class='output co'>#&gt; $README
 #&gt;         tab      column                                        description
 #&gt; 1   summary       group                             Group to categorize by
 #&gt; 2   summary           n Number of identified codes contained in this group
@@ -10967,7 +10963,7 @@ Only one 'README' object is kept however and renamed as such.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

@@ -82,12 +82,6 @@ superior classes if index specified with argument index." />
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/coder.html">Get started</a>
 </li>
 <li>
@@ -188,14 +182,21 @@ and/or if index calculated without weights.</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'># Calculate Elixhauser comorbidity index</span>
-<span class='kw'>cl</span> <span class='op'>&lt;-</span> <span class='fu'><a href='classify.html'>classify</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"C80"</span>, <span class='st'>"I20"</span>), <span class='st'>"elixhauser"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='fu'>index</span>(<span class='kw'>cl</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; <span class='message'>index calculated as number of relevant categories</span></div><div class='output co'>#&gt; C80 I20 
+<span class='kw'>cl</span> <span class='op'>&lt;-</span> <span class='fu'><a href='classify.html'>classify</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"C80"</span>, <span class='st'>"I20"</span>), <span class='st'>"elixhauser"</span>)
+</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='fu'>index</span>(<span class='kw'>cl</span>)
+</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; <span class='message'>index calculated as number of relevant categories</span></div><div class='output co'>#&gt; C80 I20 
 #&gt;   1   0 </div><div class='input'>
 <span class='co'># Calculate Charlson-index using original weights</span>
-<span class='kw'>cl</span> <span class='op'>&lt;-</span> <span class='fu'><a href='classify.html'>classify</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"C80"</span>, <span class='st'>"I21"</span>), <span class='st'>"charlson"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='fu'>index</span>(<span class='kw'>cl</span>, <span class='st'>"quan_original"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; C80 I21 
+<span class='kw'>cl</span> <span class='op'>&lt;-</span> <span class='fu'><a href='classify.html'>classify</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"C80"</span>, <span class='st'>"I21"</span>), <span class='st'>"charlson"</span>)
+</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='fu'>index</span>(<span class='kw'>cl</span>, <span class='st'>"quan_original"</span>)
+</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; C80 I21 
 #&gt;   6   1 </div><div class='input'>
 <span class='co'># Calculate Charlson-index using updated weights</span>
-<span class='kw'>cl</span> <span class='op'>&lt;-</span> <span class='fu'><a href='classify.html'>classify</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"C80"</span>, <span class='st'>"I21"</span>), <span class='st'>"charlson"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='fu'>index</span>(<span class='kw'>cl</span>, <span class='st'>"quan_updated"</span>)</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; C80 I21 
-#&gt;   6   0 </div><div class='input'></div></pre>
+<span class='kw'>cl</span> <span class='op'>&lt;-</span> <span class='fu'><a href='classify.html'>classify</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"C80"</span>, <span class='st'>"I21"</span>), <span class='st'>"charlson"</span>)
+</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='input'><span class='fu'>index</span>(<span class='kw'>cl</span>, <span class='st'>"quan_updated"</span>)
+</div><div class='output co'>#&gt; <span class='message'>Classification based on: regex_icd10</span></div><div class='output co'>#&gt; C80 I21 
+#&gt;   6   0 </div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -211,7 +212,7 @@ and/or if index calculated without weights.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
