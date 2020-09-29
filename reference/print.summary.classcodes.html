@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">coder</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.11</span>
       </span>
     </div>
 
@@ -141,20 +141,7 @@
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Arguments passed on to <code>tibble:::print.tbl</code></p><dl>
-    <dt><code>n</code></dt><dd><p>Number of rows to show. If <code>NULL</code>, the default, will print all rows
-if less than option <code>tibble.print_max</code>. Otherwise, will print
-<code>tibble.print_min</code> rows.</p></dd>
-    <dt><code>width</code></dt><dd><p>Width of text output to generate. This defaults to <code>NULL</code>, which
-means use <code><a href='https://rdrr.io/r/base/options.html'>getOption("tibble.width")</a></code> or (if also <code>NULL</code>)
-<code><a href='https://rdrr.io/r/base/options.html'>getOption("width")</a></code>; the latter displays only the columns that fit on one
-screen. You can also set <code><a href='https://rdrr.io/r/base/options.html'>options(tibble.width = Inf)</a></code> to override this
-default and always print all columns.</p></dd>
-    <dt><code>n_extra</code></dt><dd><p>Number of extra columns to print abbreviated information for,
-if the width is too small for the entire tibble. If <code>NULL</code>, the default,
-will print information about at most <code>tibble.max_extra_cols</code> extra columns.</p></dd>
-  
-</dl></td>
+      <td><p>arguments to control the printing of a tibble</p></td>
     </tr>
     </table>
 

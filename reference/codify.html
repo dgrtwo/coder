@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">coder</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.11.11</span>
       </span>
     </div>
 
@@ -157,9 +157,11 @@ each code. An optional column <code>condition</code> might distinguish codes/dat
 with certain characteristics (see example).</p></td>
     </tr>
     <tr>
-      <th>id, date</th>
-      <td><p>column names (from <code>data</code> and <code>codedata</code>) with case id
-(<code>character</code>) and (optional) date (<a href='https://rdrr.io/r/base/Dates.html'>Date</a>).</p></td>
+      <th>id, code, date, code_date</th>
+      <td><p>column names with case id
+(<code>character</code> from <code>data</code> and <code>codedata</code>), <code>code</code> (from <code>data</code>) and
+optional date (<a href='https://rdrr.io/r/base/Dates.html'>Date</a> from <code>data</code>) and
+<code>code_date</code> (<a href='https://rdrr.io/r/base/Dates.html'>Date</a> from <code>codedata</code>).</p></td>
     </tr>
     <tr>
       <th>days</th>
@@ -212,8 +214,20 @@ Useful for adverse events after a surgical procedure.</p></li>
 <code><a href='index_fun.html'>index_fun</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>codify</span>(<span class='kw'>ex_people</span>, <span class='kw'>ex_icd10</span>, id = <span class='st'>"name"</span>, code = <span class='st'>"icd10"</span>, date = <span class='st'>"event"</span>, days = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='op'>-</span><span class='fl'>365</span>, <span class='fl'>0</span>))
-</div><div class='output co'>#&gt; <span class='error'>Error in codify(ex_people, ex_icd10, id = "name", code = "icd10", date = "event",     days = c(-365, 0)): data column 'event' is not of class 'Date'!</span></div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>codify</span>(<span class='kw'>ex_people</span>, <span class='kw'>ex_icd10</span>, id = <span class='st'>"name"</span>, code = <span class='st'>"icd10"</span>,
+  date = <span class='st'>"surgery"</span>, code_date = <span class='st'>"admission"</span>, days = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='op'>-</span><span class='fl'>365</span>, <span class='fl'>0</span>))
+</div><div class='output co'>#&gt;                    name    surgery  admission icd10  hdia in_period
+#&gt;   1: Alexander, Bethany 2019-10-08 2019-08-28 L988C FALSE      TRUE
+#&gt;   2: Alexander, Bethany 2019-10-08 2019-10-02  B670 FALSE      TRUE
+#&gt;   3:    Arguello, Tommy 2020-07-05 2019-07-17 E888A FALSE      TRUE
+#&gt;   4:    Arguello, Tommy 2020-07-05 2019-12-16 V3811 FALSE      TRUE
+#&gt;   5:    Arguello, Tommy 2020-07-05 2020-03-23 X5214 FALSE      TRUE
+#&gt;  ---                                                               
+#&gt; 365:   el-Zaki, Huwaida 2020-07-23 2019-09-09 V3533 FALSE      TRUE
+#&gt; 366:   el-Zaki, Huwaida 2020-07-23 2019-09-09 V4103 FALSE      TRUE
+#&gt; 367:   el-Zaki, Huwaida 2020-07-23 2019-11-24  F058 FALSE      TRUE
+#&gt; 368:   el-Zaki, Huwaida 2020-07-23 2020-01-11  E748 FALSE      TRUE
+#&gt; 369:   el-Zaki, Huwaida 2020-07-23 2020-06-19 Y2623 FALSE      TRUE</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
