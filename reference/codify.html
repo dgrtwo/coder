@@ -165,12 +165,12 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> or <a href='https://Rdatatable.gitlab.io/data.table/reference/data.table.html'>data.table::data.table</a> with at least case id
-(<code>character</code>), and optional date (<code><a href='https://rdrr.io/r/base/Dates.html'>Date</a></code>) of interest</p></td>
+      <td><p>a table with columns id (<code>character</code>), code, and optionally date
+(<code><a href='https://rdrr.io/r/base/Dates.html'>Date</a></code>)</p></td>
     </tr>
     <tr>
       <th>codedata</th>
-      <td><p><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a> or <a href='https://Rdatatable.gitlab.io/data.table/reference/data.table.html'>data.table::data.table</a> with columns
+      <td><p>additional data with columns
 including case id (<code>character</code>), code and an optional date (<a href='https://rdrr.io/r/base/Dates.html'>Date</a>) for
 each code. An optional column <code>condition</code> might distinguish codes/dates
 with certain characteristics (see example).</p></td>
@@ -212,7 +212,7 @@ but the object will be changed by reference.</p></td>
       <th>n</th>
       <td><p>number of rows to preview as tibble.
 The output is technically a <a href='https://Rdatatable.gitlab.io/data.table/reference/data.table.html'>data.table::data.table</a>, which might be an
-unusual format for some users.</p></td>
+unusual format to look at. Use <code>n = NULL</code> to print the object as is.</p></td>
     </tr>
     </table>
 
