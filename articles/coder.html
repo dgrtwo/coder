@@ -113,15 +113,15 @@
 
 <span class="fu">coder</span><span class="fu">::</span><span class="fu"><a href="../reference/all_classcodes.html">all_classcodes</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 7 x 3</span>
-<span class="co">#&gt;   classcodes   regex                           indices                          </span>
-<span class="co">#&gt;   &lt;chr&gt;        &lt;chr&gt;                           &lt;chr&gt;                            </span>
-<span class="co">#&gt; 1 charlson     icd10, icd9cm_deyo, icd9cm_enh… "index_charlson, index_deyo_rama…</span>
-<span class="co">#&gt; 2 cps          icd10                           "index_only_ordinary"            </span>
-<span class="co">#&gt; 3 elixhauser   icd10, icd10_short, icd9cm, ic… "index_sum_all, index_sum_all_ah…</span>
-<span class="co">#&gt; 4 hip_ae       icd10, kva, icd10_fracture      ""                               </span>
-<span class="co">#&gt; 5 hip_ae_hail… icd10, kva                      ""                               </span>
-<span class="co">#&gt; 6 knee_ae      icd10, kva                      ""                               </span>
-<span class="co">#&gt; 7 rxriskv      pratt, caughey, garland         "index_pratt, index_sum_all"</span></pre></div>
+<span class="co">#&gt;   classcodes   regex                             indices                        </span>
+<span class="co">#&gt;   &lt;chr&gt;        &lt;chr&gt;                             &lt;chr&gt;                          </span>
+<span class="co">#&gt; 1 charlson     icd10, icd9cm_deyo, icd9cm_enhan… "charlson, deyo_ramano, dhoore…</span>
+<span class="co">#&gt; 2 cps          icd10                             "only_ordinary"                </span>
+<span class="co">#&gt; 3 elixhauser   icd10, icd10_short, icd9cm, icd9… "sum_all, sum_all_ahrq, walrav…</span>
+<span class="co">#&gt; 4 hip_ae       icd10, kva, icd10_fracture        ""                             </span>
+<span class="co">#&gt; 5 hip_ae_hail… icd10, kva                        ""                             </span>
+<span class="co">#&gt; 6 knee_ae      icd10, kva                        ""                             </span>
+<span class="co">#&gt; 7 rxriskv      atc_pratt, atc_caughey, atc_garl… "pratt, sum_all"</span></pre></div>
 </div>
 <div id="triad-of-functions" class="section level2">
 <h2 class="hasAnchor">
@@ -247,7 +247,7 @@
     id <span class="op">=</span> <span class="st">"name"</span>,
     code <span class="op">=</span> <span class="st">"atc"</span>
   <span class="op">)</span>
-<span class="co">#&gt; Classification based on: regex_pratt</span>
+<span class="co">#&gt; Classification based on: atc_pratt</span>
 <span class="va">default</span>
 <span class="co">#&gt; # A tibble: 100 x 50</span>
 <span class="co">#&gt;    name  surgery    `Alcohol depend… Allergies Anticoagulants Antiplatelets</span>
@@ -276,13 +276,13 @@
 <span class="co">#&gt; #   Pain &lt;lgl&gt;, `Pancreatic insufficiency` &lt;lgl&gt;, `Parkinson's disease` &lt;lgl&gt;,</span>
 <span class="co">#&gt; #   Psoriasis &lt;lgl&gt;, `Psychotic illness` &lt;lgl&gt;, `Pulmonary hypertension` &lt;lgl&gt;,</span>
 <span class="co">#&gt; #   `Renal disease` &lt;lgl&gt;, `Smoking cessation` &lt;lgl&gt;, `Steroid-responsive</span>
-<span class="co">#&gt; #   disease` &lt;lgl&gt;, Transplant &lt;lgl&gt;, Tuberculosis &lt;lgl&gt;, index_pratt &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   index_sum_all &lt;dbl&gt;</span></pre></div>
+<span class="co">#&gt; #   disease` &lt;lgl&gt;, Transplant &lt;lgl&gt;, Tuberculosis &lt;lgl&gt;, pratt &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   sum_all &lt;dbl&gt;</span></pre></div>
 <p>The first two columns are identical to <code>ex_people</code> (except row order, which could be preserved by <code>sort = FALSE</code>). Additional columns indicate whether patients had any of the individual comorbidities identified by Rx Risk V. Patients without any ATC data (the 10 excluded above) have <code>NA</code> values (which might be substituted by <code>FALSE</code>). The last columns contain summarized index values (weighted sums of individual comorbidities). Let’s summarize the distribution of <code>index_pratt</code> (<a href="https://dx.doi.org/10.1136/bmjopen-2017-021122">Pratt et al.</a>):</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="va">hist2</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
   <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span>
-    <span class="va">x</span><span class="op">$</span><span class="va">index_pratt</span>, 
+    <span class="va">x</span><span class="op">$</span><span class="va">pratt</span>, 
     main <span class="op">=</span> <span class="cn">NULL</span>, 
     xlab <span class="op">=</span> <span class="st">"RxRisk V"</span>, 
     col  <span class="op">=</span> <span class="st">"lightblue"</span>
@@ -311,7 +311,7 @@
       <span class="op">)</span>
   <span class="op">)</span> 
 <span class="op">)</span>
-<span class="co">#&gt; Classification based on: regex_pratt</span></pre></div>
+<span class="co">#&gt; Classification based on: atc_pratt</span></pre></div>
 <p><img src="coder_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
 </div>
 <div id="alternative-classification" class="section level1">
@@ -331,7 +331,7 @@
         date      <span class="op">=</span> <span class="st">"surgery"</span>, 
         code_date <span class="op">=</span> <span class="st">"prescription"</span>,
         days      <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">365</span>, <span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span>,
-    cc_args       <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>regex <span class="op">=</span> <span class="st">"regex_caughey"</span><span class="op">)</span>
+    cc_args       <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>regex <span class="op">=</span> <span class="st">"caughey"</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">)</span></pre></div>
 <p><img src="coder_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
@@ -354,7 +354,7 @@
   <span class="fu"><a href="../reference/index_fun.html">index</a></span><span class="op">(</span><span class="st">"pratt"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; Warning: 'classify()' does not preserve row order ('categorize()' does!)</span>
-<span class="co">#&gt; Classification based on: regex_pratt</span>
+<span class="co">#&gt; Classification based on: atc_pratt</span>
 <span class="co">#&gt; .</span>
 <span class="co">#&gt; -1  0  1  2  3  4  5  6  7  8 </span>
 <span class="co">#&gt; 10 39  2 24  6  2  1  3  1  2</span></pre></div>
@@ -399,8 +399,9 @@
   <span class="op">)</span><span class="op">$</span><span class="va">index_pratt</span>,
   na.rm <span class="op">=</span> <span class="cn">TRUE</span>
 <span class="op">)</span>
-<span class="co">#&gt; Classification based on: regex_pratt</span>
-<span class="co">#&gt; [1] 808</span></pre></div>
+<span class="co">#&gt; Classification based on: atc_pratt</span>
+<span class="co">#&gt; Warning: Unknown or uninitialised column: `index_pratt`.</span>
+<span class="co">#&gt; [1] 0</span></pre></div>
 <p>Thus, no codes are recognized (every one got index = 0). By default, codes are only recognized if found immediate in its corresponding column. This can be controlled by arguments <code>start</code> and <code>stop</code> specified via <code>cc_args</code>:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit">
 <span class="fu">hist2</span><span class="op">(</span>
@@ -413,7 +414,7 @@
     cc_args  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="cn">FALSE</span>, stop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; Classification based on: regex_pratt</span></pre></div>
+<span class="co">#&gt; Classification based on: atc_pratt</span></pre></div>
 <p><img src="coder_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
 </div>
   </div>
