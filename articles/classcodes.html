@@ -411,22 +411,24 @@
 <div class="sourceCode" id="cb16"><pre class="downlit">
 <span class="fu"><a href="../reference/classify.html">classify</a></span><span class="op">(</span><span class="fl">410</span>, <span class="va">charlson_icd8</span>, tech_names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; NOTE! The classified data is an object of class: classified, matrix. </span>
-<span class="co">#&gt; It is simply previewed here as a tibble for easier overview!</span>
+<span class="co">#&gt; The printed data is of class: classified, matrix. It has 1 rows.</span>
+<span class="co">#&gt; It is here previewed as a tibble</span>
+<span class="co">#&gt; Use `print(x, n = NULL)` to print as is (or use `n` to specify the number of rows to preview)!</span>
+<span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; # A tibble: 1 x 13</span>
 <span class="co">#&gt;   charlson_regex_… charlson_regex_… charlson_regex_… charlson_regex_…</span>
-<span class="co">#&gt;   &lt;classifd&gt;       &lt;classifd&gt;       &lt;classifd&gt;       &lt;classifd&gt;      </span>
+<span class="co">#&gt;   &lt;lgl&gt;            &lt;lgl&gt;            &lt;lgl&gt;            &lt;lgl&gt;           </span>
 <span class="co">#&gt; 1 TRUE             FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt; # … with 9 more variables: charlson_regex_icd8_brusselaers_dementia &lt;classifd&gt;,</span>
-<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_chronic_pulmonary_disease &lt;classifd&gt;,</span>
-<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_rheumatic_disease &lt;classifd&gt;,</span>
-<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_hemiplegia_or_paraplegia &lt;classifd&gt;,</span>
-<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_renal_disease &lt;classifd&gt;,</span>
-<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_diabetes_complication &lt;classifd&gt;,</span>
-<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_malignancy &lt;classifd&gt;,</span>
-<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_moderate_or_severe_liver_disease &lt;classifd&gt;,</span>
-<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_metastatic_solid_tumor &lt;classifd&gt;</span></pre></div>
+<span class="co">#&gt; # … with 9 more variables: charlson_regex_icd8_brusselaers_dementia &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_chronic_pulmonary_disease &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_rheumatic_disease &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_hemiplegia_or_paraplegia &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_renal_disease &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_diabetes_complication &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_malignancy &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_moderate_or_severe_liver_disease &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   charlson_regex_icd8_brusselaers_metastatic_solid_tumor &lt;lgl&gt;</span></pre></div>
 <p>Thus, the ICD-8 code <code>410</code>is recognized only as myocardial infarction.</p>
 </div>
 <div id="implicit-use-of-set_classcodes" class="section level2">
@@ -445,18 +447,19 @@
   <span class="op">)</span>
 <span class="op">)</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; NOTE! The classified data is an object of class: classified, matrix. </span>
-<span class="co">#&gt; It is simply previewed here as a tibble for easier overview!</span>
+<span class="co">#&gt; The printed data is of class: classified, matrix. It has 1 rows.</span>
+<span class="co">#&gt; It is here previewed as a tibble</span>
+<span class="co">#&gt; Use `print(x, n = NULL)` to print as is (or use `n` to specify the number of rows to preview)!</span>
+<span class="co">#&gt; </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; # A tibble: 1 x 13</span>
 <span class="co">#&gt;   `myocardial inf… `congestive hea… `peripheral vas… `cerebrovascula… dementia</span>
-<span class="co">#&gt;   &lt;classifd&gt;       &lt;classifd&gt;       &lt;classifd&gt;       &lt;classifd&gt;       &lt;classi&gt;</span>
+<span class="co">#&gt;   &lt;lgl&gt;            &lt;lgl&gt;            &lt;lgl&gt;            &lt;lgl&gt;            &lt;lgl&gt;   </span>
 <span class="co">#&gt; 1 TRUE             FALSE            FALSE            FALSE            FALSE   </span>
-<span class="co">#&gt; # … with 8 more variables: `chronic pulmonary disease` &lt;classifd&gt;, `rheumatic</span>
-<span class="co">#&gt; #   disease` &lt;classifd&gt;, `hemiplegia or paraplegia` &lt;classifd&gt;, `renal</span>
-<span class="co">#&gt; #   disease` &lt;classifd&gt;, `diabetes complication` &lt;classifd&gt;,</span>
-<span class="co">#&gt; #   malignancy &lt;classifd&gt;, `moderate or severe liver disease` &lt;classifd&gt;,</span>
-<span class="co">#&gt; #   `metastatic solid tumor` &lt;classifd&gt;</span></pre></div>
+<span class="co">#&gt; # … with 8 more variables: `chronic pulmonary disease` &lt;lgl&gt;, `rheumatic</span>
+<span class="co">#&gt; #   disease` &lt;lgl&gt;, `hemiplegia or paraplegia` &lt;lgl&gt;, `renal disease` &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   `diabetes complication` &lt;lgl&gt;, malignancy &lt;lgl&gt;, `moderate or severe liver</span>
+<span class="co">#&gt; #   disease` &lt;lgl&gt;, `metastatic solid tumor` &lt;lgl&gt;</span></pre></div>
 <p>… where we decided to drop the <code>tech_names = TRUE</code>, however, since that lead to overly complicated column names.</p>
 </div>
 </div>
