@@ -249,12 +249,9 @@
     code <span class="op">=</span> <span class="st">"atc"</span>
   <span class="op">)</span>
 <span class="co">#&gt; Classification based on: atc_pratt</span>
-<span class="co">#&gt; Warning in `[.data.table`(unique(codified, by = id), , ...data_cols): Both</span>
-<span class="co">#&gt; '.data_cols' and '...data_cols' exist in calling scope. Please remove the</span>
-<span class="co">#&gt; '...data_cols' variable in calling scope for clarity.</span>
 <span class="va">default</span>
 <span class="co">#&gt; # A tibble: 100 x 50</span>
-<span class="co">#&gt;    name  surgery    `Alcohol depend… Allergies Anticoagulants Antiplatelets</span>
+<span class="co">#&gt;    name  surgery    Alcohol.depende… Allergies Anticoagulants Antiplatelets</span>
 <span class="co">#&gt;    &lt;chr&gt; &lt;date&gt;     &lt;lgl&gt;            &lt;lgl&gt;     &lt;lgl&gt;          &lt;lgl&gt;        </span>
 <span class="co">#&gt;  1 Arch… 2020-05-25 FALSE            TRUE      FALSE          FALSE        </span>
 <span class="co">#&gt;  2 Awtr… 2020-09-20 FALSE            FALSE     TRUE           FALSE        </span>
@@ -267,21 +264,22 @@
 <span class="co">#&gt;  9 Carn… 2020-09-11 FALSE            TRUE      FALSE          FALSE        </span>
 <span class="co">#&gt; 10 Chap… 2020-05-18 FALSE            FALSE     FALSE          FALSE        </span>
 <span class="co">#&gt; # … with 90 more rows, and 44 more variables: Anxiety &lt;lgl&gt;, Arrhythmia &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   `Benign prostatic hyperplasia` &lt;lgl&gt;, `Bipolar disorder` &lt;lgl&gt;, `Chronic</span>
-<span class="co">#&gt; #   airways disease` &lt;lgl&gt;, `Congestive heart failure` &lt;lgl&gt;, Dementia &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   Depression &lt;lgl&gt;, Diabetes &lt;lgl&gt;, Epilepsy &lt;lgl&gt;, `Gastrooesophageal reflux</span>
-<span class="co">#&gt; #   disease` &lt;lgl&gt;, Glaucoma &lt;lgl&gt;, Gout &lt;lgl&gt;, `Hepatitis B` &lt;lgl&gt;, `Hepatitis</span>
-<span class="co">#&gt; #   C` &lt;lgl&gt;, HIV &lt;lgl&gt;, Hyperkalaemia &lt;lgl&gt;, Hyperlipidaemia &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   Hypertension &lt;lgl&gt;, Hyperthyroidism &lt;lgl&gt;, Hypothyroidism &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   Incontinence &lt;lgl&gt;, `Inflammation/pain` &lt;lgl&gt;, `Irritable bowel</span>
-<span class="co">#&gt; #   syndrome` &lt;lgl&gt;, `Ischaemic heart disease: hypertension` &lt;lgl&gt;, `Ischemic</span>
-<span class="co">#&gt; #   heart disease: angina` &lt;lgl&gt;, `Liver failure` &lt;lgl&gt;, Malignancies &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   Malnutrition &lt;lgl&gt;, Migraine &lt;lgl&gt;, `Osteoporosis/Paget's` &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   Pain &lt;lgl&gt;, `Pancreatic insufficiency` &lt;lgl&gt;, `Parkinson's disease` &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   Psoriasis &lt;lgl&gt;, `Psychotic illness` &lt;lgl&gt;, `Pulmonary hypertension` &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   `Renal disease` &lt;lgl&gt;, `Smoking cessation` &lt;lgl&gt;, `Steroid-responsive</span>
-<span class="co">#&gt; #   disease` &lt;lgl&gt;, Transplant &lt;lgl&gt;, Tuberculosis &lt;lgl&gt;, pratt &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   sum_all &lt;dbl&gt;</span></pre></div>
+<span class="co">#&gt; #   Benign.prostatic.hyperplasia &lt;lgl&gt;, Bipolar.disorder &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Chronic.airways.disease &lt;lgl&gt;, Congestive.heart.failure &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Dementia &lt;lgl&gt;, Depression &lt;lgl&gt;, Diabetes &lt;lgl&gt;, Epilepsy &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Gastrooesophageal.reflux.disease &lt;lgl&gt;, Glaucoma &lt;lgl&gt;, Gout &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Hepatitis.B &lt;lgl&gt;, Hepatitis.C &lt;lgl&gt;, HIV &lt;lgl&gt;, Hyperkalaemia &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Hyperlipidaemia &lt;lgl&gt;, Hypertension &lt;lgl&gt;, Hyperthyroidism &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Hypothyroidism &lt;lgl&gt;, Incontinence &lt;lgl&gt;, Inflammation.pain &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Irritable.bowel.syndrome &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Ischaemic.heart.disease..hypertension &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Ischemic.heart.disease..angina &lt;lgl&gt;, Liver.failure &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Malignancies &lt;lgl&gt;, Malnutrition &lt;lgl&gt;, Migraine &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Osteoporosis.Paget.s &lt;lgl&gt;, Pain &lt;lgl&gt;, Pancreatic.insufficiency &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Parkinson.s.disease &lt;lgl&gt;, Psoriasis &lt;lgl&gt;, Psychotic.illness &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Pulmonary.hypertension &lt;lgl&gt;, Renal.disease &lt;lgl&gt;, Smoking.cessation &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   Steroid.responsive.disease &lt;lgl&gt;, Transplant &lt;lgl&gt;, Tuberculosis &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   pratt &lt;dbl&gt;, sum_all &lt;dbl&gt;</span></pre></div>
 <p>The first two columns are identical to <code>ex_people</code> (except row order, which could be preserved by <code>sort = FALSE</code>). Additional columns indicate whether patients had any of the individual comorbidities identified by Rx Risk V. Patients without any ATC data (the 10 excluded above) have <code>NA</code> values (which might be substituted by <code>FALSE</code>). The last columns contain summarized index values (weighted sums of individual comorbidities). Let’s summarize the distribution of <code>index_pratt</code> (<a href="https://dx.doi.org/10.1136/bmjopen-2017-021122">Pratt et al.</a>):</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="va">hist2</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
@@ -315,10 +313,7 @@
       <span class="op">)</span>
   <span class="op">)</span> 
 <span class="op">)</span>
-<span class="co">#&gt; Classification based on: atc_pratt</span>
-<span class="co">#&gt; Warning in `[.data.table`(unique(codified, by = id), , ...data_cols): Both</span>
-<span class="co">#&gt; '.data_cols' and '...data_cols' exist in calling scope. Please remove the</span>
-<span class="co">#&gt; '...data_cols' variable in calling scope for clarity.</span></pre></div>
+<span class="co">#&gt; Classification based on: atc_pratt</span></pre></div>
 <p><img src="coder_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
 </div>
 <div id="alternative-classification" class="section level1">
@@ -340,10 +335,7 @@
         days      <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">365</span>, <span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span>,
     cc_args       <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>regex <span class="op">=</span> <span class="st">"caughey"</span><span class="op">)</span>
   <span class="op">)</span>
-<span class="op">)</span>
-<span class="co">#&gt; Warning in `[.data.table`(unique(codified, by = id), , ...data_cols): Both</span>
-<span class="co">#&gt; '.data_cols' and '...data_cols' exist in calling scope. Please remove the</span>
-<span class="co">#&gt; '...data_cols' variable in calling scope for clarity.</span></pre></div>
+<span class="op">)</span></pre></div>
 <p><img src="coder_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
 </div>
 <div id="specified-index" class="section level1">
@@ -410,9 +402,6 @@
   na.rm <span class="op">=</span> <span class="cn">TRUE</span>
 <span class="op">)</span>
 <span class="co">#&gt; Classification based on: atc_pratt</span>
-<span class="co">#&gt; Warning in `[.data.table`(unique(codified, by = id), , ...data_cols): Both</span>
-<span class="co">#&gt; '.data_cols' and '...data_cols' exist in calling scope. Please remove the</span>
-<span class="co">#&gt; '...data_cols' variable in calling scope for clarity.</span>
 <span class="co">#&gt; Warning: Unknown or uninitialised column: `index_pratt`.</span>
 <span class="co">#&gt; [1] 0</span></pre></div>
 <p>Thus, no codes are recognized (every one got index = 0). By default, codes are only recognized if found immediate in its corresponding column. This can be controlled by arguments <code>start</code> and <code>stop</code> specified via <code>cc_args</code>:</p>
@@ -427,10 +416,7 @@
     cc_args  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="cn">FALSE</span>, stop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; Classification based on: atc_pratt</span>
-<span class="co">#&gt; Warning in `[.data.table`(unique(codified, by = id), , ...data_cols): Both</span>
-<span class="co">#&gt; '.data_cols' and '...data_cols' exist in calling scope. Please remove the</span>
-<span class="co">#&gt; '...data_cols' variable in calling scope for clarity.</span></pre></div>
+<span class="co">#&gt; Classification based on: atc_pratt</span></pre></div>
 <p><img src="coder_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
 </div>
   </div>

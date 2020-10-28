@@ -135,7 +135,7 @@
   regex <span class='op'>=</span> <span class='cn'>NULL</span>,
   start <span class='op'>=</span> <span class='cn'>TRUE</span>,
   stop <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  tech_names <span class='op'>=</span> <span class='cn'>FALSE</span>
+  tech_names <span class='op'>=</span> <span class='cn'>NULL</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -168,7 +168,9 @@ by <code>^/$</code>.</p></td>
       <td><p>should technical column names be used? If <code>FALSE</code>,
 colnames are taken directly from group names of <code>by</code>, if <code>TRUE</code>,
 these are changed to more technical names avoiding special characters and
-are prefixed by the name of the classification scheme.</p></td>
+are prefixed by the name of the classification scheme.
+<code>NULL</code> (by default) preserves previously set names
+(fall backs to <code>FALSE</code> if not already set).</p></td>
     </tr>
     </table>
 
