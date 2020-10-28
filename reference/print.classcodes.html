@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Classcodes methods — classcodes • coder</title>
+<title>Print classcodes object — print.classcodes • coder</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,8 @@
 
 
 
-<meta property="og:title" content="Classcodes methods — classcodes" />
-<meta property="og:description" content="&quot;Classcodes&quot; are classifying schemes based on regular expression stored in
-data frames. These are essential to the package and constitute the third
-part of the triad of case data, code data and a classification scheme." />
+<meta property="og:title" content="Print classcodes object — print.classcodes" />
+<meta property="og:description" content="Print classcodes object" />
 
 
 
@@ -122,128 +120,39 @@ part of the triad of case data, code data and a classification scheme." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Classcodes methods</h1>
+    <h1>Print classcodes object</h1>
     <small class="dont-index">Source: <a href='https://github.com/eribul/coder/blob/master/R/classcodes.R'><code>R/classcodes.R</code></a></small>
-    <div class="hidden name"><code>classcodes.Rd</code></div>
+    <div class="hidden name"><code>print.classcodes.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>"Classcodes" are classifying schemes based on regular expression stored in
-data frames. These are essential to the package and constitute the third
-part of the triad of case data, code data and a classification scheme.</p>
+    <p>Print classcodes object</p>
     </div>
 
-    <pre class="usage"><span class='fu'>as.classcodes</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='co'># S3 method for classcodes</span>
-<span class='fu'>as.classcodes</span><span class='op'>(</span>
-  <span class='va'>x</span>,
-  <span class='va'>...</span>,
-  regex <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/attr.html'>attr</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='st'>"regexpr"</span><span class='op'>)</span>,
-  indices <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/attr.html'>attr</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='st'>"indices"</span><span class='op'>)</span>,
-  hierarchy <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/attr.html'>attr</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='st'>"hierarchy"</span><span class='op'>)</span>
-<span class='op'>)</span>
-
-<span class='co'># S3 method for default</span>
-<span class='fu'>as.classcodes</span><span class='op'>(</span>
-  <span class='va'>x</span>,
-  <span class='va'>...</span>,
-  regex <span class='op'>=</span> <span class='cn'>NULL</span>,
-  indices <span class='op'>=</span> <span class='cn'>NULL</span>,
-  hierarchy <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/attr.html'>attr</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='st'>"hierarchy"</span><span class='op'>)</span>,
-  .name <span class='op'>=</span> <span class='cn'>NULL</span>
-<span class='op'>)</span>
-
-<span class='fu'>is.classcodes</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='co'># S3 method for classcodes</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>data frame with columns described in the details section</p></td>
+      <td><p>object of type classcodes</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>arguments passed between methods
-subordinate classes.
-To be used for indexing when the subordinate class is redundant
-(see the details section of <code><a href='elixhauser.html'>elixhauser</a></code> for an example).</p></td>
-    </tr>
-    <tr>
-      <th>regex, indices</th>
-      <td><p>character vector with names of columns in <code>x</code> containing
-regular expressions/indices.</p></td>
-    </tr>
-    <tr>
-      <th>hierarchy</th>
-      <td><p>named list of pairwise group names to appear as superior and
-subordinate for indices. See <a href='elixhauser.html'>elixhauser</a> for a possible application.</p></td>
-    </tr>
-    <tr>
-      <th>.name</th>
-      <td><p>used internally for name dispatch</p></td>
+      <td><p>arguments passed to print method for tibble</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Object of class "classcodes" (data frame) with additional attributes:</p><ul>
-<li><p><code>code:</code> the coding used (for example "icd10", or "ATC").
-<code>NULL</code> for unknown/arbitrary coding.</p></li>
-<li><p><code>regexprs:</code> name of columns with regular expressions</p></li>
-<li><p><code>indices:</code> name of columns with (optional) index weights</p></li>
-<li><p><code>hierarchy:</code> list as specified by the <code>hierarchy</code> argument.</p></li>
-<li><p><code>name:</code> name as specified by the <code>.name</code> argument.</p></li>
-</ul>
-
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>A classcodes object is a data frame with mandatory columns:</p><ul>
-<li><p><code>group</code>: unique and non missing class names</p></li>
-<li><p><code>regex_*</code>: regular expressions (<a href='https://rdrr.io/r/base/regex.html'>regex</a>) defining class membership.
-Could be more than one and could have arbitrary names.
-Occurrences of non unique regular expressions will lead to the same class
-having multiple names. This is accepted but will raise a warning.
-Classes do not have to be disjunct;
-the same code can be recognized by more than one <code>regex_*</code>.</p></li>
-</ul>
-
-<p>The object can have additional optional columns:</p><ul>
-<li><p><code>description</code>: description of each category</p></li>
-<li><p><code>condition</code>: a class might have conditions additional to what
-is expressed by <code>regex_*</code>. If so, these should be specified as quoted
-expressions that can be evaluated within the data frame used by
-<code><a href='classify.html'>classify()</a></code></p></li>
-<li><p><code>index_*</code>: weights for each class used by
-<code><a href='index_fun.html'>index()</a></code>. Could be more than one and could have arbitrary names.</p></li>
-</ul>
-
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>A vignette provides additional details and examples:
-<code><a href='../articles/classcodes.html'>vignette("classcodes", package = "coder")</a></code></p>
-<p>The package have several default classcodes included, see <code><a href='all_classcodes.html'>all_classcodes()</a></code>.</p>
-<p>Regular expressions used in classcodes can often be quite complex
-and hard to interpret. Use <code><a href='https://rdrr.io/pkg/generics/man/visualize.html'>visualize()</a></code> to visualize classcodes
-graphically or <code><a href='summary.classcodes.html'>summary.classcodes()</a></code> to list all codes individually.</p>
-<p>Other classcodes: 
+    <div class='dont-index'><p>Other classcodes: 
 <code><a href='all_classcodes.html'>all_classcodes</a>()</code>,
 <code><a href='as.data.frame.classified.html'>as.data.frame.classified</a>()</code>,
+<code><a href='classcodes.html'>classcodes</a></code>,
 <code><a href='codebooks.html'>codebooks</a>()</code>,
 <code><a href='codebook.html'>codebook</a>()</code>,
-<code><a href='print.classcodes.html'>print.classcodes</a>()</code>,
-<code><a href='print.codebook.html'>print.codebook</a>()</code>,
-<code><a href='print.summary.classcodes.html'>print.summary.classcodes</a>()</code>,
-<code><a href='set_classcodes.html'>set_classcodes</a>()</code>,
-<code><a href='summary.classcodes.html'>summary.classcodes</a>()</code>,
-<code><a href='visualize.classcodes.html'>visualize.classcodes</a>()</code></p>
-<p>Other classcodes: 
-<code><a href='all_classcodes.html'>all_classcodes</a>()</code>,
-<code><a href='as.data.frame.classified.html'>as.data.frame.classified</a>()</code>,
-<code><a href='codebooks.html'>codebooks</a>()</code>,
-<code><a href='codebook.html'>codebook</a>()</code>,
-<code><a href='print.classcodes.html'>print.classcodes</a>()</code>,
 <code><a href='print.codebook.html'>print.codebook</a>()</code>,
 <code><a href='print.summary.classcodes.html'>print.summary.classcodes</a>()</code>,
 <code><a href='set_classcodes.html'>set_classcodes</a>()</code>,
@@ -251,43 +160,18 @@ graphically or <code><a href='summary.classcodes.html'>summary.classcodes()</a><
 <code><a href='visualize.classcodes.html'>visualize.classcodes</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># The Elixhauser comorbidity classification is already a classcodes object</span>
-<span class='fu'>is.classcodes</span><span class='op'>(</span><span class='fu'>coder</span><span class='fu'>::</span><span class='va'><a href='elixhauser.html'>elixhauser</a></span><span class='op'>)</span>
-</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
-<span class='co'># Strip its class attributes to use in examples</span>
-<span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='fu'>coder</span><span class='fu'>::</span><span class='va'><a href='elixhauser.html'>elixhauser</a></span><span class='op'>)</span>
-
-<span class='co'># Specify which columns store regular expressions and indices</span>
-<span class='co'># (assume no hierarchy)</span>
-<span class='va'>elix</span> <span class='op'>&lt;-</span>
-  <span class='fu'>as.classcodes</span><span class='op'>(</span>
-    <span class='va'>df</span>,
-    regex <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
-      <span class='st'>"icd10"</span>,
-      <span class='st'>"icd10_short"</span>,
-      <span class='st'>"icd9cm"</span>,
-      <span class='st'>"icd9cm_ahrqweb"</span>,
-      <span class='st'>"icd9cm_enhanced"</span>
-    <span class='op'>)</span>,
-    indices <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>
-      <span class='st'>"sum_all"</span>,
-      <span class='st'>"sum_all_ahrq"</span>,
-      <span class='st'>"walraven"</span>,
-      <span class='st'>"sid29"</span>,
-      <span class='st'>"sid30"</span>,
-      <span class='st'>"ahrq_mort"</span>,
-      <span class='st'>"ahrq_readm"</span>
-    <span class='op'>)</span>,
-    hierarchy <span class='op'>=</span> <span class='cn'>NULL</span>
-  <span class='op'>)</span>
-<span class='va'>elix</span>
+    <pre class="examples"><div class='input'><span class='co'># Default printing</span>
+<span class='fu'>coder</span><span class='fu'>::</span><span class='va'><a href='elixhauser.html'>elixhauser</a></span>
 </div><div class='output co'>#&gt; 
 #&gt; Classcodes object
 #&gt;  
 #&gt; Regular expressions:
 #&gt;    icd10, icd10_short, icd9cm, icd9cm_ahrqweb, icd9cm_enhanced 
 #&gt; Indices:
-#&gt;    sum_all, sum_all_ahrq, walraven, sid29, sid30, ahrq_mort, ahrq_readm   
+#&gt;    sum_all, sum_all_ahrq, walraven, sid29, sid30, ahrq_mort, ahrq_readm 
+#&gt; Hierarchy:
+#&gt;    c("metastatic cancer", "solid tumor"),
+#&gt;    c("diabetes uncomplicated", "diabetes complicated") 
 #&gt; 
 #&gt; <span style='color: #555555;'># A tibble: 31 x 13</span><span>
 #&gt;    group icd10 icd10_short icd9cm icd9cm_ahrqweb icd9cm_enhanced sum_all
@@ -304,15 +188,8 @@ graphically or <code><a href='summary.classcodes.html'>summary.classcodes()</a><
 #&gt; </span><span style='color: #555555;'>10</span><span> chro… (I27… I27|(J([46… 49(([… 49|50([0-5]|6… 4(16[89]|90)|5…       1
 #&gt; </span><span style='color: #555555;'># … with 21 more rows, and 6 more variables: sum_all_ahrq </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,</span><span>
 #&gt; </span><span style='color: #555555;'>#   walraven </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, sid29 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, sid30 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, ahrq_mort </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, ahrq_readm </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div><div class='input'>
-<span class='co'># Specify hierarchy for patients with different types of cancer and diabetes</span>
-<span class='co'># See `?elixhauser` for details</span>
-<span class='fu'>as.classcodes</span><span class='op'>(</span>
-  <span class='va'>elix</span>,
-  hierarchy <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>
-    cancer   <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"metastatic cancer"</span>, <span class='st'>"solid tumor"</span><span class='op'>)</span>,
-    diabetes <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"diabetes complicated"</span>, <span class='st'>"diabetes uncomplicated"</span><span class='op'>)</span>
-  <span class='op'>)</span>
-<span class='op'>)</span>
+<span class='co'># Print all rows</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='fu'>coder</span><span class='fu'>::</span><span class='va'><a href='elixhauser.html'>elixhauser</a></span>, n <span class='op'>=</span> <span class='fl'>31</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; 
 #&gt; Classcodes object
 #&gt;  
@@ -322,7 +199,7 @@ graphically or <code><a href='summary.classcodes.html'>summary.classcodes()</a><
 #&gt;    sum_all, sum_all_ahrq, walraven, sid29, sid30, ahrq_mort, ahrq_readm 
 #&gt; Hierarchy:
 #&gt;    c("metastatic cancer", "solid tumor"),
-#&gt;    c("diabetes complicated", "diabetes uncomplicated") 
+#&gt;    c("diabetes uncomplicated", "diabetes complicated") 
 #&gt; 
 #&gt; </span><span style='color: #555555;'># A tibble: 31 x 13</span><span>
 #&gt;    group icd10 icd10_short icd9cm icd9cm_ahrqweb icd9cm_enhanced sum_all
@@ -337,8 +214,29 @@ graphically or <code><a href='summary.classcodes.html'>summary.classcodes()</a><
 #&gt; </span><span style='color: #555555;'> 8</span><span> para… G(04… G(04|11|8[… 34(2[… 34[2-4]|438[2… 3(341|4([23]|4…       1
 #&gt; </span><span style='color: #555555;'> 9</span><span> othe… G(1[… G(1[0-3]|2… 3(3(1… 3(3([0145]|20… 3(3(19|2[01]|3…       1
 #&gt; </span><span style='color: #555555;'>10</span><span> chro… (I27… I27|(J([46… 49(([… 49|50([0-5]|6… 4(16[89]|90)|5…       1
-#&gt; </span><span style='color: #555555;'># … with 21 more rows, and 6 more variables: sum_all_ahrq </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   walraven </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, sid29 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, sid30 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, ahrq_mort </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, ahrq_readm </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div></span></pre>
+#&gt; </span><span style='color: #555555;'>11</span><span> diab… E1[0… E1[0-4]     250[0… 250[0-3]|6480  250[0-3]              1
+#&gt; </span><span style='color: #555555;'>12</span><span> diab… E1[0… E1[0-4]     250[4… 250[4-9]|7751  250[4-9]              1
+#&gt; </span><span style='color: #555555;'>13</span><span> hypo… E(0[… E(0[0-3]|8… 24(3|… 24(3|4[0-2]|4… 24(09|[34]|6[1…       1
+#&gt; </span><span style='color: #555555;'>14</span><span> rena… I(12… I(1[23])|N… 40(3(… 40(3([019]1)|… 40(3([019]1)|4…       1
+#&gt; </span><span style='color: #555555;'>15</span><span> live… B18|… B18|I(8[56… 070(3… 070([23]{2}|[… 070([23]{2}|[4…       1
+#&gt; </span><span style='color: #555555;'>16</span><span> pept… K2[5… K2[5-8]     53([1… 53([1-4]([4-6… 53[1-4][79]           1
+#&gt; </span><span style='color: #555555;'>17</span><span> AIDS… B2[0… B2[0-24]    04[2-… 04[2-4]        04[2-4]               1
+#&gt; </span><span style='color: #555555;'>18</span><span> lymp… C(8[… C(8[1-58]|… 2(0([… 2(0([01]|2[0-… 2(0([0-2]|30)|…       1
+#&gt; </span><span style='color: #555555;'>19</span><span> meta… C(7[… C(7[7-9]|8… 19[6-… 19[6-9]        19[6-9]               1
+#&gt; </span><span style='color: #555555;'>20</span><span> soli… C([0… C([01]|2[0… 1([4-… 1([4-68]|7([0… 1([4-68]|7[0-2…       1
+#&gt; </span><span style='color: #555555;'>21</span><span> rheu… L94[… L94|M(0[56… 7(010… 7(010|1[04]|2… 446|7(010|1(0[…       1
+#&gt; </span><span style='color: #555555;'>22</span><span> coag… D6([… D6[5-9]     28(6|… 28(6|7[13-5])  28(6|7[13-5])         1
+#&gt; </span><span style='color: #555555;'>23</span><span> obes… E66   E66         2780   2780           2780                  1
+#&gt; </span><span style='color: #555555;'>24</span><span> weig… E4[0… E4[0-6]|R6… 26[0-… 26[0-3]|7832   26[0-3]|7(832|…       1
+#&gt; </span><span style='color: #555555;'>25</span><span> flui… E(22… E(22|8[67]) 276    276            2(53|7)6              1
+#&gt; </span><span style='color: #555555;'>26</span><span> bloo… D500  D50         2800   2800|6482      2800                  1
+#&gt; </span><span style='color: #555555;'>27</span><span> defi… D5(0… D5[0-3]     28(0[… 28(0[1-9]|1|5… 28(0[1-9]|1)          1
+#&gt; </span><span style='color: #555555;'>28</span><span> alco… F10|… F10|E52|G6… 29(1[… 291[0-3589]|3… 2(652|9(1[1-35…       1
+#&gt; </span><span style='color: #555555;'>29</span><span> drug… F1[1… F1[1-689]|… 292(0… 292(0|8[2-9]|… 292|30(4|5[2-9…       1
+#&gt; </span><span style='color: #555555;'>30</span><span> psyc… F(2[… F(2[02-589… 29([5… 29([5-8]|91)   29(38|9([578]|…       1
+#&gt; </span><span style='color: #555555;'>31</span><span> depr… F(20… F(20|3[1-4… 3(0(0… 3(0(04|112|9[… 29(6[235])|3(0…      </span><span style='color: #BB0000;'>NA</span><span>
+#&gt; </span><span style='color: #555555;'># … with 6 more variables: sum_all_ahrq </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, walraven </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, sid29 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   sid30 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, ahrq_mort </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, ahrq_readm </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

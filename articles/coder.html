@@ -83,7 +83,7 @@
       <h1 data-toc-skip>coder</h1>
                         <h4 class="author">Erik Bulow</h4>
             
-            <h4 class="date">2020-10-27</h4>
+            <h4 class="date">2020-10-28</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/eribul/coder/blob/master/vignettes/coder.Rmd"><code>vignettes/coder.Rmd</code></a></small>
       <div class="hidden name"><code>coder.Rmd</code></div>
@@ -249,6 +249,9 @@
     code <span class="op">=</span> <span class="st">"atc"</span>
   <span class="op">)</span>
 <span class="co">#&gt; Classification based on: atc_pratt</span>
+<span class="co">#&gt; Warning in `[.data.table`(unique(codified, by = id), , ...data_cols): Both</span>
+<span class="co">#&gt; '.data_cols' and '...data_cols' exist in calling scope. Please remove the</span>
+<span class="co">#&gt; '...data_cols' variable in calling scope for clarity.</span>
 <span class="va">default</span>
 <span class="co">#&gt; # A tibble: 100 x 50</span>
 <span class="co">#&gt;    name  surgery    `Alcohol depend… Allergies Anticoagulants Antiplatelets</span>
@@ -312,7 +315,10 @@
       <span class="op">)</span>
   <span class="op">)</span> 
 <span class="op">)</span>
-<span class="co">#&gt; Classification based on: atc_pratt</span></pre></div>
+<span class="co">#&gt; Classification based on: atc_pratt</span>
+<span class="co">#&gt; Warning in `[.data.table`(unique(codified, by = id), , ...data_cols): Both</span>
+<span class="co">#&gt; '.data_cols' and '...data_cols' exist in calling scope. Please remove the</span>
+<span class="co">#&gt; '...data_cols' variable in calling scope for clarity.</span></pre></div>
 <p><img src="coder_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
 </div>
 <div id="alternative-classification" class="section level1">
@@ -334,7 +340,10 @@
         days      <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">365</span>, <span class="op">-</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span>,
     cc_args       <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>regex <span class="op">=</span> <span class="st">"caughey"</span><span class="op">)</span>
   <span class="op">)</span>
-<span class="op">)</span></pre></div>
+<span class="op">)</span>
+<span class="co">#&gt; Warning in `[.data.table`(unique(codified, by = id), , ...data_cols): Both</span>
+<span class="co">#&gt; '.data_cols' and '...data_cols' exist in calling scope. Please remove the</span>
+<span class="co">#&gt; '...data_cols' variable in calling scope for clarity.</span></pre></div>
 <p><img src="coder_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
 </div>
 <div id="specified-index" class="section level1">
@@ -401,6 +410,9 @@
   na.rm <span class="op">=</span> <span class="cn">TRUE</span>
 <span class="op">)</span>
 <span class="co">#&gt; Classification based on: atc_pratt</span>
+<span class="co">#&gt; Warning in `[.data.table`(unique(codified, by = id), , ...data_cols): Both</span>
+<span class="co">#&gt; '.data_cols' and '...data_cols' exist in calling scope. Please remove the</span>
+<span class="co">#&gt; '...data_cols' variable in calling scope for clarity.</span>
 <span class="co">#&gt; Warning: Unknown or uninitialised column: `index_pratt`.</span>
 <span class="co">#&gt; [1] 0</span></pre></div>
 <p>Thus, no codes are recognized (every one got index = 0). By default, codes are only recognized if found immediate in its corresponding column. This can be controlled by arguments <code>start</code> and <code>stop</code> specified via <code>cc_args</code>:</p>
@@ -415,7 +427,10 @@
     cc_args  <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>start <span class="op">=</span> <span class="cn">FALSE</span>, stop <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">)</span>
-<span class="co">#&gt; Classification based on: atc_pratt</span></pre></div>
+<span class="co">#&gt; Classification based on: atc_pratt</span>
+<span class="co">#&gt; Warning in `[.data.table`(unique(codified, by = id), , ...data_cols): Both</span>
+<span class="co">#&gt; '.data_cols' and '...data_cols' exist in calling scope. Please remove the</span>
+<span class="co">#&gt; '...data_cols' variable in calling scope for clarity.</span></pre></div>
 <p><img src="coder_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
 </div>
   </div>
