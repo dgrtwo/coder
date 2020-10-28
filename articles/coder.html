@@ -398,12 +398,11 @@
     cc <span class="op">=</span> <span class="va">rxriskv</span>, 
     id <span class="op">=</span> <span class="st">"name"</span>,
     code <span class="op">=</span> <span class="st">"atc"</span>
-  <span class="op">)</span><span class="op">$</span><span class="va">index_pratt</span>,
+  <span class="op">)</span><span class="op">$</span><span class="va">pratt</span>,
   na.rm <span class="op">=</span> <span class="cn">TRUE</span>
 <span class="op">)</span>
 <span class="co">#&gt; Classification based on: atc_pratt</span>
-<span class="co">#&gt; Warning: Unknown or uninitialised column: `index_pratt`.</span>
-<span class="co">#&gt; [1] 0</span></pre></div>
+<span class="co">#&gt; [1] 808</span></pre></div>
 <p>Thus, no codes are recognized (every one got index = 0). By default, codes are only recognized if found immediate in its corresponding column. This can be controlled by arguments <code>start</code> and <code>stop</code> specified via <code>cc_args</code>:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit">
 <span class="fu">hist2</span><span class="op">(</span>
