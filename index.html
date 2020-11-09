@@ -157,7 +157,7 @@
 <span class="co">#&gt;  8 Shuemaker, Lauren 2020-03-29</span>
 <span class="co">#&gt;  9 Boucher, Teresa   2020-09-04</span>
 <span class="co">#&gt; 10 Le, Soraiya       2020-08-09</span>
-<span class="co">#&gt; # ... with 90 more rows</span></code></pre></div>
+<span class="co">#&gt; # … with 90 more rows</span></code></pre></div>
 <p>Those patietns (among others) were also recorded in a national patient register with date of hospital admissions and diagnoses codes coded by the International Classification of Diseases (ICD) version 10:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ex_icd10</span>
@@ -174,7 +174,7 @@
 <span class="co">#&gt;  8 Sommerville, Dominic 2020-05-03 A227  FALSE</span>
 <span class="co">#&gt;  9 Sommerville, Dominic 2020-09-07 H702  FALSE</span>
 <span class="co">#&gt; 10 Sommerville, Dominic 2019-12-31 X6051 TRUE </span>
-<span class="co">#&gt; # ... with 2,366 more rows</span></code></pre></div>
+<span class="co">#&gt; # … with 2,366 more rows</span></code></pre></div>
 <p>Using those two data sets, as well as a classification scheme (<code>classcodes</code> object; see below), we can easily identify all Charlson comorbidities for each patient:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ch</span> <span class="op">&lt;-</span> 
@@ -188,26 +188,26 @@
 
 <span class="va">ch</span>
 <span class="co">#&gt; # A tibble: 100 x 25</span>
-<span class="co">#&gt;    name  surgery    `myocardial inf~ `congestive hea~ `peripheral vas~</span>
+<span class="co">#&gt;    name  surgery    myocardial.infa… congestive.hear… peripheral.vasc…</span>
 <span class="co">#&gt;    &lt;chr&gt; &lt;date&gt;     &lt;lgl&gt;            &lt;lgl&gt;            &lt;lgl&gt;           </span>
-<span class="co">#&gt;  1 Arch~ 2020-05-25 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  2 Awtr~ 2020-09-20 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  3 Bamm~ 2020-03-25 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  4 Bank~ 2020-06-18 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  5 Bega~ 2020-06-19 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  6 Beni~ 2020-02-24 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  7 Bhat~ 2020-10-12 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  8 Bouc~ 2020-09-04 FALSE            FALSE            TRUE            </span>
-<span class="co">#&gt;  9 Carn~ 2020-09-11 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt; 10 Chap~ 2020-05-18 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt; # ... with 90 more rows, and 20 more variables: `cerebrovascular</span>
-<span class="co">#&gt; #   disease` &lt;lgl&gt;, dementia &lt;lgl&gt;, `chronic pulmonary disease` &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   `rheumatic disease` &lt;lgl&gt;, `peptic ulcer disease` &lt;lgl&gt;, `mild liver</span>
-<span class="co">#&gt; #   disease` &lt;lgl&gt;, `diabetes without complication` &lt;lgl&gt;, `hemiplegia or</span>
-<span class="co">#&gt; #   paraplegia` &lt;lgl&gt;, `renal disease` &lt;lgl&gt;, `diabetes complication` &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   malignancy &lt;lgl&gt;, `moderate or severe liver disease` &lt;lgl&gt;, `metastatic</span>
-<span class="co">#&gt; #   solid tumor` &lt;lgl&gt;, `AIDS/HIV` &lt;lgl&gt;, charlson &lt;dbl&gt;, deyo_ramano &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   dhoore &lt;dbl&gt;, ghali &lt;dbl&gt;, quan_original &lt;dbl&gt;, quan_updated &lt;dbl&gt;</span></code></pre></div>
+<span class="co">#&gt;  1 Arch… 2020-05-25 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  2 Awtr… 2020-09-20 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  3 Bamm… 2020-03-25 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  4 Bank… 2020-06-18 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  5 Bega… 2020-06-19 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  6 Beni… 2020-02-24 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  7 Bhat… 2020-10-12 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  8 Bouc… 2020-09-04 FALSE            FALSE            TRUE            </span>
+<span class="co">#&gt;  9 Carn… 2020-09-11 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt; 10 Chap… 2020-05-18 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt; # … with 90 more rows, and 20 more variables: cerebrovascular.disease &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   dementia &lt;lgl&gt;, chronic.pulmonary.disease &lt;lgl&gt;, rheumatic.disease &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   peptic.ulcer.disease &lt;lgl&gt;, mild.liver.disease &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   diabetes.without.complication &lt;lgl&gt;, hemiplegia.or.paraplegia &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   renal.disease &lt;lgl&gt;, diabetes.complication &lt;lgl&gt;, malignancy &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   moderate.or.severe.liver.disease &lt;lgl&gt;, metastatic.solid.tumor &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   AIDS.HIV &lt;lgl&gt;, charlson &lt;dbl&gt;, deyo_ramano &lt;dbl&gt;, dhoore &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   ghali &lt;dbl&gt;, quan_original &lt;dbl&gt;, quan_updated &lt;dbl&gt;</span></code></pre></div>
 <p>How many patietns were diagnosed with malignancy?</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">ch</span><span class="op">$</span><span class="va">malignancy</span><span class="op">)</span>
@@ -255,13 +255,13 @@
 <span class="co">#&gt; # A tibble: 7 x 3</span>
 <span class="co">#&gt;   classcodes   regex                             indices                        </span>
 <span class="co">#&gt;   &lt;chr&gt;        &lt;chr&gt;                             &lt;chr&gt;                          </span>
-<span class="co">#&gt; 1 charlson     icd10, icd9cm_deyo, icd9cm_enhan~ "charlson, deyo_ramano, dhoore~</span>
+<span class="co">#&gt; 1 charlson     icd10, icd9cm_deyo, icd9cm_enhan… "charlson, deyo_ramano, dhoore…</span>
 <span class="co">#&gt; 2 cps          icd10                             "only_ordinary"                </span>
-<span class="co">#&gt; 3 elixhauser   icd10, icd10_short, icd9cm, icd9~ "sum_all, sum_all_ahrq, walrav~</span>
+<span class="co">#&gt; 3 elixhauser   icd10, icd10_short, icd9cm, icd9… "sum_all, sum_all_ahrq, walrav…</span>
 <span class="co">#&gt; 4 hip_ae       icd10, kva, icd10_fracture        ""                             </span>
-<span class="co">#&gt; 5 hip_ae_hail~ icd10, kva                        ""                             </span>
+<span class="co">#&gt; 5 hip_ae_hail… icd10, kva                        ""                             </span>
 <span class="co">#&gt; 6 knee_ae      icd10, kva                        ""                             </span>
-<span class="co">#&gt; 7 rxriskv      atc_pratt, atc_caughey, atc_garl~ "pratt, sum_all"</span></code></pre></div>
+<span class="co">#&gt; 7 rxriskv      atc_pratt, atc_caughey, atc_garl… "pratt, sum_all"</span></code></pre></div>
 </div>
 </div>
 <div id="relation-to-other-packages" class="section level1">
