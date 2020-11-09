@@ -107,12 +107,12 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can (soon) install the released version of coder from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="co"># install.packages("coder") # Not yet!</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("coder") # Not yet!</span></code></pre></div>
 <p>And the development version from <a href="https://github.com/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"eribul/coder"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"eribul/coder"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="typical-use-case" class="section level2">
 <h2 class="hasAnchor">
@@ -133,8 +133,8 @@
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>Assume we have some patients with surgery at specified dates:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://eribul.github.io/coder">coder</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://eribul.github.io/coder">coder</a></span><span class="op">)</span>
 <span class="va">ex_people</span>
 <span class="co">#&gt; # A tibble: 100 x 2</span>
 <span class="co">#&gt;    name              surgery   </span>
@@ -149,10 +149,10 @@
 <span class="co">#&gt;  8 Shuemaker, Lauren 2020-03-29</span>
 <span class="co">#&gt;  9 Boucher, Teresa   2020-09-04</span>
 <span class="co">#&gt; 10 Le, Soraiya       2020-08-09</span>
-<span class="co">#&gt; # … with 90 more rows</span></pre></div>
+<span class="co">#&gt; # … with 90 more rows</span></code></pre></div>
 <p>Those patietns (among others) were also recorded in a national patient register with date of hospital admissions and diagnoses codes coded by the International Classification of Diseases (ICD) version 10:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="va">ex_icd10</span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ex_icd10</span>
 <span class="co">#&gt; # A tibble: 2,376 x 4</span>
 <span class="co">#&gt;    name                 admission  icd10 hdia </span>
 <span class="co">#&gt;    &lt;chr&gt;                &lt;date&gt;     &lt;chr&gt; &lt;lgl&gt;</span>
@@ -166,10 +166,10 @@
 <span class="co">#&gt;  8 Sommerville, Dominic 2020-05-03 A227  FALSE</span>
 <span class="co">#&gt;  9 Sommerville, Dominic 2020-09-07 H702  FALSE</span>
 <span class="co">#&gt; 10 Sommerville, Dominic 2019-12-31 X6051 TRUE </span>
-<span class="co">#&gt; # … with 2,366 more rows</span></pre></div>
+<span class="co">#&gt; # … with 2,366 more rows</span></code></pre></div>
 <p>Using those two data sets, as well as a classification scheme (<code>classcodes</code> object; see below), we can easily identify all Charlson comorbidities for each patient:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="va">ch</span> <span class="op">&lt;-</span> 
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ch</span> <span class="op">&lt;-</span> 
   <span class="fu"><a href="reference/categorize.html">categorize</a></span><span class="op">(</span>
   <span class="va">ex_people</span>,                  <span class="co"># patients of interest </span>
   codedata <span class="op">=</span> <span class="va">ex_icd10</span>,        <span class="co"># Medical codes from national patient register</span>
@@ -200,18 +200,18 @@
 <span class="co">#&gt; #   `moderate or severe liver disease` &lt;lgl&gt;, `metastatic solid tumor` &lt;lgl&gt;,</span>
 <span class="co">#&gt; #   `AIDS/HIV` &lt;lgl&gt;, index_charlson &lt;dbl&gt;, index_deyo_ramano &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   index_dhoore &lt;dbl&gt;, index_ghali &lt;dbl&gt;, index_quan_original &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   index_quan_updated &lt;dbl&gt;</span></pre></div>
+<span class="co">#&gt; #   index_quan_updated &lt;dbl&gt;</span></code></pre></div>
 <p>How many patietns were diagnosed with malignancy?</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">ch</span><span class="op">$</span><span class="va">malignancy</span><span class="op">)</span>
-<span class="co">#&gt; [1] 5</span></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">ch</span><span class="op">$</span><span class="va">malignancy</span><span class="op">)</span>
+<span class="co">#&gt; [1] 5</span></code></pre></div>
 <p>What is the distribution of the combined comorbidity index for each patient?</p>
-<div class="sourceCode" id="cb7"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">ch</span><span class="op">$</span><span class="va">index_charlson</span>, main <span class="op">=</span> <span class="st">"Charlson comorbidity index"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">ch</span><span class="op">$</span><span class="va">index_charlson</span>, main <span class="op">=</span> <span class="st">"Charlson comorbidity index"</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/READMEunnamed-chunk-5-1.png" width="100%"></p>
 <p>There are in many versions of the Charlson comorbidity index, which might be controlled by the <code>index</code> argument. We might also be interested only in diagnoses from 90 days before surgery:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="va">ch</span> <span class="op">&lt;-</span> 
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ch</span> <span class="op">&lt;-</span> 
   <span class="fu"><a href="reference/categorize.html">categorize</a></span><span class="op">(</span>
     <span class="va">ex_people</span>, codedata <span class="op">=</span> <span class="va">ex_icd10</span>, cc <span class="op">=</span> <span class="st">"charlson"</span>, id <span class="op">=</span> <span class="st">"name"</span>, code <span class="op">=</span> <span class="st">"icd10"</span>,
     
@@ -222,14 +222,14 @@
       days <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">90</span>, <span class="op">-</span><span class="fl">1</span><span class="op">)</span> <span class="co"># Time window</span>
     <span class="op">)</span>
   <span class="op">)</span>
-<span class="co">#&gt; Classification based on: regex_icd10</span></pre></div>
+<span class="co">#&gt; Classification based on: regex_icd10</span></code></pre></div>
 <p>Number of malignancies during this period?</p>
-<div class="sourceCode" id="cb9"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">ch</span><span class="op">$</span><span class="va">malignancy</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="co">#&gt; [1] 3</span></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">ch</span><span class="op">$</span><span class="va">malignancy</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co">#&gt; [1] 3</span></code></pre></div>
 <p>Distribution of the index as proposed by QUan et al 2011 during the 90 day period:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">ch</span><span class="op">$</span><span class="va">quan_updated</span>, main <span class="op">=</span> <span class="st">"COmorbidity index by Quan et al. 2011"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">ch</span><span class="op">$</span><span class="va">quan_updated</span>, main <span class="op">=</span> <span class="st">"COmorbidity index by Quan et al. 2011"</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/READMEunnamed-chunk-8-1.png" width="100%"></p>
 </div>
 <div id="classification-schemes" class="section level2">
@@ -238,8 +238,8 @@
 <p>Classification schemes (<code>classcodes</code> objects) are based on regular expressions for computational speed, but their content can be summarized and visualized for clarity. Arbitrary <code>classcodes</code> objects can also be specified by the user.</p>
 <p>The package includes default <code>classcodes</code> for medical patient data based on the international classification of diseases version 8, 9 and 10 (ICD-8/9/10), as well as the Anatomical Therapeutic Chemical Classification System (ATC) for medical prescription data.</p>
 <p>Default <code>classcades</code> are listed in the table. Each classification (classcodes column) can be based on several code systems (regex column) and have several alternative weighted indices (indices column). Those might be combined freely.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit">
-<span class="fu">coder</span><span class="fu">::</span><span class="fu"><a href="reference/all_classcodes.html">all_classcodes</a></span><span class="op">(</span><span class="op">)</span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">coder</span><span class="fu">::</span><span class="fu"><a href="reference/all_classcodes.html">all_classcodes</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 7 x 3</span>
 <span class="co">#&gt;   classcodes   regex                           indices                          </span>
 <span class="co">#&gt;   &lt;chr&gt;        &lt;chr&gt;                           &lt;chr&gt;                            </span>
@@ -249,7 +249,7 @@
 <span class="co">#&gt; 4 hip_ae       icd10, kva, icd10_fracture      ""                               </span>
 <span class="co">#&gt; 5 hip_ae_hail… icd10, kva                      ""                               </span>
 <span class="co">#&gt; 6 knee_ae      icd10, kva                      ""                               </span>
-<span class="co">#&gt; 7 rxriskv      pratt, caughey, garland         "index_pratt, index_sum_all"</span></pre></div>
+<span class="co">#&gt; 7 rxriskv      pratt, caughey, garland         "index_pratt, index_sum_all"</span></code></pre></div>
 </div>
 </div>
 <div id="relation-to-other-packages" class="section level1">
