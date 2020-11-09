@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Deterministic Categorization of Items Based on External Code Data • coder</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -27,6 +33,7 @@
   categorization based on comorbidity indices such as Charlson, Elixhauser, 
   RxRisk V, or the co-morbidity-polypharmacy score (CPS), as well as adverse 
   events after hip and knee arthroplasty surgery.">
+<meta property="og:image" content="eribul.github.io/coder/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -93,9 +100,10 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<div id="coder" class="section level1">
+<div id="coder-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#coder" class="anchor"></a>coder</h1></div>
+<a href="#coder-" class="anchor"></a>coder <img src="reference/figures/logo.png" align="right">
+</h1></div>
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="aim-of-the-package" class="section level2">
@@ -149,7 +157,7 @@
 <span class="co">#&gt;  8 Shuemaker, Lauren 2020-03-29</span>
 <span class="co">#&gt;  9 Boucher, Teresa   2020-09-04</span>
 <span class="co">#&gt; 10 Le, Soraiya       2020-08-09</span>
-<span class="co">#&gt; # … with 90 more rows</span></code></pre></div>
+<span class="co">#&gt; # ... with 90 more rows</span></code></pre></div>
 <p>Those patietns (among others) were also recorded in a national patient register with date of hospital admissions and diagnoses codes coded by the International Classification of Diseases (ICD) version 10:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ex_icd10</span>
@@ -166,7 +174,7 @@
 <span class="co">#&gt;  8 Sommerville, Dominic 2020-05-03 A227  FALSE</span>
 <span class="co">#&gt;  9 Sommerville, Dominic 2020-09-07 H702  FALSE</span>
 <span class="co">#&gt; 10 Sommerville, Dominic 2019-12-31 X6051 TRUE </span>
-<span class="co">#&gt; # … with 2,366 more rows</span></code></pre></div>
+<span class="co">#&gt; # ... with 2,366 more rows</span></code></pre></div>
 <p>Using those two data sets, as well as a classification scheme (<code>classcodes</code> object; see below), we can easily identify all Charlson comorbidities for each patient:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ch</span> <span class="op">&lt;-</span> 
@@ -176,38 +184,42 @@
   cc <span class="op">=</span> <span class="st">"charlson"</span>,            <span class="co"># Calculate Charlson comorbidity</span>
   id <span class="op">=</span> <span class="st">"name"</span>, code <span class="op">=</span> <span class="st">"icd10"</span> <span class="co"># Specify column names</span>
   <span class="op">)</span>
-<span class="co">#&gt; Classification based on: regex_icd10</span>
+<span class="co">#&gt; Classification based on: icd10</span>
 
 <span class="va">ch</span>
 <span class="co">#&gt; # A tibble: 100 x 25</span>
-<span class="co">#&gt;    name  surgery    `myocardial inf… `congestive hea… `peripheral vas…</span>
+<span class="co">#&gt;    name  surgery    `myocardial inf~ `congestive hea~ `peripheral vas~</span>
 <span class="co">#&gt;    &lt;chr&gt; &lt;date&gt;     &lt;lgl&gt;            &lt;lgl&gt;            &lt;lgl&gt;           </span>
-<span class="co">#&gt;  1 Arch… 2020-05-25 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  2 Awtr… 2020-09-20 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  3 Bamm… 2020-03-25 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  4 Bank… 2020-06-18 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  5 Bega… 2020-06-19 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  6 Beni… 2020-02-24 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  7 Bhat… 2020-10-12 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt;  8 Bouc… 2020-09-04 FALSE            FALSE            TRUE            </span>
-<span class="co">#&gt;  9 Carn… 2020-09-11 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt; 10 Chap… 2020-05-18 FALSE            FALSE            FALSE           </span>
-<span class="co">#&gt; # … with 90 more rows, and 20 more variables: `cerebrovascular disease` &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   dementia &lt;lgl&gt;, `chronic pulmonary disease` &lt;lgl&gt;, `rheumatic</span>
-<span class="co">#&gt; #   disease` &lt;lgl&gt;, `peptic ulcer disease` &lt;lgl&gt;, `mild liver disease` &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   `diabetes without complication` &lt;lgl&gt;, `hemiplegia or paraplegia` &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   `renal disease` &lt;lgl&gt;, `diabetes complication` &lt;lgl&gt;, malignancy &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   `moderate or severe liver disease` &lt;lgl&gt;, `metastatic solid tumor` &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   `AIDS/HIV` &lt;lgl&gt;, index_charlson &lt;dbl&gt;, index_deyo_ramano &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   index_dhoore &lt;dbl&gt;, index_ghali &lt;dbl&gt;, index_quan_original &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   index_quan_updated &lt;dbl&gt;</span></code></pre></div>
+<span class="co">#&gt;  1 Arch~ 2020-05-25 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  2 Awtr~ 2020-09-20 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  3 Bamm~ 2020-03-25 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  4 Bank~ 2020-06-18 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  5 Bega~ 2020-06-19 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  6 Beni~ 2020-02-24 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  7 Bhat~ 2020-10-12 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt;  8 Bouc~ 2020-09-04 FALSE            FALSE            TRUE            </span>
+<span class="co">#&gt;  9 Carn~ 2020-09-11 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt; 10 Chap~ 2020-05-18 FALSE            FALSE            FALSE           </span>
+<span class="co">#&gt; # ... with 90 more rows, and 20 more variables: `cerebrovascular</span>
+<span class="co">#&gt; #   disease` &lt;lgl&gt;, dementia &lt;lgl&gt;, `chronic pulmonary disease` &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   `rheumatic disease` &lt;lgl&gt;, `peptic ulcer disease` &lt;lgl&gt;, `mild liver</span>
+<span class="co">#&gt; #   disease` &lt;lgl&gt;, `diabetes without complication` &lt;lgl&gt;, `hemiplegia or</span>
+<span class="co">#&gt; #   paraplegia` &lt;lgl&gt;, `renal disease` &lt;lgl&gt;, `diabetes complication` &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   malignancy &lt;lgl&gt;, `moderate or severe liver disease` &lt;lgl&gt;, `metastatic</span>
+<span class="co">#&gt; #   solid tumor` &lt;lgl&gt;, `AIDS/HIV` &lt;lgl&gt;, charlson &lt;dbl&gt;, deyo_ramano &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   dhoore &lt;dbl&gt;, ghali &lt;dbl&gt;, quan_original &lt;dbl&gt;, quan_updated &lt;dbl&gt;</span></code></pre></div>
 <p>How many patietns were diagnosed with malignancy?</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">ch</span><span class="op">$</span><span class="va">malignancy</span><span class="op">)</span>
 <span class="co">#&gt; [1] 5</span></code></pre></div>
 <p>What is the distribution of the combined comorbidity index for each patient?</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">ch</span><span class="op">$</span><span class="va">index_charlson</span>, main <span class="op">=</span> <span class="st">"Charlson comorbidity index"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span>
+  <span class="va">ch</span><span class="op">$</span><span class="va">charlson</span>, 
+  col <span class="op">=</span> <span class="st">"lightblue"</span>,
+  main <span class="op">=</span> <span class="st">"Patient comorbidity"</span>,
+  xlab <span class="op">=</span> <span class="st">"Charlson comorbidity index"</span>
+<span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/READMEunnamed-chunk-5-1.png" width="100%"></p>
 <p>There are in many versions of the Charlson comorbidity index, which might be controlled by the <code>index</code> argument. We might also be interested only in diagnoses from 90 days before surgery:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
@@ -222,7 +234,7 @@
       days <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">90</span>, <span class="op">-</span><span class="fl">1</span><span class="op">)</span> <span class="co"># Time window</span>
     <span class="op">)</span>
   <span class="op">)</span>
-<span class="co">#&gt; Classification based on: regex_icd10</span></code></pre></div>
+<span class="co">#&gt; Classification based on: icd10</span></code></pre></div>
 <p>Number of malignancies during this period?</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">ch</span><span class="op">$</span><span class="va">malignancy</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
@@ -241,15 +253,15 @@
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">coder</span><span class="fu">::</span><span class="fu"><a href="reference/all_classcodes.html">all_classcodes</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 7 x 3</span>
-<span class="co">#&gt;   classcodes   regex                           indices                          </span>
-<span class="co">#&gt;   &lt;chr&gt;        &lt;chr&gt;                           &lt;chr&gt;                            </span>
-<span class="co">#&gt; 1 charlson     icd10, icd9cm_deyo, icd9cm_enh… "index_charlson, index_deyo_rama…</span>
-<span class="co">#&gt; 2 cps          icd10                           "index_only_ordinary"            </span>
-<span class="co">#&gt; 3 elixhauser   icd10, icd10_short, icd9cm, ic… "index_sum_all, index_sum_all_ah…</span>
-<span class="co">#&gt; 4 hip_ae       icd10, kva, icd10_fracture      ""                               </span>
-<span class="co">#&gt; 5 hip_ae_hail… icd10, kva                      ""                               </span>
-<span class="co">#&gt; 6 knee_ae      icd10, kva                      ""                               </span>
-<span class="co">#&gt; 7 rxriskv      pratt, caughey, garland         "index_pratt, index_sum_all"</span></code></pre></div>
+<span class="co">#&gt;   classcodes   regex                             indices                        </span>
+<span class="co">#&gt;   &lt;chr&gt;        &lt;chr&gt;                             &lt;chr&gt;                          </span>
+<span class="co">#&gt; 1 charlson     icd10, icd9cm_deyo, icd9cm_enhan~ "charlson, deyo_ramano, dhoore~</span>
+<span class="co">#&gt; 2 cps          icd10                             "only_ordinary"                </span>
+<span class="co">#&gt; 3 elixhauser   icd10, icd10_short, icd9cm, icd9~ "sum_all, sum_all_ahrq, walrav~</span>
+<span class="co">#&gt; 4 hip_ae       icd10, kva, icd10_fracture        ""                             </span>
+<span class="co">#&gt; 5 hip_ae_hail~ icd10, kva                        ""                             </span>
+<span class="co">#&gt; 6 knee_ae      icd10, kva                        ""                             </span>
+<span class="co">#&gt; 7 rxriskv      atc_pratt, atc_caughey, atc_garl~ "pratt, sum_all"</span></code></pre></div>
 </div>
 </div>
 <div id="relation-to-other-packages" class="section level1">
