@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>coder: Deterministic Categorization of Items Based on External Code Data — coder-package • coder</title>
+<title>Example data for random ATC codes — ex_atc • coder</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,22 +46,8 @@
 
 
 
-<meta property="og:title" content="coder: Deterministic Categorization of Items Based on External Code Data — coder-package" />
-<meta property="og:description" content="
-Fast categorization of items based on external code data identified by 
-  regular expressions. A typical use case considers patient with medically coded 
-  data, such as codes from the International Classification of Diseases (ICD) or 
-  the Anatomic Therapeutic Chemical (ATC) classification system. 
-  Functions of the package relies on a triad of objects: (1) case data with unit 
-  id:s and possible dates of interest; (2) external code data for corresponding 
-  units in (1) and with optional dates of interest and; (3) a classification 
-  scheme ('classcodes' object) with regular expressions to identify and 
-  categorize relevant codes from (2). 
-  It is easy to introduce new classification schemes ('classcodes' objects) or  
-  to use default schemes included in the package. Use cases includes patient 
-  categorization based on comorbidity indices such as Charlson, Elixhauser, 
-  RxRisk V, or the co-morbidity-polypharmacy score (CPS), as well as adverse 
-  events after hip and knee arthroplasty surgery." />
+<meta property="og:title" content="Example data for random ATC codes — ex_atc" />
+<meta property="og:description" content="Example data for fictive people to use for testing and in examples." />
 <meta property="og:image" content="eribul.github.io/coder/logo.png" />
 
 
@@ -148,42 +134,34 @@ Fast categorization of items based on external code data identified by
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>coder: Deterministic Categorization of Items Based on External Code Data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/eribul/coder/blob/master/R/coder-package.R'><code>R/coder-package.R</code></a></small>
-    <div class="hidden name"><code>coder-package.Rd</code></div>
+    <h1>Example data for random ATC codes</h1>
+    <small class="dont-index">Source: <a href='https://github.com/eribul/coder/blob/master/R/manual_for_datasets.R'><code>R/manual_for_datasets.R</code></a></small>
+    <div class="hidden name"><code>ex_atc.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><img src='figures/logo.png' align='right' alt='logo' width='120' /></p>
-<p>Fast categorization of items based on external code data identified by 
-  regular expressions. A typical use case considers patient with medically coded 
-  data, such as codes from the International Classification of Diseases (ICD) or 
-  the Anatomic Therapeutic Chemical (ATC) classification system. 
-  Functions of the package relies on a triad of objects: (1) case data with unit 
-  id:s and possible dates of interest; (2) external code data for corresponding 
-  units in (1) and with optional dates of interest and; (3) a classification 
-  scheme ('classcodes' object) with regular expressions to identify and 
-  categorize relevant codes from (2). 
-  It is easy to introduce new classification schemes ('classcodes' objects) or  
-  to use default schemes included in the package. Use cases includes patient 
-  categorization based on comorbidity indices such as Charlson, Elixhauser, 
-  RxRisk V, or the co-morbidity-polypharmacy score (CPS), as well as adverse 
-  events after hip and knee arthroplasty surgery.</p>
+    <p>Example data for fictive people to use for testing and in examples.</p>
     </div>
 
+    <pre class="usage"><span class='va'>ex_atc</span></pre>
 
+
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>Data frames with 100 rows and 2 variables:</p><dl>
+<dt>name</dt><dd><p>random person names</p></dd>
+<dt>atc</dt><dd><p>Random codes from the Anatomic Therapeutic Chemical
+classification (ATC) system.</p></dd>
+<dt>prescription</dt><dd><p>random dates of prescription of medications with c
+oresponding ATC codes</p></dd>
+
+</dl>
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Useful links:</p><ul>
-<li><p><a href='https://eribul.github.io/coder'>https://eribul.github.io/coder</a></p></li>
-<li><p>Report bugs at <a href='https://github.com/eribul/coder/issues'>https://github.com/eribul/coder/issues</a></p></li>
-</ul>
-
-</div>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p><strong>Maintainer</strong>: Erik Bulow <a href='mailto:eriklgb@gmail.com'>eriklgb@gmail.com</a> (<a href='https://orcid.org/0000-0002-9973-456X'>ORCID</a>)</p>
+    <div class='dont-index'><p>Other example data: 
+<code><a href='ex_icd10.html'>ex_icd10</a></code>,
+<code><a href='ex_people.html'>ex_people</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
