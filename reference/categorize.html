@@ -204,18 +204,17 @@ Alternatively, the output from <code><a href='codify.html'>codify()</a></code></
 (identified by <code>id = "&lt;col_name&gt;"</code>),
 code column (identified by argument <code>code = "&lt;col_name&gt;"</code>)
 and optional <code><a href='https://rdrr.io/r/base/Dates.html'>Date</a></code> column
-(identified by <code>codify_args = list(code_date = "&lt;col_name&gt;")</code>).
-@param id name of unique character id column found in both <code>x</code>and <code>codedata</code>.
-(where it must not be unique).
-@param code name of code column in <code>codedata</code>.</p></td>
+(identified by <code>codify_args = list(code_date = "&lt;col_name&gt;")</code>).</p></td>
     </tr>
     <tr>
       <th>id</th>
-      <td><p>name of code/id columns (in <code>codified</code>).</p></td>
+      <td><p>name of unique character id column found in
+both <code>x</code>and <code>codedata</code>.
+(where it must not be unique).</p></td>
     </tr>
     <tr>
       <th>code</th>
-      <td><p>name of code/id columns (in <code>codified</code>).</p></td>
+      <td><p>name of code column in <code>codedata</code>.</p></td>
     </tr>
     <tr>
       <th>codify_args</th>
@@ -248,7 +247,8 @@ spaces. Those names are changed to syntactically correct names by
 <code>check.names = TRUE</code>. Syntactically invalid, but grammatically correct
 names might be preferred for presentation of the data as achieved by
 <code>check.names = FALSE</code>. Alternatively, if <code>categorize</code> is called repeatedly,
-longer informative names might be created by <code>cc_args = list(tech_names = TRUE)</code>.</p></td>
+longer informative names might be created by
+<code>cc_args = list(tech_names = TRUE)</code>.</p></td>
     </tr>
     <tr>
       <th>.data_cols</th>

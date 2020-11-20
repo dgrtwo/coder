@@ -108,7 +108,7 @@
 <div id="patients" class="section level1">
 <h1 class="hasAnchor">
 <a href="#patients" class="anchor"></a>Patients</h1>
-<p><code>ex_people</code> contains 100 patients (with random names from the <a href="https://centerforassessment.github.io/randomNames/"><code>randomNames</code></a> package) who received THA surgery at given (random) dates (<code>surgery</code> column). This data might represent a sample from a national quality register.</p>
+<p><code>ex_people</code> contains 100 patients (with random names from the <a href="https://centerforassessment.github.io/randomNames/"><code>randomNames</code></a> package) who received total hip arthroplasty (THA) surgery at given (random) dates (<code>surgery</code> column). This data represent a sample from a national quality register.</p>
 <p>See also <code><a href="../reference/ex_people.html">?ex_people</a></code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ex_people</span>
@@ -130,7 +130,7 @@
 <div id="diagnoses-data" class="section level1">
 <h1 class="hasAnchor">
 <a href="#diagnoses-data" class="anchor"></a>Diagnoses data</h1>
-<p>We are interested in comorbidity for the patients above and have collected some diagnostics data (<code>ex_icd10</code>) from a national patient register. Patients have one entry for every combination of recorded diagnoses codes according to the International classification of diseases version 10, <code>icd10</code>, and corresponding dates of hospital <code>admission</code>s for which those codes were recorded. (Column <code>hdia</code> is <code>TRUE</code> for main diagnoses and <code>FALSE</code> for underlying/less relevant codes).</p>
+<p>We are interested in comorbidity for the patients above and have collected some synthesized diagnostics data (<code>ex_icd10</code>) from a national patient register (we can at least assume that for now). Patients have one entry for every combination of recorded diagnoses codes according to the International classification of diseases version 10, <code>icd10</code>, and corresponding dates of hospital <code>admission</code>s for which those codes were recorded. (Column <code>hdia</code> is <code>TRUE</code> for main diagnoses and <code>FALSE</code> for underlying/less relevant codes).</p>
 <p>See also <code><a href="../reference/ex_icd10.html">?ex_icd10</a></code>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ex_icd10</span>
