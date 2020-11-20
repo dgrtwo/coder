@@ -19,8 +19,8 @@
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">coder</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.12</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.12.1</span>
       </span>
     </div>
 
@@ -204,6 +204,19 @@
 #&gt; </span><span style='color: #555555;'>10</span><span> chro… (I27… I27|(J([46… 49(([… 49|50([0-5]|6… 4(16[89]|90)|5…       1
 #&gt; </span><span style='color: #555555;'># … with 21 more rows, and 6 more variables: sum_all_ahrq </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,</span><span>
 #&gt; </span><span style='color: #555555;'>#   walraven </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, sid29 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, sid30 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, ahrq_mort </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, ahrq_readm </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div><div class='input'>
+<span class='co'># Print attributes data but no data preview</span>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>elixhauser</span>, n <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; 
+#&gt; Classcodes object
+#&gt;  
+#&gt; Regular expressions:
+#&gt;    icd10, icd10_short, icd9cm, icd9cm_ahrqweb, icd9cm_enhanced 
+#&gt; Indices:
+#&gt;    sum_all, sum_all_ahrq, walraven, sid29, sid30, ahrq_mort, ahrq_readm 
+#&gt; Hierarchy:
+#&gt;    c("metastatic cancer", "solid tumor"),
+#&gt;    c("diabetes uncomplicated", "diabetes complicated") 
+#&gt; </div><div class='input'>
 <span class='co'># Print all rows</span>
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>elixhauser</span>, n <span class='op'>=</span> <span class='fl'>31</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; 
@@ -252,20 +265,7 @@
 #&gt; </span><span style='color: #555555;'>30</span><span> psyc… F(2[… F(2[02-589… 29([5… 29([5-8]|91)   29(38|9([578]|…       1
 #&gt; </span><span style='color: #555555;'>31</span><span> depr… F(20… F(20|3[1-4… 3(0(0… 3(0(04|112|9[… 29(6[235])|3(0…      </span><span style='color: #BB0000;'>NA</span><span>
 #&gt; </span><span style='color: #555555;'># … with 6 more variables: sum_all_ahrq </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, walraven </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, sid29 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,</span><span>
-#&gt; </span><span style='color: #555555;'>#   sid30 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, ahrq_mort </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, ahrq_readm </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div><div class='input'>
-<span class='co'># Print attributes data but no data preview</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>elixhauser</span>, n <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; 
-#&gt; Classcodes object
-#&gt;  
-#&gt; Regular expressions:
-#&gt;    icd10, icd10_short, icd9cm, icd9cm_ahrqweb, icd9cm_enhanced 
-#&gt; Indices:
-#&gt;    sum_all, sum_all_ahrq, walraven, sid29, sid30, ahrq_mort, ahrq_readm 
-#&gt; Hierarchy:
-#&gt;    c("metastatic cancer", "solid tumor"),
-#&gt;    c("diabetes uncomplicated", "diabetes complicated") 
-#&gt; </div></span></pre>
+#&gt; </span><span style='color: #555555;'>#   sid30 </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, ahrq_mort </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, ahrq_readm </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
